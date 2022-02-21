@@ -1,0 +1,283 @@
+---
+title: 'Week 1 Module 4: Lines and Polygons'
+subtitle: 'Exercises'
+output:
+  pdf_document: default
+  html_notebook: default
+  html_document:
+    df_print: paged
+---
+
+
+Let's clear the global computing environment:
+```{r}
+rm( list =)
+```
+
+
+
+# Exercises for Week 1 Module 4: Lines and Polygons
+
+
+## Exercise 4.1: Draw a line segment
+
+Create an empty plot with no data, with $x$ ranging from 0 to 20 and $y$ ranging from 0 to 10.
+
+Then draw a line segment starting at the point (3, 7) and ending at the point (12, 4).
+
+**Solution**
+
+```{r}
+# Type your answer in here
+```
+
+
+
+
+## Exercise 4.2: Line type, width, and color
+
+Create an empty plot with no data, with $x$ ranging from 0 to 20 and $y$ ranging from 0 to 10.
+
+Then draw a dotted line segment starting at the point (3, 7) and ending at the point (12, 4), using a line width of 3 and a color of "cadetblue3".
+
+**Solution**
+
+```{r}
+# Type your answer here
+```
+
+
+
+
+
+
+## Exercise 4.3: Annual profit line graph
+
+The annual profit for WiDgT for the years 2016 - 2019 is:
+
+| Year | Annual Profit (M) |
+|:----:|:-----------------:|
+| 2016 |        1.3        |
+| 2017 |        1.6        |
+| 2018 |        2.1        |
+| 2019 |        2.2        |
+
+Create a connected graph of the annual profits using the `plot()` function. Include both the line as well as the points.
+
+**Solution**
+
+```{r}
+# Type your answer here
+```
+
+
+
+
+## Exercise 4.4: Using the `lines()` function
+
+Create an empty plot with no data, with $x$ ranging from 0 to 20 and $y$ ranging from 0 to 10.
+
+Then draw two connected line segments:
+
+* The first line segment starts at the point (3, 7) and ends at the point (12, 4).
+
+* The second line segment starts at the point (12, 4) and ends at the point (16, 9).
+
+Use a solid line with a width of 2 and a color of "aquamarine3".
+
+**Solution**
+
+```{r}
+# Type your answer here
+```
+
+
+
+## Exercise 4.5: 3-4-5 Right Triangle
+
+Create an empty plot with no data, where the $x$-axis ranges from 0 to 10 and the $y$-axis ranges from 0 to 7. Create a 3-4-5 right triangle using the `polygon()` function, and specify a border color and a fill color. Hint: start at the point (3, 5), then go down 3 units, then go right for 4 units.
+
+**Solution**
+
+```{r}
+# Type your answer here
+```
+
+
+
+
+# Solutions to the Exercises
+
+
+## Exercise 4.1: Draw a line segment
+
+Create an empty plot with no data, with $x$ ranging from 0 to 20 and $y$ ranging from 0 to 510.
+
+Then draw a line segment starting at the point (3, 7) and ending at the point (12, 4).
+
+**Solution**
+
+```{r}
+# First, let's create the empty plot with no data:
+
+plot(
+    x = NULL,
+    xlim = c(0, 20),
+    ylim = c(0, 10),
+    main = "Exercise 1: Line segment",
+    xlab = "x",
+    ylab = "y",
+    bty = "n"
+)
+
+# Now let's draw the line segment:
+
+segments(
+    x0 = 3,
+    y0 = 7,
+    x1 = 12,
+    y1 = 4
+)
+```
+
+
+## Exercise 4.2: Line type, width, and color
+
+Create an empty plot with no data, with $x$ ranging from 0 to 20 and $y$ ranging from 0 to 10.
+
+Then draw a dotted line segment starting at the point (3, 7) and ending at the point (12, 4), using a line width of 3 and a color of "cadetblue3".
+
+**Solution**
+
+```{r}
+# First, let's create the empty plot with no data:
+
+plot(
+    x = NULL,
+    xlim = c(0, 20),
+    ylim = c(0, 10),
+    main = "Exercise 3.2: Line segment",
+    xlab = "x",
+    ylab = "y",
+    bty = "n"
+)
+
+# Now let's draw the line segment:
+
+segments(
+    x0 = 3,
+    y0 = 7,
+    x1 = 12,
+    y1 = 4,
+    lty = "dotted",
+    lwd = 3,
+    col = "cadetblue3"
+)
+```
+
+
+
+## Exercise 4.3: Annual profit line graph
+
+The annual profit for WiDgT for the years 2016 - 2019 is:
+
+| Year | Annual Profit (M) |
+|:----:|:-----------------:|
+| 2016 |        1.3        |
+| 2017 |        1.6        |
+| 2018 |        2.1        |
+| 2019 |        2.2        |
+
+Create a connected graph of the annual profits using the `plot()` function. Include both the line as well as the points.
+
+**Solution**
+
+```{r}
+plot(
+    x = c(2016, 2017, 2018, 2019),
+    y = c(1.3, 1.6, 2.1, 2.2),
+    xlim = c(2016, 2019),
+    ylim = c(0, 2.5),
+    main = "Annual profit for WiDgT",
+    xlab = "Year",
+    ylab = "Annual profit (M)",
+    col = "navy",
+    cex = 2.5,
+    lty = "dotted",
+    lwd = 2,
+    type = "b"
+)
+```
+
+
+
+## Exercise 4.4: Using the `lines()` function
+
+Create an empty plot with no data, with $x$ ranging from 0 to 20 and $y$ ranging from 0 to 10.
+
+Then draw two connected line segments:
+
+* The first line segment starts at the point (3, 7) and ends at the point (12, 4).
+
+* The second line segment starts at the point (12, 4) and ends at the point (16, 9).
+
+Use a solid line with a width of 2 and a color of "aquamarine3".
+
+**Solution**
+
+```{r}
+# First, let's create the empty plot with no data:
+
+plot(
+    x = NULL,
+    xlim = c(0, 20),
+    ylim = c(0, 10),
+    main = "Exercise 3.4: Using the lines() function",
+    xlab = "x",
+    ylab = "y",
+    bty = "n"
+)
+
+# Now let's draw the line segments using
+# the lines() function:
+
+lines(
+    x = c(3, 12, 16),
+    y = c(7, 4, 9),
+    lty = "solid",
+    lwd = 2,
+    col = "aquamarine3"
+)
+```
+
+
+
+## Exercise 4.5: 3-4-5 Right Triangle
+
+Create an empty plot with no data, where the $x$-axis ranges from 0 to 10 and the $y$-axis ranges from 0 to 7. Create a 3-4-5 right triangle using the `polygon()` function, and specify a border color and a fill color. Hint: start at the point (3, 5), then go down 3 units, then go right for 4 units.
+
+**Solution**
+
+Here's my solution:
+```{r}
+plot(
+    x = NULL,
+    xlim = c(0, 10),
+    ylim = c(0, 7),
+    main = "Graph of 3-4-5 right triangle",
+    xlab = "",
+    ylab = "",
+    las = 1
+)
+
+polygon(
+    c(3, 3, 7),
+    c(5, 2, 2),
+    border = "navy",
+    col = "cyan2"
+)
+```
+
+
+
+

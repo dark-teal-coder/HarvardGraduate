@@ -1,0 +1,215 @@
+---
+title: 'Lecture 3, Module 3: Vector Indexing'
+subtitle: Exercises
+output:
+  html_document:
+    df_print: paged
+---
+
+
+
+
+# Exercises
+
+
+## Exercise 3.1: Indexing with positive integers
+
+Let's construct a simple vector:
+```{r}
+exercise.vector <-
+    c( 6, 3, 2, 8, 6, 4, 1, 5, 9, 0)
+```
+
+### Part (a)
+
+Select the fourth element of this vector.
+
+**Solution**
+
+
+### Part (b)
+
+Select the elements in the second, fifth, and seventh positions.
+
+**Solution**
+
+
+### Part (c)
+
+Select the fourth through the eighth elements of the vector.
+
+**Solution**
+
+
+
+
+## Exercise 3.2: Indexing with negative integers
+
+Let's construct a simple vector:
+```{r}
+exercise.vector <-
+    c( 6, 3, 2, 8, 6, 4, 1, 5, 9, 0)
+```
+
+### Part (a)
+
+Select all the elements of this vector except for the seventh element.
+
+**Solution**
+
+
+
+
+### Part (b)
+
+Select all the elements of this vector except for the elements in the third, sixth, and eighth positions.
+
+**Solution**
+
+
+### Part (c)
+
+Select all the elements of the vector except for the first through third elements.
+
+**Solution**
+
+
+
+# Solutions to the Exercises
+
+## Exercise 3.1: Indexing with positive integers
+
+Let's construct a simple vector:
+```{r}
+exercise.vector <-
+    c( 6, 3, 2, 8, 6, 4, 1, 5, 9, 0)
+```
+
+### Part (a)
+
+Select the fourth element of this vector.
+
+**Solution**
+
+```{r}
+exercise.vector[ 4 ]
+```
+
+
+
+### Part (b)
+
+Select the elements in the second, fifth, and seventh positions.
+
+**Solution**
+
+```{r}
+exercise.vector[ c(2, 5, 7) ]
+```
+
+
+
+### Part (c)
+
+Select the fourth through the eighth elements of the vector.
+
+**Solution**
+
+```{r}
+exercise.vector[ 4:8 ]
+```
+
+
+
+## Exercise 3.2: Indexing with negative integers
+
+Let's construct a simple vector:
+```{r}
+exercise.vector <-
+    c( 6, 3, 2, 8, 6, 4, 1, 5, 9, 0)
+```
+
+### Part (a)
+
+Select all the elements of this vector except for the seventh element.
+
+**Solution**
+
+```{r}
+exercise.vector[ -7 ]
+```
+
+
+### Part (b)
+
+Select all the elements of this vector except for the in the third, sixth, and eighth positions.
+
+**Solution**
+
+```{r}
+exercise.vector[ c( -3, -6, -8 ) ]
+```
+
+
+### Part (c)
+
+Select all the elements of the vector except for the first through third elements.
+
+**Solution**
+
+```{r}
+exercise.vector[ -1:-3 ]
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

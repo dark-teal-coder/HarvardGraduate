@@ -1,0 +1,1059 @@
+---
+title: 'Week2 Module 5: The Quadratic Equation'
+subtitle: 'CSCI E-5a: Programming in R'
+output:
+  pdf_document: default
+  html_notebook: default
+  html_document:
+    df_print: paged
+---
+
+Let's clear the environment:
+```{r}
+rm( list = ls() )
+```
+
+
+# Module Overview and Learning Objectives
+
+In this module, we'll see how to use R to calculate the roots of a quadratic polynomial.
+
+
+
+* In Section 1, we'll review the concept of a quadratic polynomial from high-school algebra.
+
+* In Section 2, we'll see how to use the discriminant to determine the number of distinct roots of a quadratic polynomial.
+
+* In Section 3, we'll see how to use the quadratic formula to solve for the roots of a quadratic polynomial.
+
+* In Section 4, we'll look at some additional examples.
+
+
+
+When you've completed this module, you should be able to:
+
+* Define a quadratic polynomial.
+
+* Determine the number of roots of a polynomial by using the discriminant.
+
+* Calculate the roots of a quadratic polynomial.
+
+
+There are no new functions in this module.
+
+
+
+OK! Let's get started with a quick review of high-school algebra.
+
+
+
+
+
+# Section 1: Algebra Review
+
+> **Main Idea:** We can define the concept of a quadratic polynomial.
+
+In this section, we'll review the concept of a quadratic polynomial from high-school algebra.
+
+
+
+> **Definition:** A *quadratic polynomial* is a polynomial where the highest power is 2.
+
+For instance, this is a quadratic polynomial, because the highest power of the variable $x$ is 2:
+$$
+f(x)\ =\ x^2 - 6x + 5
+$$
+
+We can express this concept algebraically like this:
+$$
+f(x)\ =\ ax^2 + bx + c
+$$
+
+The $a$, $b$, and $c$ symbols represent constants, and in any practical situation we would always have specific values for these constants. 
+
+For instance, for the example above we have $a = 1$, $b = -6$, and $c = 5$.
+
+A particular value of $x$ that makes the polynomial $f(x)$ equal to 0 is called a *root* of that polynomial.
+
+Let's consider the particular value $x = 5$.
+
+Then:
+$$
+f(5)\ =\ 5^2 - (6 \times 5) + 5\ =\ 25 - 30 + 5\ =\ 0
+$$
+
+Let's do this in R.
+
+First, we'll define variables:
+```{r}
+# Example 1: Define variables
+
+a <- 1
+b <- -6
+c <- 5
+```
+
+
+Let's check the value of $f(5)$ to see if it's a root:
+```{r}
+# Example 2: Evaluate f(5)
+
+x <- 5
+
+value.of.f.at.x.equals.5 <-
+    a * x^2 + b * x + c
+
+cat(
+    "Value of f(x) at x = 5:",
+    formatC(
+        value.of.f.at.x.equals.5,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+So the particular value $x = 5$ is a root of the quadratic polynomial $f(x) = x^2 - 5x + 4$.
+
+So that's what a quadratic polynomial is.
+
+Now let's see how to determine the number of roots of a quadratic polynomial.
+
+
+
+
+
+
+# Section 2: The Discriminant
+
+> **Main Idea:** We can determine the number of roots of a quadratic polynomial.
+
+In this section, we'll see how to use the discriminant to determine the number of distinct roots of a quadratic polynomial.
+
+In order to calculate the roots of a quadratic polynomial, we first of all have to figure out how many distinct roots there are.
+
+A quadratic polynomial can have zero roots, one root, or two roots.
+
+To determine the number of roots of a quadratic polynomial, we first calculate the *discriminant*, which is denoted $\Delta$:
+$$
+\Delta\ =\ b^2 - 4ac
+$$
+
+Let's calculate the discriminant for our previous example:
+```{r}
+# Example 3: Calculating the discriminant
+
+discriminant <-
+  b^2 - 4 * a * c
+
+cat(
+  "Discriminant:",
+  formatC(
+    discriminant,
+    format = "f",
+    digits = 2
+  )
+)
+```
+
+So the value of the discriminant for that quadratic polynomial is 16.
+
+
+Then, using the discriminant, we can determine the number of roots of the quadratic polynomial:
+
+* If the discriminant is strictly less than 0, then there are no roots.
+
+* If the discriminant is equal to 0, then there is exactly one root $x$.
+
+* If the discriminant is strictly greater than 0, then the quadratic polynomial has exactly two distinct roots.
+
+So that's how to use the discriminant to determine the number of distinct roots of a quadratic polynomial.
+
+Now let's see how to actually calculate the values of any roots.
+
+
+
+
+
+# Section 3: Calculating the Roots
+
+> **Main Idea:** *We can calculate the roots of a quadratic polynomial.*
+
+In section, we'll see how to use the quadratic formula to solve for the roots of a quadratic polynomial.
+
+Before we try to calculate the values of any roots, we first of all have to be sure how many roots there are.
+
+If there are no real roots, then there's nothing to calculate.
+
+If the discriminant is equal to 0, then there is exactly one root $x$, and the formula for $x$ is:
+$$
+x\ =\ -\frac{b}{2a}
+$$
+
+If the discriminant is strictly greater than 0, then the quadratic polynomial has exactly two distinct roots.
+
+The first root $x_1$ is:
+$$
+x_1\ =\ \frac{-b - \sqrt{b^2 - 4ac}}{2a}
+$$
+
+The second root is:
+$$
+x_2\ =\ \frac{-b + \sqrt{b^2 - 4ac}}{2a}
+$$
+
+
+Let's recall our original example of a quadratic polynomial:
+$$
+f(x)\ =\ x^2 - 6x + 5
+$$
+
+
+
+Recall from Example 3 that the discriminant for this quadratic polynomial is $\Delta = 16$.
+
+
+Since the discriminant is strictly greater than 0, there are exactly two roots for this function.
+
+Let's calculate the first root:
+```{r}
+# Example 4: Calculate the first root
+
+first.root <-
+    (-b - sqrt( b^2 - 4 * a * c ) ) / (2 * a)
+
+cat(
+    "The first root of the function is:",
+    formatC(
+        first.root,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+Let's check this:
+```{r}
+# Example 5: Checking the first root
+
+a * (first.root^2) + (b * first.root) + c
+```
+
+Now let's calculate the second root, reporting our result using a `cat()` statement displaying 2 decimal places:
+```{r}
+# Example 6: Calculating the second root
+
+second.root <-
+    (-b + sqrt( b^2 - 4 * a * c ) ) / (2 * a)
+
+cat(
+    "The second root of the equation is:",
+    formatC(
+        second.root,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+Let's check this:
+```{r}
+# Example 7: Checking the second root
+
+a * (second.root^2) + (b * second.root) + c
+```
+
+Now let's make a graph:
+```{r}
+# Example 8: Creating a graph
+
+# First, let's create an empty plot:
+
+plot(
+    x = NULL,
+    xlim = c(-5, 10),
+    ylim = c(-5, 30),
+    main = "Quadratic function with 2 roots",
+    xlab = "x",
+    ylab = "f(x)"
+)
+
+
+# Next, let's draw in the x- and y-axes:
+
+segments(
+    x0 = -5,
+    y0 = 0,
+    x1 = 10,
+    y1 = 0,
+    lty = "solid",
+    lwd = 2,
+    col = "gray50"
+)
+
+
+# Here's the vertical reference line:
+
+segments(
+    x0 = 0,
+    y0 = -20,
+    x1 = 0,
+    y1 = 30,
+    lty = "solid",
+    lwd = 2,
+    col = "gray50"
+)
+
+
+# Now we can graph the quadratic function:
+
+curve(
+    expr = a*x^2 + b*x + c,
+    lty = "solid",
+    lwd = 3,
+    col = "magenta3",
+    add = TRUE
+)
+
+
+# Finally, we'll put points at the locations of the roots:
+
+points(
+    x = first.root,
+    y = 0,
+    pch = 19,
+    cex = 1.2,
+    col = "magenta4"
+)
+
+points(
+    x = second.root,
+    y = 0,
+    pch = 19,
+    cex = 1.2,
+    col = "magenta4"
+)
+```
+
+
+So that's how to use the quadratic formula to solve for the roots of a quadratic polynomial.
+
+Let's look at some more examples.
+
+
+
+
+
+
+# Section 4: More Examples
+
+**Main Idea:** *We explore two more examples.*
+
+In this section, we'll analyze two more examples.
+
+First, let's consider this quadratic polynomial:
+$$
+x^2 - 6x + 9\ =\ 0
+$$
+
+
+First, let's define some variables:
+```{r}
+# Example 9: Defining variables
+
+a <- 1
+b <- -6
+c <- 9
+```
+
+Then the discriminant is:
+```{r}
+# Example 10: Calculating the discriminant
+
+b^2 - 4 * a * c
+```
+
+
+Since the discriminant is equal to 0, there is exactly one root for this quadratic polynomial:
+```{r}
+# Example 11: Calculating the single root
+
+only.root <- - b / (2 * a)
+
+cat(
+    "The only root of the polynomial is:",
+    formatC(
+        only.root,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+Let's check this:
+```{r}
+# Example 12: Checking the single root
+
+a * only.root^2 + b * only.root + c
+```
+
+
+Now let's draw the graph:
+```{r}
+# Example 13: Drawing the graph
+
+# First, let's create an empty plot:
+
+plot(
+    x = NULL,
+    xlim = c(-5, 10),
+    ylim = c(-5, 30),
+    main = "Quadratic polynomial with 1 root",
+    xlab = "x",
+    ylab = "f(x)"
+)
+
+
+# Next, let's draw in the x- and y-axes:
+
+segments(
+    x0 = -5,
+    y0 = 0,
+    x1 = 10,
+    y1 = 0,
+    lty = "solid",
+    lwd = 2,
+    col = "gray50"
+)
+
+
+# Here's the vertical reference line:
+
+segments(
+    x0 = 0,
+    y0 = -20,
+    x1 = 0,
+    y1 = 30,
+    lty = "solid",
+    lwd = 2,
+    col = "gray50"
+)
+
+
+# Now we can graph the quadratic function:
+
+curve(
+    a*x^2 + b*x + c,
+    lty = "solid",
+    lwd = 3,
+    col = "magenta3",
+    add = TRUE
+)
+
+
+# Finally, we'll put a point at the locations of the only root:
+
+points(
+    x = only.root,
+    y = 0,
+    pch = 19,
+    cex = 1.2,
+    col = "magenta4"
+)
+
+```
+
+
+Now for the second example.
+
+Let's consider this equation:
+$$
+x^2 - 6x + 14\ =\ 0
+$$
+
+
+First, let's define some variables:
+```{r}
+# Example 14: Defining variables
+
+a <- 1
+b <- -6
+c <- 14
+```
+
+Then the discriminant is:
+```{r}
+# Example 15: Calculating the discriminant
+
+b^2 - 4 * a * c
+```
+
+Since the discriminant is less than 0, this quadratic function has no roots.
+
+Now let's draw the graph:
+```{r}
+# Example 16: Drawing the graph
+
+# First, let's create an empty plot:
+
+plot(
+    x = NULL,
+    xlim = c(-5, 10),
+    ylim = c(-5, 30),
+    main = "Quadratic polynomial with no roots",
+    xlab = "x",
+    ylab = "f(x)"
+)
+
+
+# Next, let's draw in the x- and y-axes:
+
+segments(
+    x0 = -5,
+    y0 = 0,
+    x1 = 10,
+    y1 = 0,
+    lty = "solid",
+    lwd = 2,
+    col = "gray50"
+)
+
+
+# Here's the vertical reference line:
+
+segments(
+    x0 = 0,
+    y0 = -20,
+    x1 = 0,
+    y1 = 30,
+    lty = "solid",
+    lwd = 2,
+    col = "gray50"
+)
+
+
+# Now we can graph the quadratic function:
+
+curve(
+    a*x^2 + b*x + c,
+    lty = "solid",
+    lwd = 3,
+    col = "magenta3",
+    add = TRUE
+)
+
+
+# Since this quadratic polynomial has no roots, there are no points to plot!
+
+
+```
+
+
+So those are two more examples of quadratic polynomials and their roots.
+
+Now let's review what we've learned in this module.
+
+
+
+## Exercise 2.1: Quadratic Polynomials
+
+### Part (a)
+
+Consider the quadratic function $f(x)$:
+$$
+f(x)\ =\ 2x^2 - 4x - 16
+$$
+
+First, determine the number of roots of this polynomial. Then, if there are any roots, calculate their value using the appropriate formula. Finally, create a graph so we can visualize the function and its roots.
+
+
+### Part (b)
+
+Consider the quadratic function $g(x)$:
+$$
+g(x)\ =\ 2x^2 - 4x + 8
+$$
+
+First, determine the number of roots of this polynomial. Then, if there are any roots, calculate their value using the appropriate formula. Finally, create a graph so we can visualize the function and its roots.
+
+
+### Part (c)
+
+Consider the quadratic function $h(x)$:
+$$
+h(x)\ =\ 2x^2 - 4x + 2
+$$
+
+First, determine the number of roots of this polynomial. Then, if there are any roots, calculate their value using the appropriate formula. Finally, create a graph so we can visualize the function and its roots.
+
+
+
+
+# Module Review
+
+
+In this module, we saw how to use R to calculate the roots of a quadratic polynomial.
+
+* In Section 1, we reviewed the concept of a quadratic polynomial from high-school algebra.
+
+* In Section 2, we saw how to use the discriminant to determine the number of roots of a quadratic polynomial.
+
+* In Section 3, we saw how to use the quadratic formula to solve for the distinct roots of a quadratic polynomial.
+
+* In Section 4, we looked at some additional examples.
+
+
+Now that you've completed this module, you should be able to:
+
+* Define a quadratic polynomial.
+
+* Determine the number of roots of a polynomial by using the discriminant.
+
+* Calculate the roots of a quadratic polynomial.
+
+
+There were no new functions in this module.
+
+
+
+
+
+
+# Solutions to the Exercises
+
+
+## Exercise 2.1: Quadratic Polynomials
+
+
+### Part (a)
+
+Consider the quadratic function $f(x)$:
+$$
+f(x)\ =\ 2x^2 - 4x - 16
+$$
+
+First, determine the number of roots of this polynomial. Then, if there are any roots, calculate their value using the appropriate formula. Finally, create a graph so we can visualize the function and its roots.
+
+**Solution**
+
+First, let's define variables for the coefficients of the quadratic function:
+```{r}
+a <- 2
+
+b <- -4
+
+c <- -16
+```
+
+
+Then the discriminant is:
+```{r}
+b^2 - 4 * a * c
+```
+
+Since the discriminant is strictly greater than 0, there are exactly two roots for this polynomial
+
+Let's calculate the first root:
+```{r}
+first.root <- (-b - sqrt( b^2 - 4 * a * c ) ) / (2 * a)
+
+cat(
+    "The first root of the function is:",
+    formatC(
+        first.root,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+Let's check this:
+```{r}
+a * first.root^2 + b * first.root + c
+```
+
+Now let's calculate the second root, reporting our result using a `cat()` statement displaying 2 decimal places:
+```{r}
+second.root <- (-b + sqrt( b^2 - 4 * a * c ) ) / (2 * a)
+
+cat(
+    "The second root of the equation is:",
+    formatC(
+        second.root,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+Let's check this:
+```{r}
+a * second.root^2 + b * second.root + c
+```
+
+Now let's make a graph:
+```{r}
+# First, let's create an empty plot:
+
+plot(
+    x = NULL,
+    xlim = c(-5, 10),
+    ylim = c(-25, 30),
+    main = "Quadratic function with 2 roots",
+    xlab = "x",
+    ylab = "f(x)"
+)
+
+
+# Next, let's draw in the x- and y-axes:
+
+segments(
+    x0 = -5,
+    y0 = 0,
+    x1 = 10,
+    y1 = 0,
+    lty = "solid",
+    lwd = 2,
+    col = "gray50"
+)
+
+
+# Here's the vertical reference line:
+
+segments(
+    x0 = 0,
+    y0 = -25,
+    x1 = 0,
+    y1 = 30,
+    lty = "solid",
+    lwd = 2,
+    col = "gray50"
+)
+
+
+# Now we can graph the quadratic function:
+
+curve(
+    a*x^2 + b*x + c,
+    lty = "solid",
+    lwd = 3,
+    col = "magenta3",
+    add = TRUE
+)
+
+
+# Finally, we'll put points at the locations of the roots:
+
+points(
+    x = first.root,
+    y = 0,
+    pch = 19,
+    cex = 1.2,
+    col = "magenta4"
+)
+
+points(
+    x = second.root,
+    y = 0,
+    pch = 19,
+    cex = 1.2,
+    col = "magenta4"
+)
+```
+
+
+
+
+
+
+### Part (b)
+
+Consider the quadratic function $g(x)$:
+$$
+g(x)\ =\ 2x^2 - 4x + 8
+$$
+
+First, determine the number of roots of this polynomial. Then, if there are any roots, calculate their value using the appropriate formula. Finally, create a graph so we can visualize the function and its roots.
+
+**Solution**
+
+First, let's define variables for the coefficients of the quadratic function:
+```{r}
+a <- 2
+
+b <- -4
+
+c <- 8
+```
+
+
+Then the discriminant is:
+```{r}
+b^2 - 4 * a * c
+```
+
+Since the discriminant is negative, there are no roots for this quadratic polynomial.
+
+Now let's make a graph:
+```{r}
+# First, let's create an empty plot:
+
+plot(
+    x = NULL,
+    xlim = c(-5, 10),
+    ylim = c(-25, 30),
+    main = "Quadratic function with no roots",
+    xlab = "x",
+    ylab = "f(x)"
+)
+
+
+# Next, let's draw in the x- and y-axes:
+
+segments(
+    x0 = -5,
+    y0 = 0,
+    x1 = 10,
+    y1 = 0,
+    lty = "solid",
+    lwd = 2,
+    col = "gray50"
+)
+
+
+# Here's the vertical reference line:
+
+segments(
+    x0 = 0,
+    y0 = -25,
+    x1 = 0,
+    y1 = 30,
+    lty = "solid",
+    lwd = 2,
+    col = "gray50"
+)
+
+
+# Now we can graph the quadratic function:
+
+curve(
+    a*x^2 + b*x + c,
+    lty = "solid",
+    lwd = 3,
+    col = "magenta3",
+    add = TRUE
+)
+
+
+# Finally, there are no roots for this quadratic polynomial,
+# so we're done!
+
+
+```
+
+
+
+### Part (c)
+
+Consider the quadratic function $h(x)$:
+$$
+h(x)\ =\ 2x^2 - 4x + 2
+$$
+
+First, determine the number of roots of this polynomial. Then, if there are any roots, calculate their value using the appropriate formula. Finally, create a graph so we can visualize the function and its roots.
+
+**Solution**
+
+First, let's define variables for the coefficients of the quadratic function:
+```{r}
+a <- 2
+
+b <- -4
+
+c <- 2
+```
+
+
+Then the discriminant is:
+```{r}
+b^2 - 4 * a * c
+```
+
+Since the discriminant is zero, there is exactly one root for this quadratic polynomial.
+```{r}
+only.root <-
+    - b / (2 * a)
+
+cat(
+    "Only root of h(x):",
+    formatC(
+        only.root,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+Let's check this:
+```{r}
+a * only.root^2 + b * only.root + c
+```
+
+
+Now let's make a graph:
+```{r}
+# First, let's create an empty plot:
+
+plot(
+    x = NULL,
+    xlim = c(-5, 10),
+    ylim = c(-25, 30),
+    main = "Quadratic function with one root",
+    xlab = "x",
+    ylab = "f(x)"
+)
+
+
+# Next, let's draw in the x- and y-axes:
+
+segments(
+    x0 = -5,
+    y0 = 0,
+    x1 = 10,
+    y1 = 0,
+    lty = "solid",
+    lwd = 2,
+    col = "gray50"
+)
+
+
+# Here's the vertical reference line:
+
+segments(
+    x0 = 0,
+    y0 = -25,
+    x1 = 0,
+    y1 = 30,
+    lty = "solid",
+    lwd = 2,
+    col = "gray50"
+)
+
+
+# Now we can graph the quadratic function:
+
+curve(
+    a*x^2 + b*x + c,
+    lty = "solid",
+    lwd = 3,
+    col = "magenta3",
+    add = TRUE
+)
+
+
+# Finally, there is only one root for this polynomial:
+
+points(
+    x = only.root,
+    y = 0,
+    pch = 19,
+    cex = 1.2,
+    col = "magenta4"
+)
+```
+
+
+
+## Exercise 2.2 Newton's Method
+
+So far, we've found one root of the quadratic polynomial $f(x) = x^2 - 6x + 5$. Now let's find the other, again by using Newton's method.
+
+This time, start the procedure with an initial guess of 6. Run the process for 5 steps, reporting each intermediate result using a `cat()` statement, displaying the values with 6 decimal places.
+
+**Solution**
+
+First, let's create some variables to hold the values of the coefficients:
+```{r}
+a <- 1
+
+b <- -6
+
+c <- 5
+```
+
+Now let's make our initial guess:
+```{r}
+x.1 <- 6
+```
+
+Now we'll calculate the second guess, and the report it:
+```{r}
+x.2 <-
+    (a * x.1^2 - c) /
+    (2 * a * x.1 + b)
+
+cat(
+    "x.2 =",
+    formatC(
+        x.2,
+        format = "f",
+        digits = 6
+    )
+)
+```
+
+Now let's calculate and report our third guess:
+```{r}
+x.3 <-
+    (a * x.2^2 - c) /
+    (2 * a * x.2 + b)
+
+cat(
+    "x.3 =",
+    formatC(
+        x.3,
+        format = "f",
+        digits = 6
+    )
+)
+```
+
+Now for the fourth estimate:
+```{r}
+x.4 <-
+    (a * x.3^2 - c) /
+    (2 * a * x.3 + b)
+
+cat(
+    "x.4 =",
+    formatC(
+        x.4,
+        format = "f",
+        digits = 6
+    )
+)
+```
+
+
+And finally the fifth estimate:
+```{r}
+x.5 <-
+    (a * x.4^2 - c) /
+    (2 * a * x.4 + b)
+
+cat(
+    "x.5 =",
+    formatC(
+        x.5,
+        format = "f",
+        digits = 6
+    )
+)
+```
+
+
+
+
+
+
+

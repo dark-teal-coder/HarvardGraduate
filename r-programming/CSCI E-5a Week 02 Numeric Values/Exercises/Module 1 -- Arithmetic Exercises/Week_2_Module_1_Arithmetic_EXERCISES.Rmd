@@ -1,0 +1,185 @@
+---
+title: 'Lecture 2 Module 1: Arithmetic'
+subtitle: Exercises
+output:
+  pdf_document: default
+  html_notebook: default
+---
+
+
+
+# Exercises
+
+
+## Exercise 1.1: Weird Arithmetic
+
+Consider this method for determining a number:
+
+* We start with the value 17, then we multiply it by 11.
+
+* We then raise the resulting quantity to the third power.
+
+* We then add 1,653 to this value.
+
+Determine if the final value is evenly divisible by 7.
+
+**Solution**
+
+```{r}
+# Type your solution here.
+```
+
+
+
+
+## Exercise 2.2: Operator Precedence
+
+I recently had to perform a calculation in which I took the three numbers -4, 2, and 10, squared them, multiplied these squared values by the weights 0.25, 0.25, and 0.50, and then added up the resulting values:
+
+| Value |Squared Value | Weight | Squared Value $\times$ Weight |
+|----:|------:|--------:|----:|
+|  -4 |   16  |   0.25  |  4  |
+|   2 |    4  |   0.25  |  1  |
+|  10 |  100  |   0.50  | 50  |
+|-----|-------|---------|-----|
+|     |       | **Sum** |  55 |
+
+I wrote this R code:
+```{r}
+(-4^2 * 0.25) + (2^2 * 0.25) + (10^2 * 0.50)
+```
+Why did I get the wrong answer with this expression? 
+
+Then write R code that will perform the calculation correctly.
+
+**Solution**
+
+
+
+
+# Solutions to the Exercises
+
+## Exercise 1.1: Weird Arithmetic
+
+Consider this method for determining a number:
+
+* We start with the value 17, then we multiply it by 11.
+
+* We then raise the resulting quantity to the third power.
+
+* We then add 1,653 to this value.
+
+Determine if the final value is evenly divisible by 7.
+
+**Solution**
+
+I will perform all the arithmetic operations to construct the final number, and then determine whether or not it is divisible by 7 by examinging the remainder when using integer division with a divisor of 7.
+```{r}
+( (17 * 11)^3 + 1653) %% 7
+```
+
+Since the remainder is 0, we conclude that the final number is evenly divisible by 7. To check this, let's first calculate the final number:
+```{r}
+(17 * 11)^3 + 1653
+```
+
+Let's perform integer division on this value:
+```{r}
+6540856 %/% 7
+```
+
+Now let's multiply this value by 7:
+```{r}
+934408 * 7
+```
+
+
+
+## Exercise 2.2: Operator Precedence
+
+I recently had to perform a calculation in which I took the three numbers -4, 2, and 10, squared them, multiplied these squared values by the weights 0.25, 0.25, and 0.50, and then added up the resulting values:
+
+| Value |Squared Value | Weight | Squared Value $\times$ Weight |
+|----:|------:|--------:|----:|
+|  -4 |   16  |   0.25  |  4  |
+|   2 |    4  |   0.25  |  1  |
+|  10 |  100  |   0.50  | 50  |
+|-----|-------|---------|-----|
+|     |       | **Sum** |  55 |
+
+I wrote this R code:
+```{r}
+(-4^2 * 0.25) + (2^2 * 0.25) + (10^2 * 0.50)
+```
+Why did I get the wrong answer with this expression? 
+
+Then write R code that will perform the calculation correctly.
+
+**Solution**
+
+```{r}
+((-4)^2 * 0.25) + (2^2 * 0.25) + (10^2 * 0.50)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

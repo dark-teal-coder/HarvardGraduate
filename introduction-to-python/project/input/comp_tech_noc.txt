@@ -1,0 +1,11 @@
+noc, occupation, url_code
+213, Computer and information systems managers, 1433
+2147, Computer engineers (except software engineers and designers), 2866
+2171, Information systems analysts and consultants, 22495
+2172, Database analysts and data administrators, 17873
+2173, Software engineers and designers, 5482
+2174, Computer programmers and interactive media developers, 22544
+2175, Web designers and developers, 17892
+2281, Computer network technicians, 24514
+2282, User support technicians, 3772
+2283, Information systems testing technicians, 3954

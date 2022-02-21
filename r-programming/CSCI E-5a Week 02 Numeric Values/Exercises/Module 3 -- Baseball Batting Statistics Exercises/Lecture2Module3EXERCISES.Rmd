@@ -1,0 +1,176 @@
+---
+title: "Lecture 2 Module 3 Exercises"
+output:
+  pdf_document: default
+  html_notebook: default
+---
+
+
+
+# Exercise 2.1: Ted Williams Batting Statistics
+
+Here are Ted Williams's career statistics:
+
+| Statistics        | Value |
+|:------------------|------:|
+| Plate appearances | 9,792 |
+| At-bats           | 7,706 |
+| Hits              | 2,654 |
+| Doubles           |   525 |
+| Triples           |    71 |
+| Home Runs         |   521 |
+| Bases on balls    | 2,021 |
+| Hit by a pitch    |    39 |
+| Sacrifice flies   |    20 |
+
+
+
+## Part (a)
+
+Calculate Ted Williams' career batting average.
+
+
+## Part (b)
+
+Calculate Ted Williams' career on-base percentage.
+
+
+## Part (c)
+
+Calculate Ted Williams' career slugging average.
+
+
+
+# Solution
+
+
+Here are Ted Williams's career statistics:
+
+| Statistics      | Value |
+|:----------------|------:|
+| At-bats         | 7,706 |
+| Hits            | 2,654 |
+| Doubles         |   525 |
+| Triples         |    71 |
+| Home Runs       |   521 |
+| Bases on balls  | 2,021 |
+| Hit by a pitch  |    39 |
+| Sacrifice flies |    20 |
+
+
+## Part (a)
+
+Calculate Ted Williams' career batting average
+
+
+**Solution**
+
+Let's start by creating a set of variables to hold Williams' career batting statistics:
+```{r}
+ted.williams.at.bats <- 7706
+
+ted.williams.hits <- 2654
+
+ted.williams.doubles <- 525
+
+ted.williams.triples <- 71
+
+ted.williams.home.runs <- 521
+
+ted.williams.bases.on.balls <- 2021
+
+ted.williams.hit.by.a.pitch <- 39
+
+ted.williams.sacrifice.flies <- 20
+```
+
+
+
+Now let's calculate the batting average for Ted Williams:
+```{r}
+ted.williams.batting.average <- ted.williams.hits / ted.williams.at.bats
+
+cat( "Ted Williams batting average:",
+     formatC(
+         ted.williams.batting.average,
+         format = "f",
+         digits = 3
+     )
+)
+```
+
+
+## Part (b)
+
+Calculate Ted Williams' career on-base percentage
+
+**Solution**
+
+Next, let's calculate Ted Williams's on-base percentage:
+```{r}
+ted.williams.on.base.percentage <-
+    (ted.williams.hits +
+         ted.williams.bases.on.balls +
+         ted.williams.hit.by.a.pitch) /
+    (ted.williams.at.bats +
+         ted.williams.bases.on.balls +
+         ted.williams.hit.by.a.pitch +
+         ted.williams.sacrifice.flies)
+
+cat( "Ted Williams on-base percentage:",
+     formatC(
+         ted.williams.on.base.percentage,
+         format = "f",
+         digits = 3
+     )
+)
+```
+
+
+## Part (c)
+
+Calculate Ted Williams' career slugging percentage.
+
+**Solution**
+
+Remember that we have to first compute the number of singles before we can calculate the total bases:
+```{r}
+ted.williams.singles <-
+    ted.williams.hits -
+    ted.williams.doubles -
+    ted.williams.triples -
+    ted.williams.home.runs
+
+ted.williams.total.bases <-
+    ted.williams.singles +
+    2 * ted.williams.doubles +
+    3 * ted.williams.triples +
+    4 * ted.williams.home.runs
+```
+
+
+Finally, we can calculate Ted Williams's slugging percentage:
+```{r}
+ted.williams.slugging.percentage <-
+    ted.williams.total.bases / ted.williams.at.bats
+
+cat( "Ted Williams slugging percentage:",
+     formatC(
+         ted.williams.slugging.percentage,
+         format = "f",
+         digits = 3
+     )
+)
+```
+
+
+
+
+
+
+
+
+
+
+
+

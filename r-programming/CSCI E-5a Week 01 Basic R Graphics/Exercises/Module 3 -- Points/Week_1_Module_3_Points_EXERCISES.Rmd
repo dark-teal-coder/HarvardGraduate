@@ -1,0 +1,451 @@
+---
+title: "Week 1 Module 3: Points"
+subtitle: "Exercises"
+output:
+  pdf_document: default
+  html_notebook: default
+---
+
+
+Let's clear the global computing environment:
+```{r}
+rm( list = ls() )
+```
+
+
+# Exercises for Week 1 Module 3: Points
+
+
+## Exercise 2.1: Graphing a single point
+
+First, create an empty plotting region with no data, where the $x$-values range from 0 to 10, and the $y$-values range from 0 to 8$.
+
+Then use the `points()` function to draw a single point located at $x = 7$ and $y = 3$.
+
+**Solution**
+
+
+
+
+
+## Exercise 2.2: Annotating with text
+
+Draw a graph with a single point located at $x = 7$ and $y = 3$.
+
+Set the $x$-values for the plotting region to range from 0 to 10, and the $y$-values to range from 0 to 8.
+
+Then annotate this point with its coordinates using the `text()` function.
+
+**Solution**
+
+
+
+
+
+## Exercise 2.3: Adjusting the size of a point
+
+Create a graph of the single point at $x = 7$ and $y = 12$, and use a character expansion factor of 3.5.
+
+Let the $x$-axis range from 0 to 10, and let the $y$-axis range from 0 to 20.
+
+Remember to include a main title and to properly label the axes.
+
+**Solution**
+
+
+
+
+
+## Exercise 2.4: Adjusting the color of a point
+
+Create a graph of the single point at $x = 7$ and $y = 12$, using a character expansion factor of 3.5 and a color of "hotpink3".
+
+Let the $x$-axis range from 0 to 10, and let the $y$-axis range from 0 to 20.
+
+Remember to include a main title and to properly label the axes.
+
+**Solution**
+
+```{r}
+# Type your answer in here
+```
+
+
+
+
+## Exercise 2.5: Adjusting the shape of a point
+
+Create a graph of the single point with a solid square shape at $x = 7$ and $y = 12$, using a character expansion factor of 3.5 and the color "darkorchid3".
+
+Let the $x$-axis range from 0 to 10, and let the $y$-axis range from 0 to 20.
+
+Remember to include a main title and to properly label the axes.
+
+**Solution**
+
+```{r}
+# Type your solution in here
+```
+
+
+## Exercise 2.6: Adjusting the shape of a point
+
+Create a graph of a single circular point at $x = 7$ and $y = 12$, and use a character expansion factor of 3.5, an outline color of "darkred", an outline width of 2, and a fill color of "salmon1".
+
+Use a `pch` value of 21 to obtain a circular point with a color fill.
+
+Let the $x$-axis range from 0 to 10, and let the $y$-axis range from 0 to 20.
+
+Remember to include a main title and to properly label the axes. 
+
+**Solution**
+
+```{r}
+# Type your answer in here
+```
+
+
+
+
+
+## Exercise 2.7: Plotting multiple points
+
+Using one call to the `plot()` function, plot these points:
+
+| $X$ | $Y$ |
+|-----|-----|
+|  3  | 25  |
+|  6  | 22  |
+|  8  | 21  |
+| 10  | 17  |
+| 13  | 15  |
+
+**Solution**
+
+
+```{r}
+# Type your answer in here
+```
+
+
+
+
+## Exercise 2.8: Modern Art
+
+
+Express the poetic yearnings of your soul by creating modern art:
+
+* Create a completely blank plot, with $x$ ranging from 0 to 10, and $y$ ranging from 0 to 10 as well. Make the plot square.
+
+* In the upper left quadrant, draw an upright triangle colored red. Make it big!
+
+* In the upper right quadrant, draw an inverted triangle with a black border, and a yellow fill. Make it the same size as the first triangle.
+
+* In the lower left quadrant, draw a circle with a black border and a green fill. Make it the same size as the other objects.
+
+* Finally, in the lower right quadrant draw a solid square colored blue.
+
+**Solution**
+
+```{r}
+# Type your answer in here
+```
+
+
+
+
+
+# Solutions to the Exercises
+
+## Exercise 2.1: Graphing a single point
+
+First, create an empty plotting region with no data, where the $x$-values range from 0 to 10, and the $y$-values range from 0 to 8$.
+
+Then use the `points()` function to draw a single point located at $x = 7$ and $y = 3$.
+
+**Solution**
+
+```{r}
+plot(
+    x = NULL,
+    xlim = c(0, 10),
+    ylim = c(0, 8),
+    main = "Plot of a single point",
+    xlab = "x",
+    ylab = "y",
+    las = 1
+)
+
+points(
+    x = 7,
+    y = 3.5
+)
+```
+
+
+## Exercise 2.2: Annotating with text
+
+Draw a graph with a single point located at $x = 7$ and $y = 3$.
+
+Set the $x$-values for the plotting region to range from 0 to 10, and the $y$-values to range from 0 to 8$.
+
+Then annotate this point with its coordinates using the `text()` function.
+
+**Solution**
+
+```{r}
+plot(
+    x = 7,
+    y = 3,
+    xlim = c(0, 10),
+    ylim = c(0, 8),
+    main = "Plot of a single point",
+    xlab = "x",
+    ylab = "y",
+    las = 1
+)
+
+text(
+    x = 7,
+    y = 3.5,
+    labels = "(7, 3)"
+)
+```
+
+
+## Exercise 2.3: Adjusting the size of a point
+
+Create a graph of the single point at $x = 7$ and $y = 12$, and use a character expansion factor of 3.5.
+
+Let the $x$-axis range from 0 to 10, and let the $y$-axis range from 0 to 20.
+
+Remember to include a main title and to properly label the axes.
+
+**Solution**
+
+Here's one approach:
+```{r}
+plot(
+    x = 7,
+    y = 12,
+    xlim = c(0, 10),
+    ylim = c(0, 20),
+    main = "Graph of scaled single point",
+    xlab = "x",
+    ylab = "y",
+    cex = 3.5,
+    las = 1
+)
+```
+
+
+Here's another approach:
+```{r}
+# First, create an empty plot with no data:
+
+plot(
+    x = NULL,
+    xlim = c(0, 10),
+    ylim = c(0, 20),
+    main = "Graph of scaled single point",
+    xlab = "x",
+    ylab = "y",
+    las = 1
+)
+
+# Then plot the point:
+
+points(
+    x = 7,
+    y = 12,
+    cex = 3.5
+)
+
+```
+
+
+
+
+## Exercise 2.4: Adjusting the color of a point
+
+Create a graph of the single point at $x = 7$ and $y = 12$, using a character expansion factor of 3.5 and a color of "hotpink3".
+
+Let the $x$-axis range from 0 to 10, and let the $y$-axis range from 0 to 20.
+
+Remember to include a main title and to properly label the axes.
+
+**Solution**
+
+Here's my solution:
+```{r}
+plot(
+    x = 7,
+    y = 12,
+    xlim = c(0, 10),
+    ylim = c(0, 20),
+    main = "Graph of hotpink single point",
+    xlab = "x",
+    ylab = "y",
+    cex = 3.5,
+    col = "hotpink3",
+    las = 1
+)
+```
+
+
+
+## Exercise 2.5: Adjusting the shape of a point
+
+Create a graph of the single point with a solid square shape at $x = 7$ and $y = 12$, using a character expansion factor of 3.5 and the color "darkorchid3".
+
+Let the $x$-axis range from 0 to 10, and let the $y$-axis range from 0 to 20.
+
+Remember to include a main title and to properly label the axes.
+
+
+**Solution**
+
+Here's my solution:
+```{r}
+plot(
+    x = 7,
+    y = 12,
+    xlim = c(0, 10),
+    ylim = c(0, 20),
+    main = "Graph of scaled single point",
+    xlab = "x",
+    ylab = "y",
+    cex = 3.5,
+    col = "darkorchid3",
+    pch = 15,
+    las = 1
+)
+```
+
+
+
+## Exercise 2.6: Adjusting the shape of a point
+
+Create a graph of a single circular point at $x = 7$ and $y = 12$, and use a character expansion factor of 3.5, an outline color of "darkred", an outline width of 2, and a fill color of "salmon1".
+
+Let the $x$-axis range from 0 to 10, and let the $y$-axis range from 0 to 20.
+
+Remember to include a main title and to properly label the axes. 
+
+**Solution**
+
+```{r}
+plot(
+    x = 7,
+    y = 12,
+    xlim = c(0, 10),
+    ylim = c(0, 20),
+    main = "Graph of scaled single point",
+    xlab = "x",
+    ylab = "y",
+    cex = 3.5,
+    lwd = 2,
+    col = "darkred",
+    bg = "salmon1",
+    pch = 21,
+    las = 1
+)
+```
+
+
+
+
+
+
+
+## Exercise 2.7: Plotting multiple points
+
+Using one call to the `plot()` function, plot these points:
+
+| $X$ | $Y$ |
+|-----|-----|
+|  3  | 25  |
+|  6  | 22  |
+|  8  | 21  |
+| 10  | 17  |
+| 13  | 15  |
+
+**Solution**
+
+
+First, let's create the $X$ and $Y$ vectors:
+```{r}
+x.vector <- c(3, 6, 8, 10, 13)
+
+y.vector <- c(25, 22, 21, 17, 15)
+```
+
+Now we can plot all these values in just one call to the `plot()` function:
+```{r}
+plot(
+    x.vector,
+    y.vector,
+    main = "Plotting multiple points at once",
+    xlim = c(0, 15),
+    ylim = c(0, 30),
+    xlab = "x",
+    ylab = "y",
+    pch = 19,
+    cex = 2,
+    col = "darkslategray3",
+    las = 1
+)
+```
+
+
+
+## Exercise 2.8: Modern Art
+
+
+Express the poetic yearnings of your soul by creating modern art:
+
+* Create a completely blank plot, with $x$ ranging from 0 to 10, and $y$ ranging from 0 to 10 as well. Make the plot square.
+
+* In the upper left quadrant, draw an upright triangle colored red. Make it big!
+
+* In the upper right quadrant, draw an inverted triangle with a black border, and a yellow fill. Make it the same size as the same triangle.
+
+* In the lower left quadrant, draw a circle with a black border and a green fill. Make it the same size as the other objects.
+
+* Finally, in the lower right quadrant draw a solid square colored blue.
+
+**Solution**
+
+```{r}
+# First, to make the image a square,
+# we set the graphical parameter `pty`
+# by assigning the value "s" to it:
+
+par( pty = "s" )
+
+
+# Next, create a completely blank plot
+
+plot( x = NULL,
+      xlim = c(0, 10),
+      ylim = c(0, 10),
+      axes = FALSE,
+      xlab = "",
+      ylab = ""
+)
+
+
+# Finally, draw the shapes:
+
+points( 3, 7, pch = 17, cex = 10, col = "red" )
+points( 7, 8, pch = 25, cex = 10, bg = "yellow", lwd = 2 )
+points( 3, 3, pch = 21, cex = 10, bg = "green", lwd = 2 )
+points( 7, 3, pch = 15, cex = 10, col = "blue" )
+
+```
+
+
+
+
+
+

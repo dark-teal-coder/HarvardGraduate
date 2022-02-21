@@ -1,0 +1,206 @@
+---
+title: 'Lecture 3 Module 1: Vector Basics'
+subtitle: Exercises
+output:
+  pdf_document: default
+  html_notebook: default
+---
+
+
+# Exercises
+
+Let's load in the R objects for this module:
+```{r}
+load( "Module 1 R Objects.Rdata")
+```
+
+
+
+## Exercise 1.1: Exploring a vector
+
+Display the first 8 elements of the `test.vector` that we loaded in from the R object file.
+
+Then determine the length of the vector, as well as the sum and product of the elements of the vector.
+
+**Solution**
+
+
+
+## Exercise 1.2: Mean, variance, and standard deviation
+
+Calculate the sample mean of the values in `test.vector`. Report your result using a `cat()` statement, displaying this value with 2 decimal places.
+
+Then calculate the sample variance of the values in `test.vector`. Report your result using a `cat()` statement, displaying this value with 2 decimal places.
+
+Finally, calculate the standard deviation of the values in `test.vector`. Report your result using a `cat()` statement, displaying this value with 2 decimal places.
+
+**Solution**
+
+
+
+
+
+## Exercise 1.3: Report the `rivers` vector
+
+Report the first 20 items of the built-in `rivers` vector, displaying these values using 2 decimal places.
+
+
+
+
+# Solutions to the Exercises
+
+
+## Exercise 1.1: Exploring a vector
+
+Display the first 8 elements of the `test.vector` that we loaded in from the R object file.
+
+Then determine the length of the vector, as well as the sum and product of the elements of the vector.
+
+**Solution**
+
+Let's display the first 8 elements of `test.vector`:
+```{r}
+head( x = test.vector, n = 8 )
+```
+
+Next, the sum of the elements of `test.vector` is:
+```{r}
+sum( test.vector )
+```
+
+The product of the elements of `test.vector` is:
+```{r}
+prod( test.vector )
+```
+
+
+
+
+## Exercise 1.2: Mean, variance, and standard deviation
+
+Calculate the sample mean of the values in `test.vector`. Report your result using a `cat()` statement, displaying this value with 2 decimal places.
+
+Then calculate the sample variance of the values in `test.vector`. Report your result using a `cat()` statement, displaying this value with 2 decimal places.
+
+Finally, calculate the standard deviation of the values in `test.vector`. Report your result using a `cat()` statement, displaying this value with 2 decimal places.
+
+**Solution**
+
+First, let's do the sample mean:
+```{r}
+sample.mean <-
+    mean( test.vector )
+
+cat(
+    "Sample mean:",
+    formatC(
+        sample.mean,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+
+Next, let's do the sample variance:
+```{r}
+sample.variance <-
+    var( test.vector )
+
+cat(
+    "Sample variance:",
+    formatC(
+        sample.variance,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+
+
+Finally, here's the sample standard deviation:
+```{r}
+sample.standard.deviation <-
+    sd( test.vector )
+
+cat(
+    "Sample standard deviation:",
+    formatC(
+        sample.standard.deviation,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+
+
+
+
+## Exercise 1.3: Report the `rivers` vector
+
+Report the first 20 items of the built-in `rivers` vector, displaying these values using 2 decimal places.
+
+**Solution**
+
+```{r}
+cat(
+    "rivers:",
+    formatC(
+        head( rivers, 20 ),
+        format = "f",
+        digits = 2
+    ),
+    fill = TRUE
+)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
