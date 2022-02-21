@@ -1,0 +1,256 @@
+---
+title: "Problem Set 1"
+subtitle: 'CSCI E-5a: Programming in R'
+output:
+  pdf_document: default
+  html_notebook: default
+---
+
+
+Let's clear the global computing environment:
+```{r}
+rm( list = ls() )
+```
+
+
+
+
+# Problem 1: Triangles
+
+In this problem, we'll draw the same triangle using three different techniques. The triangle will have vertices at three points denoted $A$, $B$, and $C$, with these coordinates:
+
+| Point | $x$ | $y$ |
+|:-----:|:---:|:---:|
+| A | 1 | 2 |
+| B | 2 | 7 |
+| C | 5 | 3 |
+
+
+## Part (a): Using line segments
+
+In the first method, we'll draw a triangle by using the `segments()` function three times:
+
+* First, create an empty plot with no data, where the $x$-axis ranges from 0 to 6 and the $y$-axis ranges from 0 to 8:
+
+* Second, draw a line segment from the point $A = (1, 2)$ to the point $B = (2, 7)$.
+
+* Next, draw a line segment from the point $B = (2, 7)$ to the point $C = (5, 3)$.
+
+* Finally draw a line segment from the point $C = (5, 3)$ back to $A = (1, 2)$.
+
+The lines of the triangle should be colored blue, with a line width of 2. Finally, draw a black circular point at each of the vertices of the triangle.
+
+**Solution**
+
+
+
+
+
+
+## Part (b): Using the `lines()` function
+
+Now we'll draw the same triangle again, with the same points for the vertices, but this time we'll use the `lines()` function. Remember that this function always draws *connected* line segments. Remember to connect the last point $C$ to the first point $A$! The lines of the triangle should be colored blue with a line width of 2. As in part (a), you should also draw points at the vertices; here you are welcome to copy and paste your code from part (a). Start with the same empty plot with no data that you used in part (a).
+
+**Solution**
+
+
+
+
+
+
+## Part (c): Using polygons
+
+Finally, draw the triangle using the `polygon()` function. Remember with this function that it draws connected line segments, and that the last point $C$ is automatically connected to the first point $A$. The lines of the triangle should be colored blue with a line width of 2. Decorate your triangle with points just like in parts (a) and (b).
+
+**Solution**
+
+
+
+
+
+
+\newpage
+
+End of Problem 1
+
+\newpage
+
+
+
+
+# Problem 2: TIME
+
+Create an empty plot with no data. You'll have to decide on the ranges of the $x$- and $y$-axes. Use "TIME" for the main title, but just use empty strings for the $x$- and $y$-axis titles. Then, using only `segment()` commands, draw the letters of the word "TIME" (by my count, you'll need 13 separate `segment() commands). Try to do something creative with the line type, width, and color. You'll get full credit as long as we can see the letters for the word "TIME", but you'll get more out of the problem if you take an extra 10 minutes to explore this a little bit.
+
+**Solution**
+
+
+
+
+
+
+
+
+\newpage
+
+End of problem 2
+
+\newpage
+
+
+
+
+
+
+
+# Problem 3: Sales Chart
+
+A grocery store has data on the sales of three breakfast cereals: Sugar Bomz (SBZ), Krispee Yummm (KYM), and Healthy Kale and Tofu (HKT):
+
+| Year |  SBZ  |  KYM  |  HKT  |
+|:----:|:-----:|:-----:|:-----:|
+| 2016 |  40.3 |  33.7 |  20.4 |
+| 2017 |  55.2 |  38.9 |  15.8 |
+| 2018 |  63.4 |  41.4 |  10.6 |
+| 2019 |  76.3 |  44.6 |  11.5 |
+
+Create a sales chart for this data. The $x$-axis should indicate the year, and the $y$-axis should indicate the sales volume. Draw the sales for each brand as a connected line, and use a different point shape and color for each brand. Remember to include a main title, axis titles, and a legend.
+
+**Solution**
+
+
+
+
+
+\newpage
+
+End of problem 3
+
+\newpage
+
+
+
+
+# Problem 4: Graphing Polynomials
+
+In this problem, we will gain experience graphing polynomial functions.
+
+## Part (a): Quadratic Functions
+
+First, let's graph this function:
+$$
+y\ =\ 2 x^2 - 2 x - 4
+$$
+Make your graph using these steps:
+
+* First, create an empty plot with the $x$-axis ranging from -3 to +3 and the $y$-axis ranging from -5 to +5. Label the $x$ axis with "x" and the $y$ axis with "f(x)".
+
+* Draw in a horizontal reference line $y = 0$ from $x = -3$ to $x = +3$.
+
+* Draw in a vertical reference line $x = 0$ from $y = -5$ to $y = +5$.
+
+* Draw the graph of the function using the `curve()` command. (Hint: don't forget to use the `add = TRUE` option!) The function curve should be a solid line of width 2, and should be colored blue.
+
+* Draw points at the locations $(-1, 0)$ and $(2, 0)$, which represent the roots of the quadratic function.
+
+**Solution**
+
+
+
+
+
+
+
+## Part (b): Cubic functions
+
+Now let's draw the graph of a cubic equation:
+$$
+y\ =\ 2 x^3 - 2 x
+$$
+Make your graph using these steps:
+
+* First, create an empty plot with $x$ ranging from -3 to +3 and $y$ ranging from -5 to +5. Label the $x$ axis with "x" and the $y$ axis with "f(x)".
+
+* Draw in horizontal and vertical reference lines.
+
+* Using a solid blue line of width 3, draw the graph of the function using the `curve()` command.
+
+* Draw points at the locations (-1, 0), (0, 0), and (1, 0), which represent the roots of the cubic function.
+
+**Solution**
+
+
+
+
+
+\newpage
+
+End of Problem 4
+
+\newpage
+
+
+
+
+
+# Problem 5: Exponential Functions
+
+Create an empty plotting region with no data, where the $x$-axis ranges from 0 to 4 and the $y$-axis ranges from 0 to 2. Include horizontal and vertical reference lines. Also, draw in the dashed horizontal line $y = 1$. Then plot the curves for these functions:
+
+* The function $f(x) = 1 - e^{-x}$.
+
+* The function $g(x) = 1 - e^{-2x}$.
+
+* The function $h(x) = 1 - e^{-3x}$.
+
+Finally, include a main title, axis titles, and a legend.
+
+**Solution**
+
+
+
+
+
+
+\newpage
+
+End of problem 5
+
+\newpage
+
+
+
+
+# Problem 6: Mondrian
+
+Time to express our inner souls with some more modern art!
+
+Go to the Wikipedia article on Piet Mondrian, the great Dutch abstract artist, and scroll down to find the image of *Composition II in Red, Blue, and Yellow*, painted in 1930. Your goal is to recreate this painting using the tools that we developed in lecture.
+
+* First, create a completely blank square plot with no axes, with $x$ ranging from 0 to 10 and $y$ ranging from 0 to 10.
+
+* Draw a frame around the plot area by drawing a polygon with vertices at (0, 0), (0, 10), (10, 10), and (10, 0).
+
+* Draw the red, blue, and yellow rectangles using the `polygon()` function. You'll have to figure out the appropriate coordinates!
+
+* Finally, draw in the black lines, using the `lwd =` option to control the width of the lines.
+
+You'll find it useful when drawing thick lines to include this line code at the beginning of the code chunk:
+```{r}
+par( lend = 1)
+```
+
+
+Your picture doesn't have to be perfect, but it should be a reasonable approximation to the original.
+
+**Solution**
+
+
+
+
+
+
+
+
+
+

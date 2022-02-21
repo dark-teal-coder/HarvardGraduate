@@ -1,0 +1,183 @@
+---
+title: 'Week 1 Modulue 2: Graphics Plots'
+subtitle: Exercises
+output:
+  pdf_document: default
+  html_notebook: default
+---
+
+
+First, let's clear the global computing environment:
+```{r}
+rm( list = ls() )
+```
+
+
+
+# Exercises for Week 1 Module 2: Graphics Plots
+
+
+
+## Exercise 2.1: Modifying a basic plot
+
+Plot a single point at the location (60, 240). Set the $x$-axis to range between 0 and 100, and the $y$-axis to range between 0 and 400. Be sure to explicitly specify a main title, as well as titles for the $x$- and $y$ axes.
+
+**Solution**
+
+```{r}
+# Type your answer here
+```
+
+
+
+## Exercise 2.2: Using graphical parameters
+
+Plot a single point at the location (60, 90).
+
+Set both the $x$-axis and the $y$-axis to range between 0 and 100, and use a square graph shape.
+
+Set a graphical parameter to remove the box around the display.
+
+Be sure to include all the fancy stuff!
+
+**Solution**
+
+```{r}
+# Type your answer here
+```
+
+
+
+## Exercise 2.3: Creating an empty plot with no data
+
+Create an empty graph with no data where $x$ ranges from 0 to 20 and $y$ ranges from 0 to 5.
+
+**Solution**
+
+```{r}
+# Type your answer here
+```
+
+
+
+
+## Exercise 2.4: Creating a completely blank display
+
+Create a completely blank display where $x$ ranges from 0 to 20 and $y$ ranges from 0 to 5.
+
+**Solution**
+
+
+
+
+# Solutions to the Exercises
+
+
+## Exercise 2.1: Modifying a basic plot
+
+Plot a single point at the location (60, 240).
+
+Set the $x$-axis to range between 0 and 100, and the $y$-axis to range between 0 and 400.
+
+Be sure to put in all the extra stuff!
+
+**Solution**
+
+Here's my solution:
+```{r}
+plot(
+    x = 60,
+    y = 240,
+    xlim = c(0, 100),
+    ylim = c(0, 400),
+    main = "Plot of a single point",
+    xlab = "x",
+    ylab = "y",
+    las = 1
+)
+```
+
+
+
+
+## Exercise 2.2: Using graphical parameters
+
+Plot a single point at the location (60, 90).
+
+Set both the $x$-axis and the $y$-axis to range between 0 and 100, and use a square graph shape.
+
+Set a graphical parameter to remove the box around the display.
+
+Be sure to include all the fancy stuff!
+
+**Solution**
+
+Here's my solution:
+```{r}
+par( bty = "n" )
+
+par( pty = "s" )
+
+plot(
+    x = 60,
+    y = 90,
+    xlim = c(0, 100),
+    ylim = c(0, 100),
+    main = "Plot of a single point",
+    xlab = "x",
+    ylab = "y",
+    las = 1
+)
+```
+
+
+## Exercise 2.3: Creating an empty plot with no data
+
+Create an empty graph with no data where $x$ ranges from 0 to 20 and $y$ ranges from 0 to 5.
+
+**Solution**
+
+Here's my solution:
+```{r}
+plot(
+    x = NULL,
+    xlim = c(0, 20),
+    ylim = c(0, 5),
+    main = "Empty plot",
+    xlab = "x",
+    ylab = "y",
+    las = 1
+)
+```
+
+
+
+## Exercise 2.4: Creating a completely blank display
+
+Create a completely blank plotting region where $x$ ranges from 0 to 20 and $y$ ranges from 0 to 5.
+
+**Solution**
+
+```{r}
+plot(
+    x = NULL, 
+    xlim = c(0, 20), 
+    ylim = c(0, 5),
+    xlab = "",
+    ylab = "",
+    axes = FALSE
+)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+

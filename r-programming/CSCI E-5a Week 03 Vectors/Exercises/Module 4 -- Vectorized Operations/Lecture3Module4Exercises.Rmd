@@ -1,0 +1,243 @@
+---
+title: 'Lecture 3, Module 4: Vectorized Operations'
+subtitle: Exercises
+output:
+  html_document:
+    df_print: paged
+---
+
+
+# Exercises
+
+## Exercise 4.1: Temperature Conversion
+
+To convert a temperature in the Fahrenheit scale to a temperature in the Celsius scale, we first subtract 32 from the Fahrenheit temperature, and then multiply by 5/9.
+
+Thus, to convert 86 degrees Fahrenheit to Celsius, we first subtract 32, giving 54, and then multiply by 5/9, which gives 30.
+```{r}
+5/9 * (86 - 32)
+```
+
+So 86 degrees Fahrenheit is the same as 30 degrees Celsisus.
+
+Here is a series of Fahrenheit temperatures:
+$$
+75,\ 82,\ 67,\ 51,\ 77,\ 93,\ 84
+$$
+
+Construct a vector to store these Fahrenheit temperatures, and then use vectorized operations to convert them to Celsius. Display the resulting temperatures with no decimal places.
+
+**Solution**
+
+
+
+
+## Exercise 4.2: Two vectors
+
+Here is a table of values for two variables:
+
+| X | Y |
+|:-:|:-:|
+| 4 | 1 |
+| 7 | 2 |
+| 3 | 9 |
+| 6 | 1 |
+| 5 | 8 |
+
+Construct vectors to represent the two variables. Then calculate the sum of these two vectors, and the product of these two vectors. Try to predict what the sum and product will be *before* you run your code, and then check to see if you got it right.
+
+**Solution**
+
+
+
+## Exercise 4.3: Dot Product
+
+In Exercise 4.2 we had a table of values for two variables:
+
+| X | Y |
+|:-:|:-:|
+| 4 | 1 |
+| 7 | 2 |
+| 3 | 9 |
+| 6 | 1 |
+| 5 | 8 |
+
+Represent $X$ and $Y$ as vectors, and then use vectorized operations to calculate the dot product of $X$ and $Y$.
+
+**Solution**
+
+
+
+
+# Solutions to the Exercises
+
+
+## Exercise 4.1: Temperature Conversion
+
+To convert a temperature in the Fahrenheit scale to a temperature in the Celsius scale, we first subtract 32 from the Fahrenheit temperature, and then multiply by 5/9.
+
+Thus, to convert 86 degrees Fahrenheit to Celsius, we first subtract 32, giving 54, and then multiply by 5/9, which gives 30.
+```{r}
+5/9 * (86 - 32)
+```
+
+So 86 degrees Fahrenheit is the same as 30 degrees Celsisus.
+
+Here is a series of Fahrenheit temperatures:
+$$
+75,\ 82,\ 67,\ 51,\ 77,\ 93,\ 84
+$$
+
+Construct a vector to store these Fahrenheit temperatures, and then use vectorized operations to convert them to Celsius. Display the resulting temperatures with no decimal places.
+
+**Solution**
+
+Here's the vector:
+```{r}
+fahrenheit.temperature.vector <-
+    c( 75, 82, 67, 51, 77, 93, 84)
+```
+
+Here's the vector with the Celsius temperatures:
+```{r}
+celsius.temperature.vector <-
+    (fahrenheit.temperature.vector - 32) * (5/9)
+```
+
+Now we can display this with no decimal places:
+```{r}
+cat(
+    "Celsius temperatures:",
+    formatC(
+        celsius.temperature.vector,
+        format = "f",
+        digits = 0
+    )
+)
+```
+
+
+
+
+
+## Exercise 4.2: Two vectors
+
+Here is a table of values for two variables:
+
+| X | Y |
+|:-:|:-:|
+| 4 | 1 |
+| 7 | 2 |
+| 3 | 9 |
+| 6 | 1 |
+| 5 | 8 |
+
+Construct vectors to represent the two variables. Then calculate the sum of these two vectors, and the product of these two vectors. Try to predict what the sum and product will be *before* you run your code, and then check to see if you got it right.
+
+**Solution**
+
+Here is the vector for the $X$ values:
+```{r}
+x.vector <-
+    c( 4, 7, 3, 6, 5)
+```
+
+
+Here is the vector for the $Y$ values:
+```{r}
+y.vector <-
+    c( 1, 2, 9, 1, 8)
+```
+
+
+Here is the sum of the two vectors:
+```{r}
+x.vector + y.vector
+```
+
+
+Here is the product of the two vectors:
+```{r}
+x.vector * y.vector
+```
+
+
+
+## Exercise 4.3: Dot Product
+
+In Exercise 4.2 we had a table of values for two variables:
+
+| X | Y |
+|:-:|:-:|
+| 4 | 1 |
+| 7 | 2 |
+| 3 | 9 |
+| 6 | 1 |
+| 5 | 8 |
+
+Represent $X$ and $Y$ as vectors, and then use vectorized operations to calculate the dot product of $X$ and $Y$.
+
+**Solution**
+
+We've already created the vectors for $X$ and $Y$, so all we have to do is to calculate their dot product.
+```{r}
+sum( x.vector * y.vector )
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

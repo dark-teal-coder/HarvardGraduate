@@ -1,0 +1,613 @@
+---
+title: 'Week 3 Module 2: Constructing Vectors'
+subtitle: 'CSCI E-5a: Introduction to R'
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+
+
+Let's clear the global computing environment:
+```{r}
+rm( list = ls() )
+```
+
+
+
+# Module Overview and Learning Outcomes
+
+Hello! And welcome to Module 2: Constructing Vectors.
+
+
+
+In this module, we'll study four ways to construct vectors.
+
+* In section 1, we'll review the `c()` function, which enables us to construct arbitrary vectors.
+
+* In section 2, we'll study the `rep()` function, which we can use to create vectors with repeated values.
+
+* In section 3, we'll learn about the colon operator, which allows us to quickly create numerical sequences in steps of 1.
+
+* In section 4, we'll study the `seq()` function, which generalizes the colon operator and allows us to create arbitrary arithmetic sequences.
+
+
+
+At the end of this module, you'll be able to:
+
+* Create a vector consisting of an arbitrary sequence of values by using the `c()` function.
+
+* Create a vector consisting of repeated values by using the `rep()` function.
+
+* Create a vector consisting of a numerical sequence in steps of 1 by using the colon operator.
+
+* Create a vector consisting of an arbitrary arithmetic sequence by using the `seq()` function.
+
+
+
+There are 3 new built-in R functions in this module:
+
+* The `rep()` function
+
+* The colon operator
+
+* The `seq()` function
+
+
+
+All right! Let's get started by reviewing the `c()` function.
+
+
+
+
+
+# Section 1: The c() function
+
+**Main Idea:** *We can review the `c()` function*
+
+In this section, we'll review the `c()` function.
+
+
+
+The `c()` function *combines* values of the same class together into a single vector.
+
+This operation works by explicitly listing each element of the vector:
+```{r}
+prime.numeric.vector <- c( 2, 3, 5, 7, 11, 13 )
+
+prime.numeric.vector
+```
+
+
+We can also use the `c()` function to combine vectors together, as long as they are both the same class:
+```{r}
+first.numeric.vector <- c(1, 2, 3)
+
+second.numeric.vector <- c(8, 9, 10)
+
+c(first.numeric.vector, second.numeric.vector)
+```
+
+
+The `c()` function is the most general vector construction method possible, in the sense that you can make any vector you want as long as you're willing to individually specify each element.
+
+Thus, you can generate completely arbitrary sequences of values with the `c()` function.
+
+Of course, this is always subject to the condition that all the values in the vector must have the same atomic data type.
+
+However, this generality comes with a price, because if the elements in the vector follow some sort of pattern, the `c()` function can't take advantage of that pattern.
+
+
+
+It's important to realize that although all of the examples in this section have used numeric vectors, the `c()` function can also be used to create logical or character vectors.
+
+
+
+So that's a review of the `c()` function.
+
+Now let's learn about the `rep()` function.
+
+
+
+
+
+# Section 2: The rep() function
+
+**Main Idea:** *We can construct vectors with repeating values by using the `rep()` function*
+
+In this section, we'll study the `rep()` function, which we can use to create vectors with repeated values.
+
+
+
+
+One of the simplest functions for constructing a vector with some sort of regular pattern is the `rep()` function, which repeats a given value for a specified number of times.
+
+To create a vector which consists of the value `x = 6` repeated 12 times, we use the `times` option:
+```{r}
+rep( x = 6, times = 12 )
+```
+
+The `rep()` isn't restricted to working with only atomic data values, and can repeat a vector as well:
+```{r}
+rep( x = c(1, 2, 3, 4, 5), times = 3)
+```
+
+We can also specify the option `each`, which will cause the `rep()` function to repeat each element in the input data argument a certain number of times before moving on to the next element.
+
+For instance, to create a vector with each number from 1 to 5 repeated 10 times, we have:
+```{r}
+rep( x = c(1, 2, 3, 4, 5), each = 10)
+```
+
+
+
+So that's how to construct vectors with repeated values by using the `rep()` function.
+
+Now let's learn about the colon operator, which allows us to quickly create numerical sequences in steps of 1.
+
+
+
+## Exercise 1: Creating a vector
+
+Create a vector with a sequence consisting of three parts:
+
+* First, the value 5 is repeated 10 times.
+
+* Second, the value -2 is repeated 6 times.
+
+* Finally, the value 8 is repeated 3 times.
+
+Report your result using a `cat()` statement, displaying the values with 2 decimal places.
+
+**Solution**
+
+
+
+
+
+
+
+# Section 3: The colon operator
+
+**Main Idea:** *We can construct numerical sequences in steps of 1 by using the colon operator*
+
+In this section, we'll learn about the colon operator, which allows us to quickly create numerical sequences in steps of 1.
+
+
+
+The colon operator takes two numbers and produces a vector of numbers starting at the first value and ending at the second number in increments or decrements of 1.
+
+Here's a very simple example, where we start at the value 1 and end at the value 5:
+```{r}
+1:5
+```
+
+Notice how the rules operate: we start at the value 1 and end at the value 5, always increasing in steps of 1.
+
+We could reverse this process:
+```{r}
+5:1
+```
+
+Now we start at the value 5 and end at the value 1, this time decreasing in steps of 1.
+
+You can use negative numbers with the colon operator:
+```{r}
+-2:3
+```
+
+
+In fact, you don't even have to use integer values with the colon operator:
+```{r}
+2.5:8.5
+```
+
+As always, the colon operator produces a numeric vector with increments of 1.
+
+What happens if you try to use the colon operator with two numbers that aren't a whole number of units apart?
+
+For instance, this code:
+```{r}
+2.5:6.7
+```
+
+As usual, R starts at the value 2.5, and increments by 1 up to 6.5.
+
+The next step would be 7.5, but this is greater than the upper limit in the colon operator expression, so R does not go beyond this.
+
+So the answer is: R will start at the value and continually increment by 1 until it exceeds the second value in the colon operator expression, and at that point R will stop.
+
+
+
+## Exercise 2: The colon operator
+
+Create a vector of the form:
+$$
+1000,\ 999,\ 998,\ \ldots, 922,\ 921,\ 920
+$$
+
+Report the first 10 elements of this vector using a `cat()` statement, displaying the values with 2 decimal places.
+
+**Solution**
+
+
+
+
+
+
+
+
+When we construct a vector with the colon operator, then we can use it as an input to more vector construction methods.
+
+For instance, we can take the vector we developed in Exercise 2 and then combine it with the number 10:
+```{r}
+c( 1000:920, 10 )
+```
+
+
+
+So that's how to create a numerical sequence in steps of 1 by using the colon operator.
+
+Now let's see how to construct arbitrary arithmetic sequences by using the `seq()` function.
+
+
+
+## Exercise 3: Creating a vector
+
+Without using the c() function create this vector:
+$$
+-3.7, -2.7, -1.7, -0.7,\ 0.3,\ 1.3,\ 2.3,\ 3.3,\ 4.3
+$$
+
+**Solution**
+
+
+
+
+## Exercise 4: Creating a vector
+
+Use the colon operator twice to create two vectors that are then combined to create the final vector:
+$$
+\{\ 10,\ 9,\ 8,\ 7,\ 6,\ 5,\ 4,\ 3,\ 2,\ 1,\ 0,\ 1,\ 2,\ 3,\ 4,\ 5,\ 6,\ 7,\ 8,\ 9,\ 10\ \}
+$$
+
+**Solution**
+
+
+
+
+
+# Section 4: The `seq()` function
+
+**Main Idea:** *We can create arbitrary arithmetic sequences by using the `seq()` function*
+
+In this section, we'll study the `seq()` function, which generalizes the colon operator and allows us to create arbitrary arithmetic sequences.
+
+
+
+An important point about the colon operator is that it always increments or decrements in steps of 1.
+
+We can generalize this process by allowing the increment or decrement to be some value other than 1, as long as it's a fixed value.
+
+An *arbitrary arithmetic sequence* is a sequence of numbers where the increment or decrement is always the same amount.
+
+Thus, the arbitrary arithmetic sequence starting at the value -1 with an increment of 3 with 5 terms is:
+$$
+-1,\ 2,\ 5,\ 8,\ 11
+$$
+
+
+
+The `seq()` function allows us to specify numerical sequences in a variety of different ways.
+
+The function has four optional input arguments:
+
+* The `from` option determines the first value of the sequence.
+
+* The `to` option determines the last value of the sequence.
+
+* The `by` option determines the increment or decrement for each element of the sequence.
+
+* The `length.out` option determines the number of terms in the sequence.
+
+
+
+If you think about it, once we know any three of these values, then the fourth is fixed.
+
+Thus, the you can use the `seq()` function in four different ways:
+
+* You can generate a sequence by specifying the first and last values, as well as the increment. Then `seq()` will determine how long the sequence needs to be.
+
+* You can generate a sequence by specifying the first and last values, as well as the length. Then `seq()` will determine the increment value.
+
+* You can generate a sequence by specifying the first value, the increment, and the length. Then `seq()` will determine the ending point.
+
+* You can generate a sequence by specifying the last value, the increment, and the length. Then `seq()` will determine the starting point.
+
+
+
+Let's try some of these methods out.
+
+Often, we'll know the starting and ending points of the sequence, and then we have to specify either the increment or the length of the sequence.
+
+For example, how can we construct a sequence that starts at -1.2, ends at 0.7, and has an increment of 0.01? 
+
+* We can set the `from` parameter equal to -1.2.
+
+* The `to` parameter equal to 0.7.
+
+* The `by` parameter equal to 0.01.
+
+Putting this together, we have:
+```{r}
+seq( from = -1.2, to = 0.7, by = 0.01)
+```
+
+
+
+## Exercise 5: Constructing a sequence
+
+Construct a sequence that starts at 2.3 and goes to 4.5 in increments of 0.2.
+
+**Solution**
+
+
+
+
+
+
+Instead of specifying the increment, we can specify the length of the sequence by using the `length` option.
+
+Let's construct a sequence starting at 3 and ending at 6.8 of length 10:
+```{r}
+seq( from = 3, to = 6.8, length.out = 10 )
+```
+
+
+
+## Exercise 6: Constructing a sequence
+
+Construct a sequence starting at 12.8 and ending at 49.6 of length 200.
+
+**Solution**
+
+
+
+
+
+
+
+
+So far, we've always specified our sequences by giving a starting and an ending value.
+
+But sometimes this isn't convenient, and we'll want to specify just the starting value alone.
+
+To do this, we then have to specify the increment value and the length of the sequence.
+
+For example, suppose we wish to construct a sequence of the first 12 even numbers.
+
+To do this, we can express the concept of the first 12 even numbers by specifying three of the named parameters:
+
+* To specify one parameter, the first even number is 2, so we should set the parameter `first` equal to 2.
+
+* To specify a second parameter, note that even numbers go up by an increment of 2: 2, 4, 6, 8, \ldots, so the increment option `by` should be equal to 2.
+
+* Finally, the sequence is specified to be of length 12, so we should set the `length.out` parameter to 12.
+
+
+Let's see this:
+```{r}
+seq( from = 2, by = 2, length.out = 12 )
+```
+
+
+
+There are many different ways to apply the `seq()` function, and it will take a little while to get comfortable with them.
+
+
+
+
+## Exercise 7: Odd numbers
+
+Write R code to generate the sequence of the first 15 positive odd numbers.
+
+**Solution**
+
+
+
+So that's how to generate arbitrary arithmetic sequences by using the `seq()` function.
+
+Now let's review what we've learned in this module.
+
+
+
+
+
+# Module Review
+
+In this module, we studied four ways to construct vectors.
+
+* In section 1, we reviewed the `c()` function, which enables us to construct arbitrary vectors.
+
+* In section 2, we studied the `rep()` function, which we can use to create vectors with repeated values.
+
+* In section 3, we learned about the colon operator, which allows us to quickly create numerical sequences in steps of 1.
+
+* In section 4, we studied the `seq()` function, which generalizes the colon operator and allows us to create arbitrary arithmetic sequences.
+
+
+
+Now that you've completed this module, you should be able to:
+
+* Create a vector consisting of an arbitrary sequence of values by using the `c()` function.
+
+* Create a vector consisting of repeated values by using the `rep()` function.
+
+* Create a vector consisting of a numerical sequence in steps of 1 by using the colon operator.
+
+* Create a vector consisting of an arbitrary arithmetic sequence by using the `seq()` function.
+
+
+
+There were 3 new built-in R functions in this module:
+
+* The `rep()` function
+
+* The colon operator
+
+* The `seq()` function
+
+
+
+All right! That's it for Module 2: Constructing Vectors.
+
+Now let's move on to Module 3: Indexing Vectors.
+
+
+
+
+
+
+# Solutions to the Exercises
+
+## Exercise 1: Creating a vector
+
+Create a vector with a sequence consisting of three parts:
+
+* First, the value 5 is repeated 10 times.
+
+* Second, the value -2 is repeated 6 times.
+
+* Finally, the value 8 is repeated 3 times.
+
+Report your result using a `cat()` statement, displaying the values with 2 decimal places.
+
+**Answer**
+
+Here's my solution:
+```{r}
+exercise.2.1.vector <-
+    c(
+        rep( x = 5, times = 10 ),
+        rep( x = -2, times = 6),
+        rep( x = 8, times = 3 )
+    )
+
+cat(
+    "Exericse 2.1 vector:",
+    formatC(
+        exercise.2.1.vector,
+        format = "f",
+        digits = 2
+    ),
+    fill = TRUE
+)
+```
+
+
+## Exercise 2: The colon operator
+
+Create a vector of the form:
+$$
+1000,\ 999,\ 998,\ \ldots, 922,\ 921,\ 920
+$$
+
+Report the first 10 elements of this vector using a `cat()` statement, displaying the values with 2 decimal places.
+
+**Solution**
+
+```{r}
+long.vector <-
+    1000:920
+
+cat(
+    "long.vector:",
+    formatC(
+        head( long.vector, n = 10 ),
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+
+
+## Exercise 3: Creating a vector
+
+Create a vector of the form:
+$$
+-3.7, -2.7, -1.7, -0.7,\ 0.3,\ 1.3,\ 2.3,\ 3.3,\ 4.3
+$$
+
+**Solution**
+
+Here's one approach:
+```{r}
+c( -3.7:-0.7, 0.3:4.3 )
+```
+
+Here's another:
+```{r}
+-3.7:4.3
+```
+
+
+
+## Exercise 4: Creating a vector
+
+Use the colon operator twice to create two vectors that are then combined to create the final vector:
+$$
+\{\ 10,\ 9,\ 8,\ 7,\ 6,\ 5,\ 4,\ 3,\ 2,\ 1,\ 0,\ 1,\ 2,\ 3,\ 4,\ 5,\ 6,\ 7,\ 8,\ 9,\ 10\ \}
+$$
+
+**Solution**
+
+Here's one simple approach:
+```{r}
+c( 10:0, 1:10 )
+```
+
+Here's an alternative way to do this:
+```{r}
+c(10:1, 0:10 )
+```
+Really, both methods are fine.
+
+
+
+
+
+## Exercise 5: Constructing a sequence
+
+Construct a sequence that starts at 2.3 and goes to 4.5 in increments of 0.2.
+
+**Solution**
+
+```{r}
+seq( from = 2.3, to = 4.5, by = 0.2 )
+```
+
+
+
+## Exercise 6: Constructing a sequence
+
+Construct a sequence starting at 12.8 and ending at 49.6 of length 200.
+
+**Solution**
+
+```{r}
+seq( from = 12.8, to = 49.6, length.out = 200 )
+```
+
+
+## Exercise 7: Odd numbers
+
+Write R code to generate the sequence of the first 15 odd numbers.
+
+**Solution**
+
+```{r}
+seq( from = 1, by = 2, length.out = 15 )
+```
+

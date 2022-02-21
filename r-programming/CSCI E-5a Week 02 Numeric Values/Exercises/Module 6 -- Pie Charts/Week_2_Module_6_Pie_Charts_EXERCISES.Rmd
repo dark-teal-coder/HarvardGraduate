@@ -1,0 +1,298 @@
+---
+title: 'Week 2 Module 6: Pie Charts EXERCISES'
+subtitle: "CSCI E-5a: Programming in R"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+
+
+# Exercises for Week 2 Module 6: Pie Charts
+
+
+## Exercise 5.1: Babe Ruth At-Bats
+
+Recall that an at-bat is either an out or a hit, and there are four different kinds of hits.
+
+Thus, there are five possible outcomes for an at-bat:
+
+* An out
+
+* A single
+
+* A double
+
+* A triple
+
+Let's make a simple pie chart to display the relative proportions of these outcomes for Babe Ruth.
+
+Recall that Babe Ruth had these batting statistics:
+
+| Statistics        |  Value |
+|:------------------|-------:|
+| Plate appearances | 10,626 |
+| At-bats           |  8,399 |
+| Hits              |  2,873 |
+| Doubles           |    506 |
+| Triples           |    136 |
+| Home runs         |    714 |
+| Bases on balls    |  2,062 |
+| Hit by a pitch    |     43 |
+| Sacrifice flies   |      0 |
+
+Remember these two derived statistics:
+
+* To calculate the number of hits, subtract the number of hits from the number of at-bats
+
+* To calculate the number of singles, subtract the number of doubles, triples, and home runs from the number of hits.
+
+Here are some variables for you:
+```{r}
+babe.ruth.plate.appearances <- 10626
+
+babe.ruth.at.bats <- 8399
+
+babe.ruth.hits <- 2873
+babe.ruth.doubles <- 506
+babe.ruth.triples <- 136
+babe.ruth.home.runs <- 714
+```
+
+**Solution**
+
+
+
+
+
+## Exercise 5.2: Modifying the Babe Ruth pie chart
+
+Now add labels and a main title to the Babe Ruth pie chart, and set the rotation to clockwise.
+
+**Solution**
+
+
+
+
+
+## Exercise 5.3: Colors for the Babe Ruth pie chart
+
+Now explicitly specify the pie slice colors for the Babe Ruth pie chart.
+
+**Solution**
+
+
+
+
+
+
+
+# Solutions to the Exercises
+
+## Exercise 5.1: Babe Ruth At-Bats
+
+Recall that an at-bat is either an out or a hit, and there are four different kinds of hits.
+
+Thus, there are five possible outcomes for an at-bat:
+
+* An out
+
+* A single
+
+* A double
+
+* A triple
+
+Let's make a simple pie chart to display the relative proportions of these outcomes for Babe Ruth.
+
+Recall that Babe Ruth had these batting statistics:
+
+| Statistics        |  Value |
+|:------------------|-------:|
+| Plate appearances | 10,626 |
+| At-bats           |  8,399 |
+| Hits              |  2,873 |
+| Doubles           |    506 |
+| Triples           |    136 |
+| Home runs         |    714 |
+| Bases on balls    |  2,062 |
+| Hit by a pitch    |     43 |
+| Sacrifice flies   |      0 |
+
+Remember these two derived statistics:
+
+* To calculate the number of hits, subtract the number of hits from the number of at-bats
+
+* To calculate the number of singles, subtract the number of doubles, triples, and home runs from the number of hits.
+
+Here are some variables for you:
+```{r}
+babe.ruth.plate.appearances <- 10626
+
+babe.ruth.at.bats <- 8399
+
+babe.ruth.hits <- 2873
+babe.ruth.doubles <- 506
+babe.ruth.triples <- 136
+babe.ruth.home.runs <- 714
+```
+
+**Solution**
+
+```{r}
+babe.ruth.outs <-
+  babe.ruth.at.bats - babe.ruth.hits
+
+babe.ruth.singles <-
+  babe.ruth.hits -
+  (babe.ruth.doubles +
+     babe.ruth.triples +
+     babe.ruth.home.runs)
+
+pie(
+  x =
+    c(
+      babe.ruth.singles,
+      babe.ruth.doubles,
+      babe.ruth.triples,
+      babe.ruth.home.runs,
+      babe.ruth.outs
+    )
+)
+```
+
+
+
+
+## Exercise 5.2: Modifying the Babe Ruth pie chart
+
+Now add labels and a main title to the Babe Ruth pie chart, and set the rotation to clockwise.
+
+**Solution**
+
+```{r}
+pie(
+  x =
+    c(
+      babe.ruth.singles,
+      babe.ruth.doubles,
+      babe.ruth.triples,
+      babe.ruth.home.runs,
+      babe.ruth.outs
+    ),
+    
+  labels =
+        c( "Singles", "Doubles", "Triples",
+           "Home Runs", "Outs"),
+    
+  main = "Babe Ruth Career At-Bats",
+    
+  clockwise = TRUE
+)
+```
+
+
+
+## Exercise 5.3: Colors for the Babe Ruth pie chart
+
+Now explicitly specify the pie slice colors for the Babe Ruth pie chart.
+
+**Solution**
+
+```{r}
+pie(
+  x =
+    c(
+      babe.ruth.singles,
+      babe.ruth.doubles,
+      babe.ruth.triples,
+      babe.ruth.home.runs,
+      babe.ruth.outs
+    ),
+    
+  labels =
+        c( "Singles", "Doubles", "Triples",
+           "Home Runs", "Outs"),
+    
+  main = "Babe Ruth Career At-Bats",
+    
+  clockwise = TRUE,
+  
+  col =
+    c( "cyan1", "cadetblue2", "darkslategray3",
+       "royalblue", "salmon1" )
+)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

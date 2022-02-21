@@ -1,0 +1,122 @@
+---
+title: 'Lecture 3, Module 6: Stripcharts'
+subtitle: Exercises
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+
+# Exercises
+
+## Exercise 6.1: Basic stripchart
+
+Make a stripchart for these values:
+$$
+12.7,\ 23.8,\ 17.6,\ 45.2,\ 31.1,\ 26.9,\ 15.2
+$$
+
+Make it look nice!
+
+**Solution**
+
+
+## Exercise 6.2: The `rivers` dataset
+
+Let's see a more real-world application of a stripchart.
+
+The `rivers` dataset is a built-in vector in R that contains the lengths of the 141 major rivers in North America in miles.
+
+Let's check out the documentation on this dataset.
+
+For this exercise, make stripchart of the `rivers` dataset.
+
+You should put in all the fancy stuff: include a main title and an $x$-axis title, adjust the range of the $x$ values on the horizontal axis, and make the points look nice.
+
+Notice that there are now 141 points, so you'll have make some judgements about the size of the points.
+
+Finally, include jitter:
+
+* Remember that you have to explicitly set the values for the $y$-axis to range from 0 to 2.
+
+* Include the option `method = "jitter"`.
+
+* Set the jitter amount to give a visually pleasing range for the points.
+
+**Solution**
+
+
+
+
+# Solutions to the Exercises
+
+## Exercise 6.1: Basic stripchart
+
+Make a stripchart for these values:
+$$
+12.7, 23.8, 17.6, 45.2, 31.1, 26.9, 15.2
+$$
+
+Make it look nice!
+
+**Solution**
+
+```{r}
+exercise.6.1.numeric.vector <-
+    c( 12.7, 23.8, 17.6, 45.2, 31.1, 26.9, 15.2 )
+
+stripchart(
+    exercise.6.1.numeric.vector,
+    xlim = c(0, 50),
+    main = "Stripchart of very simple data",
+    xlab = "x",
+    pch = 15,
+    cex = 2.5,
+    col = "springgreen4"
+)
+```
+
+
+## Exercise 6.2: The `rivers` dataset
+
+Let's see a more real-world application of a stripchart.
+
+The `rivers` dataset is a built-in vector in R that contains the lengths of the 141 major rivers in North America in miles.
+
+Let's check out the documentation on this dataset.
+
+For this exercise, make stripchart of the `rivers` dataset.
+
+You should put in all the fancy stuff: include a main title and an $x$-axis title, adjust the range of the $x$ values on the horizontal axis, and make the points look nice.
+
+Notice that there are now 141 points, so you'll have make some judgements about the size of the points.
+
+Finally, include jitter:
+
+* Remember that you have to explicitly set the values for the $y$-axis to range from 0 to 2.
+
+* Include the option `method = "jitter"`.
+
+* Set the jitter amount to give a visually pleasing range for the points.
+
+**Solution**
+
+```{r}
+stripchart(
+    rivers,
+    xlim = c(0, 4000),
+    ylim = c(0, 2),
+    main = "Stripchart of the rivers dataset",
+    xlab = "x",
+    method = "jitter",
+    jitter = 0.7,
+    pch = 19,
+    cex = 1.2,
+    col = "darkseagreen4"
+)
+```
+
+
+
+

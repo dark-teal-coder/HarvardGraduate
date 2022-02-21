@@ -1,0 +1,79 @@
+---
+title: 'Lecture 2 Module 2: Variables'
+subtitle: Exercises
+output:
+  pdf_document: default
+  html_notebook: default
+---
+
+
+# Exercises
+
+
+
+## Exercise 2.1: Initializing and modifying a variable
+
+Initialize the variable `y` with the value 7, paying attention to the display in the Environment tab.
+
+Then destructively modify it so that it is associated with the value -2.
+
+**Solution**
+
+
+
+
+
+## Exercise 2.2: Reporting numeric values
+
+Report the value of `pi` using a `cat()` statement, displaying this value with 2 decimal places.
+
+**Solution**
+
+
+
+
+
+# Solution to the Exercises
+
+## Exercise 2.1: Initializing and modifying a variable
+
+Initialize the variable `y` with the value 7, paying attention to the display in the Environment tab.
+
+Then destructively modify it so that it is associated with the value -2.
+
+**Solution**
+
+First, let's initialize the variable `y` with the value 7.
+```{r}
+y <- 7
+```
+
+Now let's destructively modify the variable, replacing the associated value with 2.
+```{r}
+y <- 2
+```
+
+
+
+## Exercise 2.2
+
+Report the value of `pi` using a `cat()` statement, displaying this value with 2 decimal places.
+
+**Solution**
+
+```{r}
+cat(
+    "pi =",
+    formatC(
+        pi,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+
+
+
+
+

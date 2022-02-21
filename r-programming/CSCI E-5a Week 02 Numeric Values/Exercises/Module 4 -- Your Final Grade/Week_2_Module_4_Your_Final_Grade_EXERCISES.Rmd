@@ -1,0 +1,228 @@
+---
+title: "Week 2 Module 4: Your Final Grade EXERCISES"
+output:
+  pdf_document: default
+  html_notebook: default
+  html_document:
+    df_print: paged
+---
+
+
+Let's clear the global computing environment:
+```{r}
+rm( list = ls() )
+```
+
+
+
+
+# Exercise for Week 2 Module 4: Your Final Grade
+
+
+## Exercise 1: Your Final Grade
+
+### Part (a)
+
+Bob is registered for graduate credit, and obtained these raw scores:
+
+* He scored 52 total points on his problem sets.
+
+* He scored a 72 on the midterm.
+
+* He scored a 74 on the comprehensive course assessment.
+
+Calculate Bob's final letter grade for the course.
+
+**Answer**
+
+
+
+### Part (b)
+
+Ashley is registered for undergraduate credit, but obtains the exact same scores as Bob does.
+
+Calculate Ashley's final letter grade.
+
+
+**Answer**
+
+
+
+
+
+# Solution to the Exercise
+
+## Exercise 1: Your Final Grade
+
+### Part (a)
+
+Bob is registered for graduate credit, and obtained these raw scores:
+
+* He scored 52 total points on his problem sets.
+
+* He scored a 72 on the midterm.
+
+* He scored a 74 on the comprehensive course assessment.
+
+Calculate Bob's final letter grade for the course.
+
+
+**Answer**
+
+Let's define some variables to store Bob's raw scores:
+```{r}
+problem.set.raw.score <- 52
+
+midterm.exam.raw.score <- 72
+
+comprehensive.assessment.raw.score <- 74
+```
+
+
+First, we'll standardize Bob's scores.
+
+Bob's standardized score for the problem set points is:
+```{r}
+problem.set.standardized.score <-
+    problem.set.raw.score / 68 * 100
+    
+cat(
+    "Standardized problem set score:",
+    formatC(
+        problem.set.standardized.score,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+
+Bob's standardized score for the midterm exam is:
+```{r}
+midterm.exam.standardized.score <-
+    midterm.exam.raw.score / 80 * 100
+    
+cat(
+    "Standardized midterm exam score:",
+    formatC(
+        midterm.exam.standardized.score,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+
+Bob's standardized score for the comprehensive course assessment is:
+```{r}
+comprehensive.assessment.standardized.score <-
+    comprehensive.assessment.raw.score / 80 * 100
+    
+cat(
+    "Standardized comprehensive.assessment score:",
+    formatC(
+        comprehensive.assessment.standardized.score,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+
+Now we'll calculate Bob's preliminary score 1:
+```{r}
+preliminary.score.1 <-
+    (0.20 * problem.set.standardized.score) +
+    (0.30 * midterm.exam.standardized.score) +
+    (0.50 * comprehensive.assessment.standardized.score)
+
+cat(
+    "Preliminary score 1:",
+    formatC(
+        preliminary.score.1,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+
+Now we'll calculate Bob's preliminary score 2:
+```{r}
+preliminary.score.2 <-
+    (0.35 * midterm.exam.standardized.score) +
+    (0.65 * comprehensive.assessment.standardized.score)
+
+cat(
+    "Preliminary score 2:",
+    formatC(
+        preliminary.score.2,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+Since the value of preliminary score 2 is greater than the value of preliminary score 1, I use the preliminary score 2 value as the graduate final course score.
+
+```{r}
+graduate.final.course.score <-
+    max( preliminary.score.1, preliminary.score.2 )
+
+cat(
+    "Final graduate course score for Bob:",
+    formatC(
+        graduate.final.course.score,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+
+Let's summarize Bob's scores:
+
+|                             | Value |
+|:----------------------------|:-----:|
+| Preliminary Score 1         | 88.54 |
+| Preliminary Score 2         | 91.62 |
+|:----------------------------|:-----:|
+| Final Graduate Course Score | 91.62 |
+
+When I look up the final graduate course score of 91.62 in the letter grade table, I find that this corresponds to a grade of "A-".
+
+So Bob gets an "A-" for the course as his final grade.
+
+
+### Part (b)
+
+Ashley is registered for undergraduate credit, but obtains the exact same scores as Bob does.
+
+Calculate Ashley's final letter grade.
+
+**Answer**
+
+Since Ashley is registered for undergraduate credit, her pro-rated undergraduate final course score is:
+```{r}
+undergraduate.final.course.score <-
+    4/3 * graduate.final.course.score
+
+cat(
+    "Final course score for Ashley:",
+    formatC(
+        undergraduate.final.course.score,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+So in this case Ashley gets a final letter grade of "A".
+
+
+
+
+
+
+
+

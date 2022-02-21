@@ -1,0 +1,366 @@
+---
+title: 'Lecture 3, Module 5: Vectors'
+subtitle: Exercises
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+
+```{r}
+load( "Module 5 R Objects.Rdata" )
+```
+
+# Exercises
+
+## Exercise 5.1: Creating a named vector
+
+A grocery store sells three brands of breakfast cereal:
+
+* Sugar Bomz (SBZ), which sells for $2.99 per box.
+
+* Krispee Yummm (KYM), which sells for $3.49 per box.
+
+* Healthy Kale and Tofu (HKT), which sells for $7.99 per box.
+
+Let's make a table of these brands and their price:
+
+| Brand | Price |
+|:-----:|:-----:|
+|  SBZ  |  2.99 |
+|  KYM  |  3.49 |
+|  HKT  |  7.99 |
+
+Create a named vector that associates brand names with prices.
+
+**Solution**
+
+```{r}
+# Type your answer here
+```
+
+
+
+
+## Exercise 5.2: Character Indexing
+
+Suppose the grocery store sells this sequence of breakfast cereals:
+
+* One box of Sugar Bomz (SBZ).
+
+* One box of Krispee Yummm (KYM).
+
+* One box of Sugar Bomz (SBZ).
+
+* One box of Healthy Kale and Tofu (HKT).
+
+* One box of Sugar Bomz (SBZ).
+
+Create a vector of character strings to represent this sequence of sales, and then convert it to a numeric vector of the price per box of the brand by constructing a lookup vector.
+
+**Solution**
+
+
+
+## Exercise 5.3: Grocery Store
+
+Let's return to our grocery store example.
+
+Recall that these were the prices per box for each brand of breakfast cereal:
+
+| Brand | Price |
+|:-----:|:-----:|
+|  SBZ  |  2.99 |
+|  KYM  |  3.49 |
+|  HKT  |  7.99 |
+
+Also, recall that we had this sequence of sales:
+
+* One box of Sugar Bomz (SBZ).
+
+* One box of Krispee Yummm (KYM).
+
+* One box of Sugar Bomz (SBZ).
+
+* One box of Healthy Kale and Tofu (HKT).
+
+* One box of Sugar Bomz (SBZ).
+
+Calculate the total sales amount for the day by looking up the price for each box and then adding up the values in the vector using the `sum()` function.
+
+**Solution**
+
+
+
+
+
+## Exercise 5.4: Grocery Store
+
+The R object `cereal.sales.vector` contains data on cereal sales.
+
+As with the previous exercise, your goal is to calculate the total sales amount for this data.
+
+First, determine the number of entries in this vector, and convince yourself that it would be a lot of work to examine each entry individually.
+
+Then use the `unique()` function to see all the different labels in this data.
+
+Construct a lookup vector to repair any incorrect entries, and then use the vector of repaired values to calculate the total sales amount.
+
+**Solution**
+
+
+
+
+
+
+
+
+
+# Solutions to the Exercises
+
+
+## Exercise 5.1: Creating a named vector
+
+A grocery store sells three brands of breakfast cereal:
+
+* Sugar Bomz (SBZ), which sells for $2.99 per box.
+
+* Krispee Yummm (KYM), which sells for $3.49 per box.
+
+* Healthy Kale and Tofu (HKT), which sells for $7.99 per box.
+
+Let's make a table of these brands and their price:
+
+| Brand | Price |
+|:-----:|:-----:|
+|  SBZ  |  2.99 |
+|  KYM  |  3.49 |
+|  HKT  |  7.99 |
+
+Create a named vector that associates brand names with prices.
+
+**Solution**
+
+```{r}
+breakfast.cereal.price.lookup.vector <-
+    c(
+        "SBZ" = 2.99,
+        "KYM" = 3.49,
+        "HKT" = 7.99
+    )
+```
+
+Now let's display this vector:
+```{r}
+breakfast.cereal.price.lookup.vector
+```
+
+
+
+## Exercise 5.2: Character Indexing
+
+Suppose the grocery store sells this sequence of breakfast cereals:
+
+* One box of Sugar Bomz (SBZ).
+
+* One box of Krispee Yummm (KYM).
+
+* One box of Sugar Bomz (SBZ).
+
+* One box of Healthy Kale and Tofu (HKT).
+
+* One box of Sugar Bomz (SBZ).
+
+Create a vector of character strings to represent this sequence of sales, and then convert to a numeric vector of the price per box of the brand.
+
+**Solution**
+
+Let's start by creating the vector representing the sales, using a character string format:
+```{r}
+breakfast.cereal.sales.vector <-
+    c(
+        "SBZ", "KYM", "SBZ", "HKT", "SBZ"
+    )
+```
+
+Now let's convert that to a vector of prices per box:
+```{r}
+breakfast.cereal.prices.vector <-
+    breakfast.cereal.price.lookup.vector[
+        breakfast.cereal.sales.vector
+    ]
+
+breakfast.cereal.prices.vector
+```
+
+
+
+## Exercise 5.3: Grocery Store
+
+Let's return to our grocery store example.
+
+Recall that these were the prices per box for each brand of breakfast cereal:
+
+| Brand | Price |
+|:-----:|:-----:|
+|  SBZ  |  2.99 |
+|  KYM  |  3.49 |
+|  HKT  |  7.99 |
+
+Also, recall that we had this sequence of sales:
+
+* One box of Sugar Bomz (SBZ).
+
+* One box of Krispee Yummm (KYM).
+
+* One box of Sugar Bomz (SBZ).
+
+* One box of Healthy Kale and Tofu (HKT).
+
+* One box of Sugar Bomz (SBZ).
+
+Calculate the total sales amount for the day by looking up the price for each box and then adding up the values in the vector using the `sum()` function.
+
+**Solution**
+
+First, we'll lookup the prices (we did this in the previous problem) and then we'll add these using the `sum()` function to obtain the total sales amount:
+```{r}
+breakfast.cereal.prices.vector <-
+    breakfast.cereal.price.lookup.vector[
+        breakfast.cereal.sales.vector
+    ]
+
+total.breakfast.cereal.sales <-
+    sum( breakfast.cereal.prices.vector )
+
+cat(
+    "Total sales:",
+    formatC(
+        total.breakfast.cereal.sales,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+
+
+
+## Exercise 5.4: Grocery Store
+
+The R object `incorrect.values.cereal.sales.vector` contains data on cereal sales, but it has some incorrect values.
+
+As with the previous exercise, your goal is to calculate the total sales amount for this data.
+
+First, determine the number of entries in this vector, and convince yourself that it would be a lot of work to examine each entry individually.
+
+Then use the `unique()` function to see all the different labels in this data.
+
+Construct a lookup vector to repair any incorrect entries, and then use the vector of repaired values to calculate the total sales amount.
+
+**Solution**
+
+Let's see how many items are in this vector:
+```{r}
+length( incorrect.values.cereal.sales.vector )
+```
+
+How many unique values are there in this vector?
+```{r}
+unique( incorrect.values.cereal.sales.vector )
+```
+
+Now we'll create the lookup vector to repair the incorrect values:
+```{r}
+repair.cereal.sales.lookup.vector <-
+  c(
+    "SBZ" = "SBZ",
+    "KYM" = "KYM",
+    "HKT" = "HKT",
+    "sbz" = "SBZ",
+    "kym" = "KYM",
+    "hkt" = "HKT"
+  )
+```
+
+Now we can repair the values in this vector:
+```{r}
+repaired.cereal.sales.vector <-
+  repair.cereal.sales.lookup.vector[
+    incorrect.values.cereal.sales.vector
+  ]
+```
+
+We can convert the repaired values to numeric values:
+```{r}
+cereal.sales.numeric.vector <-
+  breakfast.cereal.price.lookup.vector[
+    repaired.cereal.sales.vector
+  ]
+```
+
+Finally, we can add everything up to obtain the total sales amount:
+```{r}
+total.cereal.sales.amount <-
+  sum( cereal.sales.numeric.vector )
+
+cat(
+  "Total cereal sales:",
+  formatC(
+    total.cereal.sales.amount,
+    format = "f",
+    digits = 2,
+    big.mark = ","
+  )
+)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

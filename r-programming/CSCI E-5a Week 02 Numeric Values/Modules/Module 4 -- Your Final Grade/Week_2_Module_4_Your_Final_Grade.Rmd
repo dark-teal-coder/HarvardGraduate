@@ -1,0 +1,604 @@
+---
+title: 'Week 2 Module 4: Your Final Grade'
+subtitle: "CSCI E-5a: Programming in R"
+output:
+  pdf_document: default
+  html_notebook: default
+---
+
+Let's clear the global computing environment:
+```{r}
+rm( list = ls() )
+```
+
+
+
+# Module Overview and Learning Objectives
+
+In this module, we'll learn how I calculate your final grade.
+
+
+
+* In Section 1, we'll discuss why we're doing this.
+
+* In Section 2, we'll go through all the steps for determining your final grade.
+
+* In Section 3, we'll consider some concrete examples of calculating a final grade.
+
+
+
+When you've finished this module, you should be able to:
+
+* Explain why we're learning this
+
+* Take a set of raw scores for a student, and calculate the final course letter grade.
+
+There are no new built-in R functions in this module.
+
+
+
+
+
+# Section 1: Why we're doing this
+
+> **Main Idea:** *We can understand why we are studying how to compute final grades.*
+
+In this section, we'll discuss why we're learning how to compute final grades.
+
+
+
+I said in Module 3 that it was hard for me to find good real-world examples that would be relevant for everyone, with one exception.
+
+Everyone in this class is by definition taking CSCI E-5a, which means that the calculation of the final course letter grade is of interest to all.
+
+But, just as with baseball statistics, we'll also see that the calculation of the final course letter grade will present us with many interesting computational challenges, not just in this lecture but throughout the course.
+
+In this module, we'll practice using variables to perform a complex, multi-step calculation.
+
+I hope you'll learn a lot about R and programming in general from these examples.
+
+
+
+So that's why we're studying this topic.
+
+Now let's see how to actually compute your grades!
+
+
+
+
+
+# Section 2: Calculating a Letter Grade
+
+> **Main Idea:** *We can compute final grades for CSCI S-5a.*
+
+In this section, we'll go through all the steps for determining your final grade.
+
+
+
+There are three components of your final grade:
+
+* Your total problem set points.
+
+* Your score on the midterm.
+
+* Your score on the comprehensive course assessment.
+
+The actual numeric scores that you receive on these components are called "raw scores".
+
+It's inconvenient to work with raw scores, because they don't range over a scale of 0 to 100.
+
+So the first step is to standardize all these raw scores to a uniform scale, ranging from 0 to 100.
+
+To standardize a raw score, we divide the raw score by the maximum number of possible points and then multiply by 100.
+
+In this course, there will be 11 problem sets for a total of 68 points.
+
+Since the maximum possible raw score for the problem set points is 68 points, we can calculate the standardized problem set score for a student by dividing through by 68, and then multiplying by 100.
+
+Thus, a student who has a raw score of 68 total points on the problem sets has a problem set standardized score of 100:
+$$
+\frac{ 68 }{ 68 } \times 100 \ =\ 100
+$$
+
+
+On the other hand, if a student has a problem set raw score of 62 points, then the standardized problem set score is:
+$$
+\frac{62}{68} \times 100\ =\ 91.17647
+$$
+
+
+
+For the Midterm Assessment, there will be 8 problems, each worth 10 points, so the maximum number of possible points is 80.
+
+Since there are 80 possible points on the midterm exam, I take the raw score and divide by 0.80 to obtain the midterm exam standardized score.
+
+Thus, a student who has a raw score of 80 total points on the midterm exam has a midterm exam standadized score of 100:
+$$
+\frac{ 80 }{ 0.80 }\ =\ 100
+$$
+
+
+On the other hand, a student who has a raw score of 68 total points on the midterm exam has a midterm exam standadized score of 85:
+$$
+\frac{ 68 }{ 80 } \times 100 \ =\ 85.00
+$$
+
+
+
+For the Comprehensive Assessment, there will be 8 problems, each worth 10 points, so the maximum number of possible points is 80.
+
+Since there are 80 possible points on the Comprehensive Assessment, I take the raw score and divide by 0.80 to obtain the Comprehensive Assessment standardized score.
+
+Thus, a student who has a raw score of 80 total points on the Comprehensive Assessment has a Comprehensive Assessment standardized score of 100:
+$$
+\frac{ 80 }{ 80 } \times 100 \ =\ 100
+$$
+
+
+On the other hand, a student who has a raw score of 68 total points on the Comprehensive Assessment has a Comprehensive Assessment standardized score of 85:
+$$
+\frac{ 68 }{ 80 } \times 100 \ =\ 85.00
+$$
+
+
+
+I then calculate two preliminary scores, which are both weighted averages of the standardized course components.
+
+Preliminary score 1 is a weighted average of the standardized problem set, midterm assessment, and comprehensive assessment scores:
+
+| Standardized Component          | Weight |
+|:--------------------------------|:------:|
+| Problem Sets                    |  0.20  |
+| Midterm Assessment              |  0.30  |
+| Comprehensive Assessment        |  0.50  |
+
+Preliminary score 2 is a weighted average of just the standardized midterm assessment and comprehensive assessment scores:
+
+| Standardized Component          | Weight |
+|:--------------------------------|:------:|
+| Midterm Assessment              |  0.35  |
+| Comprehensive Assessment        |  0.65  |
+
+
+For students registered for graduate credit, the graduate overall final course score is calculated as the maximum of the two preliminary scores.
+
+For students registered for undergraduate credit, I multiply the graduate overall final course score by 4/3 to obtain the undergraduate overall final course score.
+
+I assign the final letter grade based on the overall final course score in this table:
+
+| Range                      | Grade |
+| :--------------------------|:------|
+| 93 $\leq$ Final Score      |   A   |
+| 90 $\leq$ Final Score < 93 |   A-  |
+| 87 $\leq$ Final Score < 90 |   B+  |
+| 83 $\leq$ Final Score < 87 |   B   |
+| 80 $\leq$ Final Score < 83 |   B-  |
+| 77 $\leq$ Final Score < 80 |   C+  |
+| 73 $\leq$ Final Score < 77 |   C   |
+| 70 $\leq$ Final Score < 73 |   C-  |
+| 67 $\leq$ Final Score < 70 |   D+  |
+| 60 $\leq$ Final Score < 67 |   D   |
+| Final Score < 60           |   F   |
+
+
+
+Make sure you understand how this process works, and in particular be sure that you understand how to standardize a raw score.
+
+On the Midterm and Comprehensive Assessments, I can give you a problem where you have to calculate grades for a different grading system, with different possible total points, and you have to be able to standardize these scores.
+
+
+So that's the procedure that I use to calculate your final grade.
+
+Now let's work through some concrete examples.
+
+
+
+
+
+# Section 3: Examples
+
+> **Main Idea:** *We can work through concrete examples of calculating a final grade.*
+
+In this section, we'll consider some concrete examples of calculating a final grade.
+
+
+Let's try this out with an example:
+
+Taylor is registered for graduate credit, and at the end of the course has these scores:
+
+* Her Problem Set raw score is 67.
+
+* Her Midterm Assessment raw score is 71.
+
+* Her Comprehensive Assessment raw score is 75.
+
+Let's start by creating variables to hold these numbers:
+```{r}
+problem.set.raw.score <- 67
+
+midterm.exam.raw.score <- 71
+
+comprehensive.assessment.raw.score <- 75
+```
+
+
+The first step in the calculation is to standardize Taylor's scores.
+
+Taylor's problem set standardized score is:
+```{r}
+problem.set.standardized.score <-
+    problem.set.raw.score / 68 * 100
+    
+cat(
+    "Problem set standardized score:",
+    formatC(
+        problem.set.standardized.score,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+
+Taylor's standardized score for the midterm exam is:
+```{r}
+midterm.exam.standardized.score <-
+    midterm.exam.raw.score / 80 * 100
+    
+cat(
+    "Midterm exam standardized score:",
+    formatC(
+        midterm.exam.standardized.score,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+
+Taylor's standardized score for the comprehensive assessment is:
+```{r}
+comprehensive.assessment.standardized.score <-
+    comprehensive.assessment.raw.score / 80 * 100
+    
+cat(
+    "Comprehensive assessment standardized score:",
+    formatC(
+        comprehensive.assessment.standardized.score,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+
+Now we'll calculate Taylor's preliminary score 1:
+```{r}
+preliminary.score.1 <-
+    (0.20 * problem.set.standardized.score) +
+    (0.30 * midterm.exam.standardized.score) +
+    (0.50 * comprehensive.assessment.standardized.score)
+
+cat(
+    "Preliminary score 1:",
+    formatC(
+        preliminary.score.1,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+
+Now we'll calculate Taylor's preliminary score 2:
+```{r}
+preliminary.score.2 <-
+    (0.35 * midterm.exam.standardized.score) +
+    (0.65 * comprehensive.assessment.standardized.score)
+
+cat(
+    "Preliminary score 2:",
+    formatC(
+        preliminary.score.2,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+Since the value of preliminary score 1 is greater than the value of preliminary score 2, I use the preliminary score 1 value as the graduate final course score.
+
+```{r}
+graduate.final.course.score <-
+    max( preliminary.score.1, preliminary.score.2 )
+
+cat(
+    "Graduate final course score for Taylor:",
+    formatC(
+        graduate.final.course.score,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+Let's summarize Taylor's scores:
+
+| Couse Scores                | Value |
+|:----------------------------|:-----:|
+| Preliminary Course Score 1  | 93.21 |
+| Preliminary Course Score 2  | 92.00 |
+|:---------------------------:|:-----:|
+| Graduate Final Course Score | 93.21 |
+
+
+When I look up the final course score of 93.21 in the letter grade table, I find that this corresponds to a letter grade of "A".
+
+So Taylor gets an "A" final letter grade for the course.
+
+
+Now suppose Obi is registered for undergraduate credit, but obtains the exact same scores as Taylor does.
+
+Then I multiply Obi's final score by 4/3:
+```{r}
+undergraduate.final.course.score <-
+    4/3 * graduate.final.course.score
+
+cat(
+    "Final course score for Obi:",
+    formatC(
+        undergraduate.final.course.score,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+So in this case Obi gets an "A".
+
+Before we finish, you should stop for a moment and reflect on how variables allowed us to solve this problem in a structured, easy-to-understand way.
+
+Because variables allow us to store the result of a calculation for later use, we can break the problem into multiple steps, each of which is straightforward to compute.
+
+It would be very difficult to do this calculation in one step!
+
+So that's how final letter grades are calculated in CSCI S-5a.
+
+Now let's review what we've learned in this module.
+
+
+
+## Exercise 1: Your Final Grade
+
+### Part (a)
+
+Bob is registered for graduate credit, and obtained these raw scores:
+
+* He scored 52 total points on his problem sets.
+
+* He scored a 72 on the midterm.
+
+* He scored a 74 on the comprehensive course assessment.
+
+Calculate Bob's final letter grade for the course.
+
+
+### Part (b)
+
+Ashley is registered for undergraduate credit, but obtains the exact same scores as Bob does.
+
+Calculate Ashley's final letter grade.
+
+
+
+
+
+# Module Review
+
+In this module, we learned how I calculate your final grade.
+
+
+
+* In Section 1, we discussed why we're doing this.
+
+* In Section 2, we went all the steps for determining your final grade.
+
+* In Section 3, we considered some concrete examples of calculating a final grade.
+
+
+
+Now that you've finished this module, you should be able to:
+
+* Explain why we're learning this
+
+* Take a set of raw scores for a student, and calculate the final course letter grade.
+
+There were no new built-in R functions in this module.
+
+
+
+All right! That's it for Module 4: Your Final Grade.
+
+Now let's move on to Module 5: The Quadratic Equation.
+
+
+
+
+
+# Solutions to the Exercises
+
+
+## Exercise 1: Your Final Grade
+
+### Part (a)
+
+Bob is registered for graduate credit, and obtained these raw scores:
+
+* He scored 52 total points on his problem sets.
+
+* He scored a 72 on the midterm.
+
+* He scored a 74 on the comprehensive course assessment.
+
+Calculate Bob's final letter grade for the course.
+
+
+**Solution**
+
+Let's define some variables to store Bob's raw scores:
+```{r}
+problem.set.raw.score <- 52
+
+midterm.exam.raw.score <- 72
+
+comprehensive.assessment.raw.score <- 74
+```
+
+
+First, we'll standardize Bob's scores.
+
+Bob's standardized score for the problem set points is:
+```{r}
+problem.set.standardized.score <-
+    problem.set.raw.score / 68 * 100
+    
+cat(
+    "Standardized problem set score:",
+    formatC(
+        problem.set.standardized.score,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+
+Bob's standardized score for the midterm exam is:
+```{r}
+midterm.exam.standardized.score <-
+    midterm.exam.raw.score / 80 * 100
+    
+cat(
+    "Standardized midterm exam score:",
+    formatC(
+        midterm.exam.standardized.score,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+
+Bob's standardized score for the comprehensive course assessment is:
+```{r}
+comprehensive.assessment.standardized.score <-
+    comprehensive.assessment.raw.score / 80 * 100
+    
+cat(
+    "Standardized comprehensive.assessment score:",
+    formatC(
+        comprehensive.assessment.standardized.score,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+
+Now we'll calculate Bob's preliminary score 1:
+```{r}
+preliminary.score.1 <-
+    (0.20 * problem.set.standardized.score) +
+    (0.30 * midterm.exam.standardized.score) +
+    (0.50 * comprehensive.assessment.standardized.score)
+
+cat(
+    "Preliminary score 1:",
+    formatC(
+        preliminary.score.1,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+
+Now we'll calculate Bob's preliminary score 2:
+```{r}
+preliminary.score.2 <-
+    (0.35 * midterm.exam.standardized.score) +
+    (0.65 * comprehensive.assessment.standardized.score)
+
+cat(
+    "Preliminary score 2:",
+    formatC(
+        preliminary.score.2,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+Since the value of preliminary score 2 is greater than the value of preliminary score 1, I use the preliminary score 2 value as the graduate final course score.
+
+```{r}
+graduate.final.course.score <-
+    max( preliminary.score.1, preliminary.score.2 )
+
+cat(
+    "Final graduate course score for Bob:",
+    formatC(
+        graduate.final.course.score,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+
+Let's summarize Bob's scores:
+
+|                             | Value |
+|:----------------------------|:-----:|
+| Preliminary Score 1         | 88.54 |
+| Preliminary Score 2         | 91.62 |
+|:----------------------------|:-----:|
+| Final Graduate Course Score | 91.62 |
+
+When I look up the final graduate course score of 91.62 in the letter grade table, I find that this corresponds to a grade of "A-".
+
+So Bob gets an "A-" for the course as his final grade.
+
+
+### Part (b)
+
+Ashley is registered for undergraduate credit, but obtains the exact same scores as Bob does.
+
+Calculate Ashley's final letter grade.
+
+**Solution**
+
+Since Ashley is registered for undergraduate credit, her pro-rated undergraduate final course score is:
+```{r}
+undergraduate.final.course.score <-
+    4/3 * graduate.final.course.score
+
+cat(
+    "Final course score for Ashley:",
+    formatC(
+        undergraduate.final.course.score,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+So in this case Ashley gets a final letter grade of "A".
+
+
+
+
+
+
+
+
