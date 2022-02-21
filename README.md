@@ -1,7 +1,7 @@
 <!-- This is a README file for the parent directory. -->
 
 # Metadata
-- __Project Owner__: github.com/dark-teal-coder
+- <u>Project Owner</u>: github.com/dark-teal-coder
 - __First Published Date__: 2022-02-21
 - __Last Modified Date__: 2022-02-21
 
