@@ -1,0 +1,186 @@
+---
+title: 'CSCI 5a Lecture 4 Module 1: for Loops'
+subtitle: Exercises
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+
+# Exercises
+
+
+
+## Exercise 1.1: Even numbers
+
+Write a `for` loop that prints out the first 10 even numbers. (Hint: use the `seq()` function to create the loop vector).
+
+**Solution**
+
+
+
+
+
+
+## Exercise 1.2: Even numbers
+
+Write a `for` loop that prints out the total sum of the first 10 even numbers. For each iteration, print out the value of the current running total.
+
+**Solution**
+
+
+
+
+## Exercise 1.3: Sales report
+
+Suppose a store has three sales:
+
+| Price per item | Number of items |
+|---------------:|----------------:|
+|      10.99     |        4        |
+|       3.99     |       12        |
+|       8.99     |        7        |
+
+Create two vectors to represent the Price per item column and the Number of items column. Then write a `for` loop that prints out the price per item and number of items for each transaction, as well as the total for that transaction. Finally, when you've finished, report the total sales for all three transactions.
+
+**Solution**
+
+
+
+
+# Solutions to the Exercises
+
+
+## Exercise 1.1: Even numbers
+
+Write a `for` loop that prints out the first 10 even numbers. (Hint: use the `seq()` function to create the loop vector).
+
+**Solution**
+
+First, to construct the vector, we can use the `seq()` function:
+```{r}
+even.number.vector <-
+    seq( from = 2, by = 2, length.out = 10)
+
+even.number.vector
+```
+
+We could also use some vectorized trickery:
+```{r}
+even.number.vector <-
+    2 * 1:10
+
+even.number.vector
+```
+
+Now we can print out the even numbers:
+```{r}
+for( current.even.number in even.number.vector ) {
+    
+    cat(
+        "Current even number:",
+        current.even.number,
+        "\n"
+    )
+    
+}
+```
+
+
+
+
+## Exercise 1.2: Even numbers
+
+Write a `for` loop that prints out the total sum of the first 10 even numbers. For each iteration, print out the value of the current running total.
+
+**Solution**
+
+```{r}
+running.total <- 0
+
+even.number.vector <-
+    seq( from = 2, by = 2, length.out = 10)
+
+for( current.even.number in even.number.vector ) {
+    
+    running.total <-
+        running.total + current.even.number
+    
+    cat(
+        "\tRunning.total:",
+        running.total,
+        "\n\n"
+    )
+}
+```
+
+
+## Exercise 1.3: Sales report
+
+Suppose a store has three sales:
+
+| Price per item | Number of items |
+|---------------:|----------------:|
+|      10.99     |        4        |
+|       3.99     |       12        |
+|       8.99     |        7        |
+
+Create two vectors to represent the Price per item column and the Number of items column. Then write a `for` loop that prints out the price per item and number of items for each transaction, as well as the total for that transaction. Finally, when you've finished, report the total sales for all three transactions.
+
+**Solution**
+
+```{r}
+price.per.item.vector <-
+    c( 10.99, 3.99, 8.99 )
+
+number.of.items.vector <-
+    c( 4, 12, 7 )
+
+index.vector <-
+    1:length( price.per.item.vector )
+
+total.sales.amount <- 0
+
+for( index in index.vector ) {
+    
+    cat(
+        "Transaction:",
+        index,
+        "\n"
+    )
+    
+    cat(
+        "\tPrice per item:",
+        price.per.item.vector[ index ],
+        "\n"
+    )
+    
+    cat(
+        "\tNumber of items:",
+        number.of.items.vector[ index ],
+        "\n"
+    )
+    
+    cat(
+        "\tSales amount:",
+        price.per.item.vector[ index ] *
+            number.of.items.vector[ index ],
+        "\n"
+    )
+    
+    cat( "\n" )
+    
+    total.sales.amount <-
+        total.sales.amount +
+        price.per.item.vector[ index ] *
+            number.of.items.vector[ index ]
+}
+
+cat(
+    "Total sales amount:",
+    total.sales.amount
+)
+```
+
+

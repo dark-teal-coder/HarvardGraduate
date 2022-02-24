@@ -1,0 +1,270 @@
+---
+title: 'Lecture 5 Module 6: Histograms and Curves'
+subtitle: Exercises
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r}
+load( "Module 6 R Objects.Rdata" )
+```
+
+
+# Exercises
+
+
+## Exercise 6.1: Drawing a normal density curve
+
+Construct a graph of the density function for the normal distribution, with mean $\mu = 45$ and standard deviation $\sigma = 7$.
+
+**Solution**
+
+
+
+
+## Exercise 6.2: Superimposing a normal density curve
+
+Draw the histogram of the data in `exercise.6.2.data`. Then superimpose a normal density curve with a mean of 45 and a standard deviation of 7:
+
+**Solution**
+
+
+
+
+## Exercise 6.3: Fitting a normal density curve
+
+Calculate the sample mean and the sample standard deviation of the values in `exercise.6.2.data`. Redraw the histogram, and fit a normal density curve using the sample mean and sample standard deviation.
+
+**Solution**
+
+
+
+
+## Exercise 5.4: Superimposing a non-parametric density curve
+
+Construct a histogram of the values in `exercise.6.4.data`, and then superimpose a normal density curve. Finally, superimpose a non-parameteric density curve over this display.
+
+**Solution**
+
+
+
+
+# Solutions to the Exercises
+
+
+## Exercise 6.1: Drawing a normal density curve
+
+Construct a graph of the density function for the normal distribution, with mean $\mu = 45$ and standard deviation $\sigma = 7$.
+
+**Solution**
+
+```{r}
+curve(
+    dnorm(x, mean = 45, sd = 7),
+    main = "Graph of normal density curve",
+    xlim = c(20, 70),
+    ylim = c(0, 0.06),
+    xlab = "x",
+    ylab = "Density",
+    lty = "solid",
+    lwd = 3,
+    col = "black"
+)
+
+
+segments(
+    x0 = 70,
+    y0 = 0,
+    x1 = 130,
+    y1 = 0,
+    lty = "solid",
+    lwd = 2,
+    col = "gray60"
+)
+
+```
+
+
+
+## Exercise 6.2: Superimposing a normal density curve
+
+Draw the histogram of the data in `exercise.6.2.data`. Then superimpose a normal density curve with a mean of 45 and a standard deviation of 7:
+
+**Solution**
+
+```{r}
+hist(
+    exercise.6.2.data,
+    prob = TRUE,
+    main = "Histogram of random normal data",
+    xlab = "x",
+    ylab = "Density",
+    col = "cornsilk",
+    breaks = 50
+)
+
+curve(
+    dnorm(
+        x,
+        mean = 45,
+        sd = 7
+    ),
+    lty = "dashed",
+    lwd = 4,
+    col = "darkred",
+    add = TRUE
+)
+```
+
+
+
+## Exercise 6.3: Fitting a normal density curve
+
+Calculate the sample mean and the sample standard deviation of the values in `exercise.6.2.data`. Redraw the histogram, and fit a normal density curve using the sample mean and sample standard deviation.
+
+**Solution**
+
+```{r}
+hist( 
+    exercise.6.2.data,
+    main = "Histogram of values in exercise.6.2.data",
+    col = "skyblue",
+    xlab = "x",
+    ylab = "y",
+    prob = TRUE,
+    breaks = 50
+)
+
+
+sample.mean <-
+    mean( exercise.6.2.data )
+
+sample.standard.deviation <-
+    sd( exercise.6.2.data )
+
+curve(
+    dnorm(
+        x,
+        mean = sample.mean,
+        sd = sample.standard.deviation
+    ),
+    lty = "dashed",
+    lwd = 3,
+    col = "black",
+    add = TRUE
+)
+```
+
+
+
+
+## Exercise 6.4: Superimposing a non-parametric density curve
+
+Construct a histogram of the values in `exercise.6.4.data`, and then superimpose a normal density curve. Finally, superimpose a non-parameteric density curve over this display.
+
+**Solution**
+
+```{r}
+hist( 
+    exercise.6.4.data,
+    main = "Histogram of values in normal.data.set",
+    col = "azure1",
+    xlab = "x",
+    ylab = "y",
+    prob = TRUE,
+    breaks = 50
+)
+
+
+sample.mean <-
+    mean( exercise.6.4.data )
+
+sample.standard.deviation <-
+    sd( exercise.6.4.data )
+
+curve(
+    dnorm(
+        x,
+        mean = sample.mean,
+        sd = sample.standard.deviation
+    ),
+    lty = "dashed",
+    lwd = 3,
+    col = "royalblue4",
+    add = TRUE
+)
+
+lines(
+    density( exercise.6.4.data ),
+    lty = "solid",
+    lwd = 2,
+    col = "black"
+)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,830 @@
+---
+title: 'Week 5 Module 1: Logical Values'
+subtitle: 'CSCI E-5a: Programming in R'
+output:
+  pdf_document: default
+  html_notebook: default
+  html_document:
+    df_print: paged
+---
+
+
+Let's clear the global environment:
+```{r}
+rm( list = ls() )
+```
+
+
+# Module Overview and Learning Outcomes
+
+
+Hello! And welcome to Module 1: Logical Values.
+
+In this module, we'll study logical values.
+
+
+
+* In section 1, we'll define the concept of a logical value.
+
+* In section 2, we'll define three important logical operators, and see how to use them in a vectorized approach.
+
+* In section 3, we'll learn how to generate logical vectors from other types of vectors, in particular numeric vectors.
+
+* In section 4, we'll meet three important logical functions.
+
+* In section 5, we'll discuss some technical issues that arise when comparing floating point numbers.
+
+
+
+At the end of this module, you should be able to:
+
+* Explain the concept of logical data.
+
+* Perform logical operations on logical values and vectors.
+
+* Construct logical vectors from other types of vectors, especially numeric vectors.
+
+* Explain how the logical functions `all()`, `any()`, and `which()` operate.
+
+* Explain how to compare floating point numbers for equality.
+
+
+
+We'll also meet 5 new built-in R functions:
+
+* `all()`
+
+* `any()`
+
+* `which()`
+
+* `allequal()`
+
+* `isTRUE()`
+
+
+
+All right! Let's get started by defining the concept of a logical value.
+
+
+
+
+
+# Section 1: Definition
+
+> **Main Idea:** *We can define the concept of a logical value*
+
+In this section, we'll define the concept of a logical value.
+
+
+
+Logical data is very simple -- it consists of two values, `TRUE` and `FALSE`.
+
+Remember that R is case-sensitive, so you have to type these values in exactly the same way, and in particular you have to use all upper-case letters.
+
+For instance, here's the value `TRUE`:
+```{r}
+TRUE
+```
+
+But now look what happens when we don't use caps:
+```{r error = TRUE}
+True
+```
+R doesn't know what this `True` object is, even though it is fine with the `TRUE` object.
+
+
+
+There is another way to obtain `TRUE` and `FALSE` values.
+
+R has built-in variables named `T` and `F`, and these will evaluate to `TRUE` and `FALSE`, respectively:
+```{r}
+T
+```
+
+
+```{r}
+F
+```
+
+The problem with `T` and `F` is that they are variables, and thus can be assigned a new value.
+
+For instance, this is perfectly legitimate:
+```{r}
+T <- FALSE
+
+T
+```
+Thus, if you use `T` and `F` in your code, it's possible to have correctly working code that breaks if somehow these variables are destructively modified.
+
+Personally, I don't like to use `T` and `F`, and I think the only appeal they have is that they save a few keystrokes.
+
+I think the best thing is to write out `TRUE` and `FALSE`, and your code will be more robust and readable.
+
+
+
+So that's the definition of logical values.
+
+Now let's see how to operate on logical values.
+
+
+
+
+
+# Section 2: Operations on Logical Data
+
+> **Main Idea:** *We can operate on logical data*
+
+In this section, we'll define three important logical operators, and see how to use them in a vectorized approach.
+
+
+
+Just as there is a wide range of operations for working with numeric data, we can also perform operations on data in the logical class as well.
+
+## Logical negation
+
+There is one unary logical operator, called "logical negation" and denoted by `!`.
+
+This operation just inverts logical values: if the input argument is `TRUE`, then the output return value is `FALSE`:
+```{r}
+! TRUE
+```
+
+Similarly, if the input argument is `FALSE`, then the output return value is `TRUE`:
+```{r}
+! FALSE
+```
+
+We can even have a double negative:
+```{r}
+! ! TRUE
+```
+
+
+
+
+## The logical conjunction operator `&`
+
+Just as we had binary arithmetic operations for numeric data, we also have binary operations for logical data.
+
+One such binary logical operation has the fancy name "logical conjunction", and this returns the value `TRUE` if both of the terms are themselves `TRUE`, and `FALSE` if at least one of the terms is `FALSE`:
+```{r}
+TRUE & TRUE
+```
+
+```{r}
+TRUE & FALSE
+```
+
+```{r}
+FALSE & TRUE
+```
+
+```{r}
+FALSE & FALSE
+```
+
+
+
+A nice way to think of the logical conjunction operator `&` is that it's really like the word "AND": the R expression `x & y` evaluates to `TRUE` if and only if both `x` AND `y` evaluate to `TRUE`.
+
+In our course, I will use the expression "logical conjunction" when I'm talking about the operator `&`, because that's the technical jargon.
+
+But in practice when we're looking at actual code I will usually say something like "`x` AND `y`".
+
+
+
+## The logical disjunction operator `|`
+
+Along with the logical conjunction operator `&` there is another binary logical operation which has the fancy name "logical disjunction".
+
+The logical disjunction operator returns the value `TRUE` if at least one of the terms is `TRUE`, and `FALSE` if both terms are `FALSE`:
+```{r}
+TRUE | TRUE
+```
+
+```{r}
+TRUE | FALSE
+```
+
+
+```{r}
+FALSE | TRUE
+```
+
+
+```{r}
+FALSE | FALSE
+```
+
+A nice way to think of the logical disjunction operator `|` is that it's really like the word "OR": the R expression `x | y` evaluates to `TRUE` if and only if either `x` OR `y` evaluate to `TRUE`.
+
+In this course, I will use the expression "logical disjunction" when I'm talking about the operator `|`, because that's the technical jargon.
+
+But in practice when we're looking at actual code I will usually say something like "`x` OR `y`".
+
+
+
+## Vectorized logical operations
+
+We can use vectorized operations on logical values.
+
+Let's create two logical vectors to experiment with:
+```{r}
+first.logical.vector <- 
+    c(TRUE, TRUE, FALSE, TRUE, FALSE)
+
+second.logical.vector <- 
+    c(TRUE, FALSE, TRUE, TRUE, FALSE)
+```
+
+If we perform a logical operation on these vectors using the logical `and` operator denoted by `&`, the result will be a vector where each element is calculated by applying the `&` operator to corresponding pairs of elements of `first.logical.vector` and `second.logical.vector`:
+```{r}
+first.logical.vector & second.logical.vector
+```
+
+Make sure you understand how these values are determined.
+
+
+
+So that's how to operate on logical data.
+
+Now let's see how to generate logical vectors from other vectors.
+
+
+
+
+## Exercise 1.1: Logical operations
+
+Perform a vectorized operation on the two logical vectors `first.logical.vector` and `second.logical.vector` by using the logical `or` operator denoted by `|`.
+
+Can you predict what the resulting vector will be before you run the code?
+
+**Solution**
+
+
+
+
+
+
+
+
+
+
+# Section 3: Constructing Logical Vectors
+
+> **Main Idea:** *We can construct logical vectors**
+
+In this section, we'll learn how to generate logical vectors from other types of vectors, in particular numeric vectors.
+
+
+
+We can construct logical vectors from other vectors by using comparison operations.
+
+This is a very powerful technique that we will exploit throughout the course.
+
+Let's define a new vector `numeric.vector`:
+```{r}
+numeric.vector <- c(4, 2, -3, 7, 1)
+```
+
+
+Now consider this code:
+```{r eval = FALSE}
+numeric.vector < 0
+```
+What does this code do?
+
+Try to predict the output before you execute the code.
+
+Let's think this through.
+
+First, R will perform a vectorized operation, in which the comparison is performed element-wise:
+
+* The first element of `numeric.vector` has the value 4, and this is strictly greater than 0, so the comparison evaluates to `FALSE`.
+
+* The second element of `numeric.vector` has the value 2, and this is strictly greater than 0, so the comparison evaluates to `FALSE`.
+
+* The third element of `numeric.vector` has the value -3, and this is strictly less than 0, so the comparison evaluates to `TRUE`.
+
+* The fourth element of `numeric.vector` has the value 7, and this is strictly greater than 0, so the comparison evaluates to `FALSE`.
+
+* The fifth element of `numeric.vector` has the value 1, and this is strictly greater than 0, so the comparison evaluates to `FALSE`.
+
+OK, now let's see what the code actually does:
+```{r}
+numeric.vector < 0
+```
+Just what we predicted!
+
+
+We can use this technique with any numerical comparison.
+
+
+For instance, we can test each element to see if it is greater than or equal to 2:
+```{r}
+numeric.vector >= 2
+```
+
+
+when you want to compare 2 R objects for equality, you have to use a *double* equal sign, **not** a single equal sign.
+
+That is, when you compare 2 R objects for equality, you have to use the characters "==", **not** a single equals sign "=".
+
+Let's see how this works.
+
+We'll initialize a variable *x*, and then test it for equality with the number 6:
+```{r}
+x <- 6
+
+x == 6
+```
+
+
+
+Do you see that I used the double equals sign "==", not the single equals sign "="?
+
+R then performed a test for equality between the value of the variable *x* and the number 6, and since the variable *x* does indeed have the value 6 the result is the logical value `TRUE`. 
+
+Let's try this again:
+```{r}
+x == 8
+```
+
+This time, the result is `FALSE`, because the variable *x* does not have the value 8.
+
+The important point to remember is that in both cases we used the double equals sign "==".
+
+Why can't we use a single equals sign?
+
+R interprets a single equals sign as though it's an assignment operator.
+
+So we can initialize a variable like this:
+```{r}
+y = 2
+```
+
+Now let's look at this variable:
+```{r}
+y
+```
+
+So a single equals sign "=" is equivalent to the assignment operator "<-".
+
+Notice what happens if we try to use a single equals sign to test two R objects for equality:
+```{r}
+y = 4
+```
+
+Hmmm . . . it appears that *nothing* happened.
+
+But actually, something did happen: we destructively modified the value of *y*:
+```{r}
+y
+```
+
+So *y* is now equal to 4.
+
+Thus, the single equals sign "=" worked like the assignment operator "<-".
+
+For an extreme example of this, consider testing two numerical constants for equality:
+```{r}
+6 == 6
+```
+
+Here's another example:
+```{r}
+6 == 7
+```
+
+So this works properly.
+
+But now look what happens if we try to compare two numbers using a single equals sign:
+```{r error = TRUE}
+6 = 6
+```
+
+We get an error!
+
+That's because a single equals sign operates as an assignment operator, and we have to have a variable on the left-hand side of an assignment.
+
+But 6 isn't a variable -- it's a numeric constant, and it doesn't make sense to try to assign a value to a number.
+
+The important thing to remember is that you have to use a double equals sign to test for equality.
+
+To test for inequality, use the `!=` operator:
+```{r}
+6 != 7
+```
+
+
+
+We can even test for equality with character vectors.
+
+```{r}
+test.character.vector <-
+    c( "To", "be", "or", "not", "to", "be" )
+```
+
+
+Now we can test each element for equality with the character string "be":
+```{r}
+test.character.vector == "be"
+```
+
+
+
+So that's how to construct logical vectors out of other vectors.
+
+Now let's meet three important logical functions.
+
+
+
+
+## Exercise 1.2: Constructing a logical vector
+
+Let's create a numeric vector:
+```{r}
+second.numeric.vector <-
+    c( 6, 3, 1, 9, -2, 0, -7, 5, 8, -1)
+```
+
+Construct a logical vector which has the value `TRUE` in the locations where the corresponding element of `second.numeric.vector` is negative.
+
+**Solution**
+
+
+
+
+
+
+# Section 4: Logical Functions
+
+> **Main Idea:** *We'll meet three logical functions**
+
+In this section, we'll meet three important logical functions.
+
+
+
+There are three functions that operate on logical vectors alone.
+
+* The `any()` function.
+
+* The `all()` function.
+
+* The `which()` function
+
+Let's start by creating two logical test vectors:
+```{r}
+first.logical.vector <-
+    c(TRUE, TRUE, FALSE, TRUE, FALSE)
+
+second.logical.vector <-
+    c(TRUE, FALSE, TRUE, TRUE, FALSE)
+```
+
+
+
+## `any()`
+
+The `any()` function takes a logical vector and returns the value `TRUE` if at least one of the elements of the vector is `TRUE`, and `FALSE` otherwise.
+```{r}
+any( first.logical.vector )
+```
+
+
+
+## `all()`
+
+The second function for logical vectors is `all()`, and this acts in a way very similar to `any()`: it takes a logical vector and returns the value `TRUE` if every element of the vector is `TRUE`, and `FALSE` otherwise.
+```{r}
+all( second.logical.vector )
+```
+
+You should be clear about the similarities and differences between the `any()` and `all()` functions:
+
+* Both functions take a logical vector as their input argument and both functions return a logical value as the output.
+
+* The function `any()` returns the value `TRUE` if at least one element of the input vector is `TRUE`. In other words, the function `any()` returns `TRUE` if and only if ANY of the elements in the input vector are `TRUE`.
+
+* The function `all()` returns the value `TRUE` if every element of the input vector is `TRUE`. In other words, the function `all()` returns `TRUE` if and only if ALL of the elements in the input vector are `TRUE`.
+
+
+
+## `which()`
+
+The third function for logical vectors is `which()`, and this will be very useful for us.
+
+This function takes a logical vector and returns a numeric vector consisting of the indices of the elements of the input vector that are `TRUE`.
+
+Let's see how this works:
+```{r}
+which( first.logical.vector )
+```
+
+Do you see how the `which()` function produced this result?
+
+There are three elements in `first.logical.vector` that have the value `TRUE`, and they are located in positions 1, 2, and 4.
+
+Thus, the `which()` function returns a vector consisting of these values.
+
+
+
+So those are three important logical functions.
+
+Now let's explore some technical issues when comparing two numeric values for equality.
+
+
+
+
+## Exercise 1.3: Logical functions
+
+Here's `second.logical.vector`:
+```{r}
+second.logical.vector
+```
+
+What is the result of calling the `all()` function with this vector?
+
+What is the result of calling the `any()` function with this vector?
+
+What is the result of calling the `which()` function with this vector?
+
+Try to figure these out yourself before trying it in R.
+
+**Solution**
+
+
+
+
+# Section 5: Testing floating-point numbers for equality
+
+> **Main Idea:** *We have to be careful when comparing floating point numbers for equality*.
+
+In this section, we'll discuss some technical issues that arise when comparing floating point numbers.
+
+
+
+We can encounter problems if we try to test floating-point numbers for exact equality.
+
+Recall that a "floating point" number is just something with a decimal point.
+
+Let's calculate the square root of 5, and display it directly:
+```{r}
+square.root.of.5 <- sqrt( 5 )
+
+square.root.of.5
+```
+
+Let's check this by squaring this variable:
+```{r}
+square.root.of.5^2
+```
+
+Everything seems reasonable -- we calculated the square root of 5, and then just to be sure we squared this value and found that it was equal to 5.
+
+But now look at what happens when we test for equality:
+```{r}
+square.root.of.5^2 == 5
+```
+WHAT?!?!??!?
+
+How can this be `FALSE`?
+
+The answer is that the square root of 5 does not have a finite decimal expansion -- in reality, the square root of 5 requires an infinite number of decimals.
+
+However, our computer system can only store a finite number of decimals.
+
+When we calculate the square root of 5, the series is *truncated*, which means that it's cut off at a certain point.
+
+The value that we think is the square root of 5 isn't *exactly* the same as the square root of 5, but rather is just the closest approximation that our computer can represent.
+
+Thus, when we square this value, it's not *exactly* equal to 5, but just very close.
+
+We can see this by taking the difference of our squared value with 5:
+```{r}
+square.root.of.5^2 - 5
+```
+
+This notation indicates that the difference between the squared value and 5 is 8.9 times 10 raised to the negative sixteenth power.
+
+If we wrote this out in conventional floating point notation, we would have a zero and a decimal point followed by 15 zeroes before we see the leading digit of 8.
+```{r}
+formatC(
+  square.root.of.5^2 - 5,
+  format = "f",
+  digits = 18
+)
+```
+
+
+So the difference is very small, so small that in practice it's essentially negligible.
+
+But the difference is not 0, hence the two numbers are not identical, and that's why the test for equality returns `FALSE`.
+
+In general, we have to be very cautious about testing two floating point numbers for equality, especially if we perform an operation such as taking a square root.
+
+
+
+If we do want to test two floating point numbers for equality, then we can use the `all.equal()` function, which takes two numbers and returns `TRUE` if they are sufficiently close:
+```{r}
+all.equal( square.root.of.5^2, 5)
+```
+
+What precisely does "sufficiently close" mean?
+
+In practice, `all.equal()` will return `TRUE` if the two numbers are within about
+$1.5 \times 10^{-8}$ of each other, and you can adjust this tolerance level.
+
+However, there's a catch -- if the two numbers are sufficiently close, `all.equal()` will return the logical value `TRUE`, but if they are not sufficiently close the function will return a string declaring the difference:
+```{r}
+all.equal( 4.9, 5.0 )
+```
+This is a very unusual function, because it returns objects of different classes.
+
+In other words, if the two numbers are sufficiently close, then `all.equal()` will return the logical value `TRUE`, but if they are not sufficiently close then it will return a character string.
+
+What we would really like is to have some way to test two floating point numbers, and have R return `TRUE` if the numbers are sufficiently close and `FALSE` if they are not.
+
+To do this, we can use the function `isTRUE()`, which takes a single input argument and returns the value `TRUE` if the input argument is the logical value `TRUE` and returns the value `FALSE` otherwise.
+
+If two numbers are sufficiently close, then `all.equal()` will return `TRUE`, and since this is the logical value `TRUE` then `isTRUE()` will return `TRUE`:
+```{r}
+isTRUE( all.equal( square.root.of.5^2, 5 ) )
+```
+
+On the other hand, if the two values are not sufficiently close, then `all.equal()` will return a character string value, and since this is not the logical value `TRUE` then `isTRUE()` will return `FALSE`:
+```{r}
+isTRUE( all.equal( 4.9, 5.0 ) )
+```
+
+And this is exactly what we want!
+
+In practice, you should think twice before comparing two floating point numbers for exact equality.
+
+
+
+So that's how we compare two floating point numbers for equality.
+
+Now let's review what we've learned in this module.
+
+
+
+
+
+
+# Module Review
+
+In this module, we studied logical values.
+
+* In section 1, we defined the concept of a logical value.
+
+* In section 2, we defined three important logical operators, and saw how to use them in a vectorized approach.
+
+* In section 3, we learned how to generate logical vectors from other types of vectors, in particular numeric vectors.
+
+* In section 4, we met three important logical functions.
+
+* In section 5, we discussed some technical issues that arise when comparing floating point numbers.
+
+
+Now that you've completed this module, you should be able to:
+
+* Explain the concept of logical data.
+
+* Perform logical operations on logical values and vectors.
+
+* Construct logical vectors from other types of vectors, especially numeric vectors.
+
+* Explain how the logical functions `all()`, `any()`, and `which()` operate.
+
+* Explain how to compare floating point numbers for equality.
+
+
+We met 5 new built-in R functions:
+
+* `all()`
+
+* `any()`
+
+* `which()`
+
+* `allequal()`
+
+* `isTRUE()`
+
+
+
+All right! That's it for Module 1: Logical Values.
+
+Now let's move on to Module 2: Sample Counts and Proportions.
+
+
+
+
+
+
+# Solutions to the Exercises
+
+## Exercise 1.1: Logical operations
+
+Perform a vectorized operation on the two logical vectors `first.logical.vector` and `second.logical.vector` by using the logical `or` operator denoted by `|`.
+
+Can you predict what the resulting vector will be before you run the code?
+
+**Solution**
+
+```{r}
+first.logical.vector | second.logical.vector
+```
+
+
+
+## Exercise 1.2: Constructing a logical vector
+
+Let's create a numeric vector:
+```{r}
+second.numeric.vector <-
+    c( 6, 3, 1, 9, -2, 0, -7, 5, 8, -1)
+```
+
+Construct a logical vector which has the value `TRUE` in the locations where the corresponding element of `second.numeric.vector` is negative.
+
+**Solution**
+
+```{r}
+second.numeric.vector < 0
+```
+
+
+
+## Exercise 1.3: Logical functions
+
+Here's `second.logical.vector`:
+```{r}
+second.logical.vector
+```
+
+What is the result of calling the `all()` function with this vector?
+
+What is the result of calling the `any()` function with this vector?
+
+What is the result of calling the `which()` function with this vector?
+
+Try to figure these out yourself before trying it in R:
+
+**Solution**
+
+Since at least one value in `second.logical.vector` is `FALSE`, the `all()` function returns `FALSE`:
+```{r}
+all( second.logical.vector )
+```
+
+
+Since at least one value in `second.logical.vector` is `TRUE`, the `all()` function returns `TRUE`:
+
+```{r}
+any( second.logical.vector )
+```
+
+Since `second.logical.vector` has the value `TRUE` in locations 1, 3, and 4, the `which()` function returns the values 1, 3, and 4:
+```{r}
+which( second.logical.vector)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

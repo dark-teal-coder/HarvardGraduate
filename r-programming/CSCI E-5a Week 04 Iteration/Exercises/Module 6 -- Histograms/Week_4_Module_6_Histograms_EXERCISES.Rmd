@@ -1,0 +1,72 @@
+---
+title: 'CSCI 5a Lecture 4 Module 3: Histograms'
+subtitle: Exercises
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+---
+
+
+```{r}
+load( "Module 3 R Objects.Rdata")
+```
+
+
+
+
+# Exercises
+
+## Exercise 3.1: Basic Histogram
+
+Create a basic histogram for the values in `exercise.4.1.data`.
+
+**Solution**
+
+
+
+
+## Exercise 3.2: Basic Histogram
+
+Construct a histogram for the numeric vector `exercise.4.1.data`. Include a main title and titles for the $x$-axis and $y$-axis, select a color for the bars, and explicitly specify the number of breaks.
+
+**Solution**
+
+
+
+
+# Solutions to the Exercises
+
+## Exercise 3.1: Basic Histogram
+
+Create a basic histogram for the values in `exercise.3.1.data`.
+
+**Solution**
+
+```{r}
+hist( exercise.3.1.data )
+```
+
+
+
+
+
+
+## Exercise 3.2: Basic Histogram
+
+Construct a histogram for the numeric vector `exercise.3.1.data`. Include a main title and titles for the $x$-axis and $y$-axis, select a color for the bars, and explicitly specify the number of breaks.
+
+**Solution**
+
+```{r}
+hist(
+    exercise.3.1.data,
+    main = "Histogram of exercise.4.1.data",
+    xlab = "x",
+    ylab = "Frequency",
+    col = "plum2",
+    breaks = 50
+)
+```
+
+

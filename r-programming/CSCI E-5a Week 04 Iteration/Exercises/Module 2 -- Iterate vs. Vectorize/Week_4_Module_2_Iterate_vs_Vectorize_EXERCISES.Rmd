@@ -1,0 +1,271 @@
+---
+title: 'Lecture 4 Module 2: Iterate vs. Vectorize'
+subtitle: Code Examples
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+
+# Section 1: Iteration vs. Vectorization
+
+
+## Example 1: Counting the elements in animal.vector
+
+For instance, let's go back to the code we used to count the number of elements in `animal.vector`:
+```{r}
+animal.vector <-
+    c( "mouse", "dog", "bison" )
+
+counter <- 0
+
+for( current.animal in animal.vector ) {
+    
+    counter <- counter + 1
+    
+}
+
+counter
+```
+
+
+## Example 2: Using the built-in R function length() to count the elements
+
+Of course, we could have just used the built-in R function `length()`:
+```{r}
+length( animal.vector )
+```
+
+
+## Example 3: Calculating the total sum of the values in a numeric vector
+
+Likewise, let's consider the code for calculating the total sum of the values in a numeric vector:
+```{r}
+numeric.vector <- 1:5
+
+total <- 0
+
+for( current.number in numeric.vector ) {
+    
+    total <- total + current.number
+}
+
+total
+```
+
+
+## Example 4: Calculating the sum of the values using the built-in R function
+
+We could have just used the `sum()` function:
+```{r}
+sum( numeric.vector )
+```
+
+
+
+# Section 2: The Three Principles
+
+## Example 5: Creating two example vectors
+
+Let's create two vectors to represent these variables:
+```{r}
+x.vector <-
+    c( 3, 1, 5 )
+
+y.vector <-
+    c( 7, 9, 2 )
+```
+
+
+## Example 6: Calculating the dot product using iteration
+
+Here's the code:
+```{r}
+running.total <- 0
+
+index.vector <- 1:length( x.vector )
+
+for( index in index.vector ) {
+    
+    running.total <-
+        running.total +
+        (x.vector[ index ] * y.vector[ index ])
+}
+
+running.total
+```
+
+
+## Example 7: Calculating the dot product using vectorized operations
+
+Now let's calculate the dot product using vectorized operations and the built-in R function `sum()`:
+```{r}
+sum( x.vector * y.vector )
+```
+
+
+## Example 8: Printing out a simple report
+
+Let's consider our very first `for` loop, where we simply printed out the elements of the `animal.vector`:
+```{r}
+animal.vector <- c( "mouse", "dog", "bison" )
+
+for( current.animal in animal.vector ) {
+    
+    cat( "Current animal:", current.animal, "\n" )
+    
+}
+```
+
+
+## Example 9: Vectorized mapping of a function over a vector
+
+You might think back to this code:
+```{r}
+exp( 1:5 )
+```
+
+
+## Example 10: Trying to vectorize a cat() statement
+
+Let's try this, but before you run the code try to figure out what it's going to do:
+```{r}
+cat( "Current animal:", animal.vector, "\n" )
+```
+
+
+
+# Section 3: Avoid Optimizing
+
+
+
+## Example 11: Using a random number generate to populate vectors
+
+I'm going to use a random number generator to populate these vectors:
+```{r}
+random.vector.1 <-
+    rnorm( 100000 )
+
+random.vector.2 <-
+    rnorm( 100000 )
+```
+
+
+## Example 12: Calculating the dot product using vectorized operations
+
+First let's calculate the dot product of these two vectors using a vectorized approach:
+```{r}
+sum( random.vector.1 * random.vector.2 )
+```
+
+
+## Example 13: Calculating the dot product using iteration
+
+Next, let's calculate the dot product using an iterative approach with a `for` loop:
+```{r}
+total <- 0
+
+index.vector <- 1:length( random.vector.1 )
+
+for( index in index.vector ) {
+    
+    total <-
+        total +
+        (random.vector.1[ index ] * 
+             random.vector.2[ index ])
+}
+
+total
+```
+
+
+
+# Section 4: Final Grades
+
+Here's an example where iteration is very appealing, even though you don't have to use it.
+
+
+## Example 14: Creating preliminary score vectors
+
+Let's make some vectors to represent these scores:
+```{r}
+score.1.vector <-
+    c( 85, 92, 95, 82, 91 )
+
+score.2.vector <-
+    c( 88, 91, 92, 86, 89 )
+```
+
+
+## Example 15: Using the max() function
+
+Now there is a built-in R function called `max()`, and this takes a set of numbers and returns the maximum value.
+```{r}
+max( 4, 7 )
+```
+
+
+## Example 16: Using the max() function with two vectors
+
+Here's the code, but before we run it, try to think what's going to happen:
+```{r}
+max( score.1.vector, score.2.vector )
+```
+
+
+## Example 17: Creating a new storage vector
+
+Here's how we create a numeric vector with storage for 5 elements:
+```{r}
+graduate.course.score.vector <-
+    numeric( 5 )
+```
+
+
+## Example 18: Using iteration to calculate graduate course scores
+
+Now let's construct a `for` loop:
+```{r}
+for( index in 1:length( score.1.vector ) ) {
+    
+    graduate.course.score.vector[ index ] <-
+        max(
+            score.1.vector[ index ],
+            score.2.vector[ index ]
+        )
+}
+```
+
+
+
+## Example 19: Directly displaying the graduate course scores
+
+Now let's directly display the `graduate.course.score.vector`:
+```{r}
+graduate.course.score.vector
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

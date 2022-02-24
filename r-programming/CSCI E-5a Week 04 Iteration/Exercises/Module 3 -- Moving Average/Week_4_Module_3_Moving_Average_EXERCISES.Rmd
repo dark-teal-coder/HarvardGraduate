@@ -1,0 +1,254 @@
+---
+title: 'CSCI 5a Lecture 4 Module 4: Loan Amortization'
+subtitle: "Exercises"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+
+
+# Exercises
+
+## Exercise 4.1: Annual Payment Amount
+
+Ashley takes out a loan for \$10,000 and pays it back in 3 annual installments, the first one occurring one year after the loan is issued.
+
+The annual interest rate is 4\%.
+
+Save the loan amount and the annual interest rate in variables, but call the variables something different from `loan.amount` and `annual.interest.rate`, because we're using those variables for our text example.
+
+Calculate the annual payment amount.
+
+Save this annual payment amount in a variable, but call the variable something different from `annual.payment.amount`, because we're using that for our text example.
+
+**Solution**
+
+
+
+
+## Exercise 4.2: Amortizing a loan
+
+Ashley takes out a loan for \$10,000 and pays it back in 3 annual installments, the first one occurring one year after the loan is issued.
+
+The interest rate is 4\%.
+
+Calculate the amortization schedule.
+
+**Solution**
+
+
+
+
+
+# Solutions to the Exercises
+
+## Exercise 4.1: Annual Payment Amount
+
+Ashley takes out a loan for \$10,000 and pays it back in 3 annual installments, the first one occurring one year after the loan is issued.
+
+The annual interest rate is 4\%.
+
+Save the loan amount and the annual interest rate in variable, but call the variables something different from `loan.amount` and `annual.interest.rate`, because we're using those variables for our text example.
+
+Calculate the annual payment amount.
+
+Save this annual payment amount in a variable, but call the variable something different from `annual.payment.amount`, because we're using that for our text example.
+
+**Solution**
+
+First, we can define some variables:
+```{r}
+ashley.loan.amount <- 10000
+
+ashley.number.of.payments <- 3
+
+ashley.annual.interest.rate <- 0.04
+```
+
+
+Now we can calculate the discount factor:
+```{r}
+ashley.discount.factor <- 
+    1 / (1 + ashley.annual.interest.rate)
+
+cat(
+    "Discount factor:",
+    formatC(
+        ashley.discount.factor,
+        format = "f",
+        digits = 6
+    )
+)
+```
+
+
+Now we can calculate the annual payment amount:
+```{r}
+ashley.annual.payment.amount <-
+    ashley.loan.amount * 
+    ashley.annual.interest.rate /
+    (1 - ashley.discount.factor^ashley.number.of.payments)
+
+cat(
+    "Annual payment amount:",
+    formatC(
+        ashley.annual.payment.amount,
+        format = "f",
+        big.mark = ",",
+        digits = 2
+    )
+)
+```
+
+
+
+## Exercise 4.2: Amortizing a loan
+
+Ashley takes out a loan for \$10,000 and pays it back in 3 annual installments, the first one occurring one year after the loan is issued.
+
+The interest rate is 4\%.
+
+You've already calculated the annual payment amount for Ashley in Exercise 3.1.
+
+Now construct an amortization schedule to show that this annual payment amount will indeed pay off her initial loan in 3 years.
+
+
+**Solution**
+
+At the start of the first year, Ashley has a loan for \$10,000, with an interest rate of 4.00\%.
+```{r}
+ashley.loan.balance <- 1000
+```
+
+At the end of the year, the loan balance has accrued 4\% interest.
+
+Let's update the loan balance variable:
+```{r}
+ashley.loan.balance <-
+    ashley.loan.balance + 
+    (ashley.annual.interest.rate * ashley.loan.balance)
+
+cat(
+    "Loan balance at end of year 1, before payment:",
+    formatC(
+        ashley.loan.balance,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+This represents the loan balance at the end of the year *before* Ashley makes the first annual payment.
+
+When Ashley makes the annual payment at the end of year 1, the loan balance decreases by the amount of the payment:
+```{r}
+ashley.loan.balance <-
+    ashley.loan.balance - ashley.annual.payment.amount
+
+cat(
+    "Loan balance at end of year 1, after payment:",
+    formatC(
+        ashley.loan.balance,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+The loan balance at the end of year 1 after the payment is made now becomes the loan balance at the beginning of year 2:
+```{r}
+cat(
+    "Loan balance at beginning of year 2:",
+    formatC(
+        ashley.loan.balance,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+This loan balance accrues 4\% interest over the duration of the second year.
+
+The loan balance at the end of the second year, before Ashley makes the annual payment, is:
+```{r}
+ashley.loan.balance <-
+    ashley.loan.balance +
+    (ashley.loan.balance * ashley.annual.interest.rate)
+
+cat(
+    "Loan balance at end of year 2, before payment:",
+    formatC(
+        ashley.loan.balance,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+When Ashley makes the annual payment at the end of the second year, the loan balance decreases by the amount of the payment:
+```{r}
+ashley.loan.balance <-
+    ashley.loan.balance - ashley.annual.payment.amount
+
+cat(
+    "Loan balance at end of year 2, after payment:",
+    formatC(
+        ashley.loan.balance,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+The loan balance at the end of year 2 after the payment is made now becomes the loan balance at the beginning of year 3:
+```{r}
+cat(
+    "Loan balance at beginning of year 3:",
+    formatC(
+        ashley.loan.balance,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+The loan balance at the end of the third year, before Ashley makes the annual payment, is:
+```{r}
+ashley.loan.balance <-
+    ashley.loan.balance +
+    (ashley.loan.balance * ashley.annual.interest.rate)
+
+cat(
+    "Loan balance at end of year 3, before payment:",
+    formatC(
+        ashley.loan.balance,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+
+When Ashley makes the annual payment at the end of the third year, the loan balance is 0.00 and the loan is paid off:
+```{r}
+ashley.loan.balance <-
+    ashley.loan.balance - ashley.annual.payment.amount
+
+cat(
+    "Loan balance at end of year 3, after payment:",
+    formatC(
+        ashley.loan.balance,
+        format = "f",
+        digits = 2
+    )
+)
+```
+
+
+
+
+
+
+

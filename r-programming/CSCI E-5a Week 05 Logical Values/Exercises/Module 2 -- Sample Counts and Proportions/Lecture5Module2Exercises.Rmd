@@ -1,0 +1,106 @@
+---
+title: 'Lecture 5 Module 2: Sample Counts and Proportions'
+subtitle: Exercises
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+---
+
+
+# Exercises
+
+
+## Exercise 2.1: Sample sum and proportion
+
+Here's the vector `second.logical.vector`:
+```{r}
+second.logical.vector <- 
+    c(TRUE, FALSE, TRUE, TRUE, FALSE)
+```
+
+Using the `sum()` function, determine the total number of elements of `second.logical.vector` that have the value `TRUE`.
+
+Using the `mean()` function, determine the proportion of elements of `second.logical.vector` that have the value `TRUE`.
+
+**Solution**
+
+
+
+
+## Exercise 2.2: Sample sum and proportion
+
+Consider this numeric vector:
+```{r}
+second.numeric.vector <-
+    c( -8.4, 7.3, 2.5, 0.1, -4.4, 6.3, 1.9 )
+```
+
+How many elements of this vector are greater than or equal to 4.2?
+
+What proportion of elements of this vector are strictly less than 1.8?
+
+**Solution**
+
+
+
+
+
+
+# Solutions to the Exercises
+
+
+## Exercise 2.1: Sample sum and proportion
+
+Here's the vector `second.logical.vector`:
+```{r}
+second.logical.vector <- 
+    c(TRUE, FALSE, TRUE, TRUE, FALSE)
+```
+
+Using the `sum()` function, determine the number of elements of `second.logical.vector` that have the value `TRUE`.
+
+Using the `mean()` function, determine the proportion of elements of `second.logical.vector` that have the value `TRUE`.
+
+**Solution**
+
+To count the number of elements of the vector that have the value `TRUE`, we use the `sum()` function:
+```{r}
+sum( second.logical.vector )
+```
+
+To determine the proportion of elements of the vector that have the value `TRUE`, we use the `mean()` function:
+```{r}
+mean( second.logical.vector )
+```
+
+
+
+## Exercise 2.2: Sample sum and proportion
+
+Consider this numeric vector:
+```{r}
+second.numeric.vector <-
+    c( -8.4, 7.3, 2.5, 0.1, -4.4, 6.3, 1.9 )
+```
+
+How many elements of this vector are greater than or equal to 4.2?
+
+What proportion of elements of this vector are strictly less than 1.8?
+
+**Solution**
+
+How many elements of this vector are greater than or equal to 4.2?
+```{r}
+sum( second.numeric.vector >= 4.2 )
+```
+
+
+What proportion of elements of this vector are strictly less than 1.8?
+```{r}
+mean( second.numeric.vector < 1.8 )
+```
+
+
+
+

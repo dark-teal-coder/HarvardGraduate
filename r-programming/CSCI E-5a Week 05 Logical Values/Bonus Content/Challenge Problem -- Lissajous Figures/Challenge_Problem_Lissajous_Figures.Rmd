@@ -1,0 +1,122 @@
+---
+title: "Challenge Problem: Lissajous Curves"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+
+Let's clear the global computing environment:
+```{r}
+rm( list = ls() )
+```
+
+
+# Challenge Problem: Lissajous Curves
+
+A "Lissajous curve" is another beautiful type of curve that is defined by parametric equation for *x* and *y*, just as we saw for the Lemniscate of Bernoulli.
+
+If you search for "Lissajous curve" in your favorite search engine you'll find many Internet references.
+
+The Wikipedia entry is very thorough, and writes out the parametric equations right at the beginning of the article.
+
+There are many different Lissajous curves, which depend on three parameters $\delta$, $a$, and $b$.
+
+The parameteric equation for the $x$ coordinate is:
+$$
+x(t)\ =\ \sin(at + \delta),\ \ \ \ 0 \leq t \leq 2\pi
+$$
+
+The parameteric equation for the $x$ coordinate is:
+$$
+x(t)\ =\ \sin(bt)\ \ \ \ 0 \leq t \leq 2\pi
+$$
+
+The Wikipedia article has a number of figures of Lissajous curves for various different choices of parameter values, and if you search a little you'll find diagrams of all the curves that we draw in this problem.
+
+
+
+## Part (a): Simple Lissajous curve
+
+Let's graph a Lissajous curve!
+
+We'll start with a very simple one, where $\delta = 0$, $a = 1$ and $b = 2$.
+
+That means that the parametric equation for the $x$-coordinate is:
+$$
+x( t )\ =\ \sin( t )\ \ \ \ 0 \leq t \leq 2\pi
+$$
+
+The parametric equation for the $y$-coordinate is:
+$$
+yx( t )\ =\ \sin( 2t )\ \ \ \ 0 \leq t \leq 2\pi
+$$
+
+First, create a vector of parameter values from 0 to $2\pi$ using the `seq()` function.
+
+Next, create an empty plotting region with no data, and make sure your graph is square.
+
+Then plot this simple Lissajous figure.
+
+**Solution**
+
+
+
+
+
+
+
+## Part (b): Another Lissajous curve
+
+Now let's graph another Lissajous curve.
+
+Now we'll use the parameters $\delta = \pi/2$, $a = 3$, and $b = 4$.
+
+That means that the parametric equation for the $x$-coordinate is:
+$$
+x( t )\ =\ \sin \left ( 3t + \frac{\pi}{2} \right )\ \ \ \ 0 \leq t \leq 2\pi
+$$
+
+The parametric equation for the $y$-coordinate is:
+$$
+y( t )\ =\ \sin( 4t )\ \ \ \ 0 \leq t \leq 2\pi
+$$
+
+To draw this graph:
+
+* Create an empty plot with no data, and use a square plot.
+
+* Construct a vector of parameter values from 0 to $2\pi$.
+
+* Graph the Lissajous curve using the `lines()` function.
+
+You are welcome and encouraged to copy the code that you wrote in part (a) and modify it.
+
+**Solution**
+
+
+
+
+
+
+
+
+## Part (c): One more Lissajous curve
+
+Now draw the curve with parameters $\delta = \pi/4$, $a = 5$, and $b = 4$.
+
+Construct the graphing display just like before.
+
+You're on your own for the parametric equations!
+
+**Solution**
+
+
+
+
+
+
+
+
+

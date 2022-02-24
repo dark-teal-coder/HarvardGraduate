@@ -1,0 +1,347 @@
+---
+title: 'Lecture 4 Module 5: Moving Averages'
+subtitle: Exercises
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+
+
+# Exercises
+
+## Exercise 5.1: Line chart of stock data
+
+The closing prices for Sugar Bomz stock on five consecutive trading days are:
+
+| Trading Day | Closing Price |
+|:-----------:|:-------------:|
+|      1      |     62.50     |
+|      2      |     59.50     |
+|      3      |     62.25     |
+|      4      |     63.75     |
+|      5      |     64.00     |
+
+Store these values in vectors, and then create a line chart of this stock data.
+
+It's fine to re-use the vector of trading days from lecture, but you should use a different name for the vector of stock prices such as `sbz.stock.price.data`.
+
+**Solution**
+
+
+
+
+
+## Exercise 5.2: Line chart of smoothed stock data
+
+The closing prices for Sugar Bomz stock on five consecutive trading days are:
+
+| Trading Day | Closing Price |
+|:-----------:|:-------------:|
+|      1      |     62.50     |
+|      2      |     59.50     |
+|      3      |     62.25     |
+|      4      |     63.75     |
+|      5      |     64.00     |
+
+Calculate the smoothed values for these stock prices using the moving average approach. Then copy your graph from Exercise 5.1 and superimpose the line graph for the smoothed values.
+
+**Solution**
+
+
+
+
+## Exercise 5.3: Line chart of smoothed stock data
+
+The closing prices for Sugar Bomz stock on five consecutive trading days are:
+
+| Trading Day | Closing Price |
+|:-----------:|:-------------:|
+|      1      |     62.50     |
+|      2      |     59.50     |
+|      3      |     62.25     |
+|      4      |     63.75     |
+|      5      |     64.00     |
+
+Pre-allocate storage for the smoothed values vector. Then calculate the smoothed values for these stock prices using the moving average approach and store these directly in the smoothed values vector without creating any intermediate variables. Then copy your graph from Exercise 5.1 and superimpose the line graph for the smoothed values.
+
+**Solution**
+
+
+
+
+# Solutions to the Exercises
+
+## Exercise 5.1: Line chart of stock data
+
+The closing prices for Sugar Bomz stock on five consecutive trading days are:
+
+| Trading Day | Closing Price |
+|:-----------:|:-------------:|
+|      1      |     62.50     |
+|      2      |     59.50     |
+|      3      |     62.25     |
+|      4      |     63.75     |
+|      5      |     64.00     |
+
+Store these values in vectors, and then create a line chart of this stock data.
+
+**Solution**
+
+Let's store the data in these columns in vectors:
+```{r}
+trading.day.index.vector <- 1:5
+
+sbz.stock.price.vector <-
+  c( 62.50, 59.50, 62.25, 63.75, 64.00)
+```
+
+Now we can draw the line chart of Sugar Bomz stock prices:
+```{r}
+plot(
+  x = NULL,
+  xlim = c(1, 5),
+  ylim = c(55, 65),
+  main = "Line chart of Sugar Bomz stock price data",
+  xlab = "Trading day",
+  ylab = "Stock price"
+)
+
+lines(
+  x = trading.day.index.vector,
+  y = sbz.stock.price.vector,
+  lty = "solid",
+  lwd = 2,
+  col = "darkslategray3"
+)
+
+points(
+  x = trading.day.index.vector,
+  y = sbz.stock.price.vector,
+  pch = 15,
+  cex = 1.5,
+  col = "darkslategray3"
+)
+```
+
+
+
+## Exercise 5.2: Line chart of smoothed stock data
+
+The closing prices for Sugar Bomz stock on five consecutive trading days are:
+
+| Trading Day | Closing Price |
+|:-----------:|:-------------:|
+|      1      |     62.50     |
+|      2      |     59.50     |
+|      3      |     62.25     |
+|      4      |     63.75     |
+|      5      |     64.00     |
+
+Calculate the smoothed values for these stock prices using the moving average approach. Then copy your graph from Exercise 5.1 and superimpose the line graph for the smoothed values.
+
+**Solution**
+
+```{r}
+sbz.day.1.smoothed.stock.price <-
+  sbz.stock.price.vector[ 1 ]
+
+sbz.day.2.smoothed.stock.price <-
+  (sbz.stock.price.vector[ 1 ] +
+     sbz.stock.price.vector[ 2 ] +
+     sbz.stock.price.vector[ 3 ]) /
+  3
+
+sbz.day.3.smoothed.stock.price <-
+  (sbz.stock.price.vector[ 2 ] +
+     sbz.stock.price.vector[ 3 ] +
+     sbz.stock.price.vector[ 4 ]) /
+  3
+
+sbz.day.4.smoothed.stock.price <-
+  (sbz.stock.price.vector[ 3 ] +
+     sbz.stock.price.vector[ 4 ] +
+     sbz.stock.price.vector[ 5 ]) /
+  3
+
+sbz.day.5.smoothed.stock.price <-
+  sbz.stock.price.vector[ 5 ]
+
+sbz.smoothed.stock.price.vector <-
+    c(
+        sbz.day.1.smoothed.stock.price,
+        sbz.day.2.smoothed.stock.price,
+        sbz.day.3.smoothed.stock.price,
+        sbz.day.4.smoothed.stock.price,
+        sbz.day.5.smoothed.stock.price
+    )
+```
+
+
+Now we can create the graph:
+```{r}
+plot(
+  x = NULL,
+  xlim = c(1, 5),
+  ylim = c(55, 65),
+  main = "Line chart of Sugar Bomz stock price data",
+  xlab = "Trading day",
+  ylab = "Stock price"
+)
+
+lines(
+  x = trading.day.index.vector,
+  y = sbz.stock.price.vector,
+  lty = "solid",
+  lwd = 2,
+  col = "darkslategray3"
+)
+
+points(
+  x = trading.day.index.vector,
+  y = sbz.stock.price.vector,
+  pch = 15,
+  lwd = 2,
+  col = "darkslategray3"
+)
+
+lines(
+  x = trading.day.index.vector,
+  y = sbz.smoothed.stock.price.vector,
+  lty = "solid",
+  lwd = 2,
+  col = "darkslategray4"
+)
+
+points(
+  x = trading.day.index.vector,
+  y = sbz.smoothed.stock.price.vector,
+  pch = 21,
+  cex = 2,
+  lwd = 2,
+  bg = "cyan",
+  col = "darkslategray4"
+)
+
+legend(
+  x = 3.5,
+  y = 58,
+  legend = c( "Raw stock prices", "Smoothed stock prices" ),
+  pch = c( 15, 21),
+  col = c( "darkslategray3", "darkslategray4"),
+  pt.bg = "cyan",
+  pt.lwd = 2,
+  pt.cex = 2
+)
+```
+
+
+
+## Exercise 5.3: Line chart of smoothed stock data
+
+The closing prices for Sugar Bomz stock on five consecutive trading days are:
+
+| Trading Day | Closing Price |
+|:-----------:|:-------------:|
+|      1      |     62.50     |
+|      2      |     59.50     |
+|      3      |     62.25     |
+|      4      |     63.75     |
+|      5      |     64.00     |
+
+Pre-allocate storage for the smoothed values vector. Then calculate the smoothed values for these stock prices using the moving average approach and store these directly in the smoothed values vector without creating any intermediate variables. Then copy your graph from Exercise 5.1 and superimpose the line graph for the smoothed values.
+
+**Solution**
+
+```{r}
+sbz.smoothed.stock.price.vector <-
+  numeric( 5 )
+
+sbz.smoothed.stock.price.vector[ 1 ] <-
+  sbz.stock.price.vector[ 1 ]
+
+sbz.smoothed.stock.price.vector[ 2 ] <-
+  (sbz.stock.price.vector[ 1 ] +
+     sbz.stock.price.vector[ 2 ] +
+     sbz.stock.price.vector[ 3 ] ) /
+  3
+
+sbz.smoothed.stock.price.vector[ 3 ] <-
+  (sbz.stock.price.vector[ 2 ] +
+     sbz.stock.price.vector[ 3 ] +
+     sbz.stock.price.vector[ 4 ] ) /
+  3
+
+sbz.smoothed.stock.price.vector[ 4 ] <-
+  (sbz.stock.price.vector[ 3 ] +
+     sbz.stock.price.vector[ 4 ] +
+     sbz.stock.price.vector[ 5 ] ) /
+  3
+
+
+sbz.smoothed.stock.price.vector[ 5 ] <-
+  sbz.stock.price.vector[ 5 ]
+```
+
+
+
+```{r}
+plot(
+  x = NULL,
+  xlim = c(1, 5),
+  ylim = c(55, 65),
+  main = "Line chart of Sugar Bomz stock price data",
+  xlab = "Trading day",
+  ylab = "Stock price"
+)
+
+lines(
+  x = trading.day.index.vector,
+  y = sbz.stock.price.vector,
+  lty = "solid",
+  lwd = 2,
+  col = "darkslategray3"
+)
+
+points(
+  x = trading.day.index.vector,
+  y = sbz.stock.price.vector,
+  pch = 15,
+  lwd = 2,
+  col = "darkslategray3"
+)
+
+lines(
+  x = trading.day.index.vector,
+  y = sbz.smoothed.stock.price.vector,
+  lty = "solid",
+  lwd = 2,
+  col = "darkslategray4"
+)
+
+points(
+  x = trading.day.index.vector,
+  y = sbz.smoothed.stock.price.vector,
+  pch = 21,
+  cex = 2,
+  lwd = 2,
+  bg = "cyan",
+  col = "darkslategray4"
+)
+
+legend(
+  x = 3.5,
+  y = 58,
+  legend = c( "Raw stock prices", "Smoothed stock prices" ),
+  pch = c( 15, 21),
+  col = c( "darkslategray3", "darkslategray4"),
+  pt.bg = "cyan",
+  pt.lwd = 2,
+  pt.cex = 2
+)
+```
+
+
+
+

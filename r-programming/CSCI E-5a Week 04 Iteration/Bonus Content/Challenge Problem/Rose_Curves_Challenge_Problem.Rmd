@@ -1,0 +1,175 @@
+---
+title: "Rose Curves Challenge Problem (Bonus)"
+output:
+  pdf_document: default
+  html_notebook: default
+---
+
+
+
+Let's clear the global computing environment:
+```{r}
+rm( list = ls() )
+```
+
+
+
+
+
+
+
+# Challenge Problem: Rose Curves (Bonus)
+
+This is a challenge problem, which means that it's something for you to try if you're interested. It's not required, and it's not part of Problem Set 4.
+
+
+
+In a previous challenge problem, we saw how to construct the Lemniscate of Bernoulli by using vectorized methods.
+
+The idea was to construct a vector of parameter values using the `seq()` function, and then use vectorized operations on this vector to obtain vectors of $x$- and $y$-coordinates.
+
+The curve could then be plotted using the `lines()` function.
+
+In this problem, we'll explore another such parametric curve, called a *rose* curve.
+
+
+## Part (a): Creating a plotting display
+
+Construct a completely blank plotting region, with the $x$-axis ranging from -1 to 1 and the $y$-axis also ranging from -1 to 1.
+
+Also, make the plotting display square.
+
+Finally, draw in horizontal reference lines $y = 0$ and $x = 0$; notice that these reference lines will now bisect the plotting region.
+
+For this part, just construct this plotting region; we'll use this as the foundation for our other graphs.
+
+**Solution**
+
+
+
+
+
+## Part (b): Drawing a rose curve
+
+Now we'll draw a rose curve.
+
+The parametric equation for the $x$-coordinate of a rose curve is:
+$$
+x( \theta )\ =\ \cos( k \theta ) \cdot \cos( \theta )
+$$
+
+This only works if $k$ is a rational number i.e.\ it has to be a ratio of two whole numbers.
+
+In this part, we'll graph the equation where $k = 3$.
+
+* First, use the `seq()` function to construct a sequence of 1,000 values for $\theta$ from 0 to $\pi$.
+
+* Next, compute a vector of $x$-coordinates using the formula:
+$$
+x( \theta )\ =\ \cos( 3 \theta ) \cdot \cos( \theta )
+$$
+
+* Similarly, compute a vector of $y$-coordinates using the formula:
+$$
+x( \theta )\ =\ \cos( 3 \theta ) \cdot \sin( \theta )
+$$
+
+
+Copy the code you developed in part (a), and then draw the curve using the `lines()` function
+
+**Solution**
+
+
+
+
+
+
+## Part (c): Drawing a rose curve
+
+Now we'll draw another rose curve.
+
+In this part, we'll graph the equation where $k = 4/3$.
+
+The parametric equation for the $x$-coordinate is:
+$$
+x( \theta )\ =\ \cos \left ( \frac{4}{3} \cdot \theta \right ) \cdot \cos( \theta )
+$$
+
+The parametric equation for the $y$-coordinate is:
+$$
+x( \theta )\ =\ \cos \left ( \frac{4}{3} \cdot \theta \right ) \cdot \sin( \theta )
+$$
+
+For this curve, the parameter values should range from 0 to $6\pi$.
+
+
+You're welcome and encouraged to copy your code from part (b) and modify it.
+
+If you wrote your code in part (b) well, you should be able to do this problem with very little effort.
+
+**Solution**
+
+
+
+
+
+## Part (d): Drawing a rose curve
+
+Now we'll draw another rose curve.
+
+In this part, we'll graph the equation where $k = 3/7$.
+
+The parametric equation for the $x$-coordinate is:
+$$
+x( \theta )\ =\ \cos \left ( \frac{3}{7} \cdot \theta \right ) \cdot \cos( \theta )
+$$
+
+The parametric equation for the $y$-coordinate is:
+$$
+x( \theta )\ =\ \cos \left ( \frac{3}{7} \cdot \theta \right ) \cdot \sin( \theta )
+$$
+
+For this curve, the parameter values should range from 0 to $7\pi$.
+
+
+You're welcome and encouraged to copy your code from part (b) and modify it.
+
+If you wrote your code in part (b) well, you should be able to do this problem with very little effort.
+
+**Solution**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

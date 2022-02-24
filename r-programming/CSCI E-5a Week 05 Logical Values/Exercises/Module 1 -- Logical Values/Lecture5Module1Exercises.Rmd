@@ -1,0 +1,145 @@
+---
+title: "R Notebook"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+
+# Exercises
+
+
+
+## Exercise 1.1: Logical operations
+
+Perform a vectorized operation on the two logical vectors `first.logical.vector` and `second.logical.vector` by using the logical `or` operator denoted by `|`.
+
+Can you predict what the resulting vector will be before you run the code?
+
+**Solution**
+
+
+
+
+## Exercise 1.2: Constructing a logical vector
+
+Let's create a numeric vector:
+```{r}
+second.numeric.vector <-
+    c( 6, 3, 1, 9, -2, 0, -7, 5, 8, -1)
+```
+
+Construct a logical vector which has the value `TRUE` in the locations where the corresponding element of `second.numeric.vector` is negative.
+
+**Solution**
+
+
+
+
+
+## Exercise 1.3: Logical functions
+
+Let's start by creating two logical test vectors:
+```{r}
+## Example 24: Constructing two logical test vectors
+
+first.logical.vector <-
+    c(TRUE, TRUE, FALSE, TRUE, FALSE)
+
+second.logical.vector <-
+    c(TRUE, FALSE, TRUE, TRUE, FALSE)
+```
+
+
+
+Here's `second.logical.vector`:
+```{r}
+second.logical.vector
+```
+
+What is the result of calling the `all()` function with this vector?
+
+What is the result of calling the `any()` function with this vector?
+
+What is the result of calling the `which()` function with this vector?
+
+Try to figure these out yourself before trying it in R.
+
+**Solution**
+
+
+
+
+
+
+# Solutions to the Exercises
+
+## Exercise 1.1: Logical operations
+
+Perform a vectorized operation on the two logical vectors `first.logical.vector` and `second.logical.vector` by using the logical `or` operator denoted by `|`.
+
+Can you predict what the resulting vector will be before you run the code?
+
+**Solution**
+
+```{r}
+first.logical.vector | second.logical.vector
+```
+
+
+
+## Exercise 1.2: Constructing a logical vector
+
+Let's create a numeric vector:
+```{r}
+second.numeric.vector <-
+    c( 6, 3, 1, 9, -2, 0, -7, 5, 8, -1)
+```
+
+Construct a logical vector which has the value `TRUE` in the locations where the corresponding element of `second.numeric.vector` is negative.
+
+**Solution**
+
+```{r}
+second.numeric.vector < 0
+```
+
+
+
+## Exercise 1.3: Logical functions
+
+Here's `second.logical.vector`:
+```{r}
+second.logical.vector
+```
+
+What is the result of calling the `all()` function with this vector?
+
+What is the result of calling the `any()` function with this vector?
+
+What is the result of calling the `which()` function with this vector?
+
+Try to figure these out yourself before trying it in R:
+
+**Solution**
+
+Since at least one value in `second.logical.vector` is `FALSE`, the `all()` function returns `FALSE`:
+```{r}
+all( second.logical.vector )
+```
+
+
+Since at least one value in `second.logical.vector` is `TRUE`, the `all()` function returns `TRUE`:
+
+```{r}
+any( second.logical.vector )
+```
+
+Since `second.logical.vector` has the value `TRUE` in locations 1, 3, and 4, the `which()` function returns the values 1, 3, and 4:
+```{r}
+which( second.logical.vector)
+```
+
+
+
