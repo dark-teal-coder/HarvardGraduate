@@ -25,7 +25,7 @@ Use `python file_name.py` to run the script in a command-line interface (CLI). O
 1. [DarkTealCoder](https://github.com/dark-teal-coder)
 
 ## References 
-### Lecture Materials 
+### Lecture Materials:
 1. CSCI E-7 Introduction to Python lecture materials by Jeff Parker from Harvard University 
 ### Data: 
 2. Canada's National Occupation Code (NOC): https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/eligibility/find-national-occupation-code.html#noc
