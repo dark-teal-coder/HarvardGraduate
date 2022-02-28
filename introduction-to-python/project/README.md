@@ -9,7 +9,7 @@
 Job Bank WebScraper and Data Analyzer
 
 # Description 
-The project uses Pythonto scrape wage data from Job Bank, to performsimple data analysisand to generate Excel and PDF reports.The data are drawn from the Canadian national job board, which has a huge number of job postings classified by the Canadian National Occupation Classification(NOC)and other related data.
+The project uses Python to scrape wage data from [Job Bank](https://www.jobbank.gc.ca/home), to performs imple data analysis and to generate Excel and PDF reports.The data are drawn from the Canadian national job board, which has a huge number of job postings classified by the Canadian National Occupation Classification(NOC) and other related data.
 
 # Installation 
 Make sure you have [Python 3](https://www.python.org/downloads/) installed on your machine. [Git-clone the project repository from Github](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) to the local machine. Use the command `pip install package_name` or `conda install package_name` to install the necessary Python libraries. Check the top part of the `.py` script file for the list of libraries required. For example, you may need `requests` and `beautifulsoup4` libraries if you see the following lines in the top part of the script file: 
@@ -25,7 +25,7 @@ Use `python file_name.py` to run the script in a command-line interface (CLI). O
 1. [DarkTealCoder](https://github.com/dark-teal-coder)
 
 ## References 
-### Lecture Materials 
+### Lecture Materials:
 1. CSCI E-7 Introduction to Python lecture materials by Jeff Parker from Harvard University 
 ### Data: 
 2. Canada's National Occupation Code (NOC): https://www.canada.ca/en/immigration-refugees-citizenship/services/immigrate-canada/express-entry/eligibility/find-national-occupation-code.html#noc
