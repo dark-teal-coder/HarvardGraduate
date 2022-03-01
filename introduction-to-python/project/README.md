@@ -9,7 +9,7 @@
 Job Bank WebScraper and Data Analyzer
 
 # Description 
-The project uses Python to scrape wage data from [Job Bank](https://www.jobbank.gc.ca/home), to perform simple data analysis and to generate Excel and PDF reports.The data are drawn from the Canadian national job board, which has a huge number of job postings classified by the Canadian National Occupation Classification (NOC) and other related data.
+The project uses Python to scrape wage data from [Job Bank](https://www.jobbank.gc.ca/home), to perform simple data analysis and to generate Excel and PDF reports. The data are drawn from the Canadian national job board, which has a huge number of job postings classified by the Canadian National Occupation Classification (NOC) and other related data.
 
 # Installation 
 
