@@ -50,4 +50,4 @@ If `pip` fails to locate the relevant packages, you may find it at [Python Packa
 6. Python if \__name__ == \__main__ Explained with Code Examples: https://www.freecodecamp.org/news/if-name-main-python-example/
 7. Convert Text and Text File to PDF using Python: https://www.geeksforgeeks.org/convert-text-and-text-file-to-pdf-using-python/
 ### Solutions: 
-8. Ref.: https://stackoverflow.com/questions/3430372/how-do-i-get-the-full-path-of-the-current-files-directory
+8. StackOverflow: https://stackoverflow.com/questions/3430372/how-do-i-get-the-full-path-of-the-current-files-directory
