@@ -12,12 +12,12 @@ Job Bank WebScraper and Data Analyzer
 The project uses Python to scrape wage data from [Job Bank](https://www.jobbank.gc.ca/home), to performs imple data analysis and to generate Excel and PDF reports.The data are drawn from the Canadian national job board, which has a huge number of job postings classified by the Canadian National Occupation Classification(NOC) and other related data.
 
 # Installation 
-Make sure you have [Python 3](https://www.python.org/downloads/) installed on your machine. [Git-clone the project repository from Github](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) to the local machine. Use the command `pip install package_name` or `conda install package_name` to install the necessary Python libraries. Check the top part of the `.py` script file for the list of libraries required. For example, you may need `requests` and `beautifulsoup4` libraries if you see the following lines in the top part of the script file: 
+Make sure you have [Python 3](https://www.python.org/downloads/) installed on your machine. [Git-clone the project repository from Github](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) to the local machine. If you installed Python from [python.org](https://www.python.org/), you should already have `pip`. If it is not installed, you can use the command `py -m ensurepip --default-pip` to bootstrap it from the standard library. You can find out more about the `pip` tool [here](https://pip.pypa.io/en/stable/getting-started/). Use the command `py -m pip install package_name` to install the necessary Python libraries. Check out [pip documentation](https://pip.pypa.io/en/stable/cli/pip_install/) to learn more about `pip install`. Check the top part of the `.py` script file for the list of libraries required. For example, you may need `requests` and `beautifulsoup4` libraries if you see the following lines in the top part of the script file: 
 ```
 import requests
 from bs4 import BeautifulSoup
 ```
-Use `python file_name.py` to run the script in a command-line interface (CLI). Or, download an integrated development environment (IDE), such as [Visual Studio Code](https://code.visualstudio.com/download), to run the script. There will be a "Run" button in the top right corner of the opened script file. 
+If you cannot find the relevant packages, you can also find it at [Python Package Index (PyPI)](https://pypi.org/). Use `python file_name.py` to run the script in a command-line interface (CLI). Or, download an integrated development environment (IDE), such as [Visual Studio Code](https://code.visualstudio.com/download), to run the script. There will be a "Run" button in the top right corner of the opened script file. 
 
 # Credits 
 
