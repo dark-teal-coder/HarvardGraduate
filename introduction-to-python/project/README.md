@@ -30,7 +30,7 @@ Check if you have Python installed using the command `python --version`, or simp
 import requests
 from bs4 import BeautifulSoup
 ```
-If you cannot find the relevant packages, you can also find it at [Python Package Index (PyPI)](https://pypi.org/). Use `python file_name.py` to run the script in a CLI. Or, use an IDE, such as VS Code, to run the script. There will usually be a "Run" button in the top right corner of the opened script file. 
+If you cannot find the relevant packages, you can also find it at [Python Package Index (PyPI)](https://pypi.org/). Use `python file_name.py` to run the script in a CLI. Or, use an IDE, such as VS Code, to run the script. There will usually be a [Run] button in the top right corner of the opened script file. 
 
 # Credits 
 
