@@ -35,7 +35,7 @@ If `pip` fails to locate the relevant packages, you may find it at [Python Packa
 # Credits 
 
 ## Contributors 
-1. [DarkTealCoder](https://github.com/dark-teal-coder)
+1. [@dark-teal-coder](github.com/dark-teal-coder)
 
 ## References 
 ### Lecture Materials:
