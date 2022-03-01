@@ -1,9 +1,9 @@
 <!-- This is a README file for a project. -->
 
 # Metadata
-- <ins>Project Owner</ins>: github.com/dark-teal-coder
+- <ins>Project Owner</ins>: [DarkTealCoder](github.com/dark-teal-coder)
 - <ins>First Published Date</ins>: 2022-02-21
-- <ins>Last Modified Date</ins>: 2022-02-21
+- <ins>Last Modified Date</ins>: 2022-03-01
 
 # Title 
 Job Bank WebScraper and Data Analyzer
