@@ -12,8 +12,8 @@
   - [x] Intermediate
   - [ ] Advanced
 - <ins>Scale</ins>: 
-  - [x] Small
-  - [ ] Medium
+  - [ ] Small
+  - [x] Medium
   - [ ] Big
 
 # Description 
