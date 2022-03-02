@@ -6,7 +6,7 @@
 - <ins>Last Modified Date</ins>: 2022-03-01
 
 # Project 
-- <ins>Title</ins>: Job Bank WebScraper and Data Analyzer
+- <ins>Title</ins>: Job Bank Web Scraper and Data Analyzer
 - <ins>Difficulty</ins>:
   - [ ] Beginner
   - [x] Intermediate
