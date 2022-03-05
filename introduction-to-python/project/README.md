@@ -1,28 +1,49 @@
 <!-- This is a README file for a project. -->
 
 # Metadata
-- <ins>Project Owner</ins>: github.com/dark-teal-coder
+- <ins>Project Owner</ins>: [@dark-teal-coder](github.com/dark-teal-coder)
 - <ins>First Published Date</ins>: 2022-02-21
-- <ins>Last Modified Date</ins>: 2022-02-21
+- <ins>Last Modified Date</ins>: 2022-03-01
 
-# Title 
-Job Bank WebScraper and Data Analyzer
+# Project 
+- <ins>Title</ins>: Job Bank Web Scraper and Data Analyzer
+- <ins>Difficulty</ins>:
+  - [ ] Beginner
+  - [x] Intermediate
+  - [ ] Advanced
+- <ins>Scale</ins>: 
+  - [ ] Small
+  - [x] Medium
+  - [ ] Big
 
 # Description 
-The project uses Python to scrape wage data from [Job Bank](https://www.jobbank.gc.ca/home), to performs imple data analysis and to generate Excel and PDF reports.The data are drawn from the Canadian national job board, which has a huge number of job postings classified by the Canadian National Occupation Classification(NOC) and other related data.
+The project uses Python to scrape wage data from [Job Bank](https://www.jobbank.gc.ca/home), to perform simple data analysis and to generate Excel and PDF reports. The data are drawn from the Canadian national job board, which has a huge number of job postings classified by the Canadian National Occupation Classification (NOC) and other related data.
 
 # Installation 
-Make sure you have [Python 3](https://www.python.org/downloads/) installed on your machine. [Git-clone the project repository from Github](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) to the local machine. Use the command `pip install package_name` or `conda install package_name` to install the necessary Python libraries. Check the top part of the `.py` script file for the list of libraries required. For example, you may need `requests` and `beautifulsoup4` libraries if you see the following lines in the top part of the script file: 
+
+## Tools
+- Text Editor or Integrated Development Environment (IDE)
+  - You can [download the famous text editor Notepad++](https://notepad-plus-plus.org/downloads/). 
+  - Or, you can [download the popular IDE Visual Studio Code (VS Code)](https://code.visualstudio.com/download). 
+- Python 3
+  - You can [install Python 3 from python.org](https://www.python.org/downloads/). 
+- Python Package Installer/Manager `pip`
+  - If you installed Python from [python.org](https://www.python.org/), you should already have `pip`. If it is not installed, you can use the command `py -m ensurepip --default-pip` to bootstrap it from the standard library. If you are using Linux, you will have to [install the package manager separately](https://packaging.python.org/en/latest/guides/installing-using-linux-tools/). You can find out more about the `pip` tool [here](https://pip.pypa.io/en/stable/getting-started/). 
+- Command-line interface (CLI) 
+  - You can [install the open-source PowerShell on Windows, Linux and macOS](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell) if you do not have or want to use a pre-installed CLI on your local machine. 
+
+## Description
+Check if you have Python installed using the command `python --version`, or simply, `python version`, in the CLI. [Git-clone the project repository from Github](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) to the local machine. Use the command `py -m pip install package_name` to install the necessary Python libraries. Check out [pip documentation](https://pip.pypa.io/en/stable/cli/pip_install/) to learn more about `pip install`. Check the top part of the `.py` script file for the list of libraries required. For example, you may need `requests` and `beautifulsoup4` libraries if you see the following lines in the top part of the script file: 
 ```
 import requests
 from bs4 import BeautifulSoup
 ```
-Use `python file_name.py` to run the script in a command-line interface (CLI). Or, download an integrated development environment (IDE), such as [Visual Studio Code](https://code.visualstudio.com/download), to run the script. There will be a "Run" button in the top right corner of the opened script file. 
+If `pip` fails to locate the relevant packages, you may find it at [Python Package Index (PyPI)](https://pypi.org/). Use `python file_name.py` to run the script in a CLI. Or, use an IDE, such as VS Code, to run the script. There will usually be a [Run] button in the top right corner of the opened script file. 
 
 # Credits 
 
 ## Contributors 
-1. [DarkTealCoder](https://github.com/dark-teal-coder)
+1. [@dark-teal-coder](github.com/dark-teal-coder)
 
 ## References 
 ### Lecture Materials:
@@ -37,4 +58,4 @@ Use `python file_name.py` to run the script in a command-line interface (CLI). O
 6. Python if \__name__ == \__main__ Explained with Code Examples: https://www.freecodecamp.org/news/if-name-main-python-example/
 7. Convert Text and Text File to PDF using Python: https://www.geeksforgeeks.org/convert-text-and-text-file-to-pdf-using-python/
 ### Solutions: 
-8. Ref.: https://stackoverflow.com/questions/3430372/how-do-i-get-the-full-path-of-the-current-files-directory
+8. StackOverflow: https://stackoverflow.com/questions/3430372/how-do-i-get-the-full-path-of-the-current-files-directory
