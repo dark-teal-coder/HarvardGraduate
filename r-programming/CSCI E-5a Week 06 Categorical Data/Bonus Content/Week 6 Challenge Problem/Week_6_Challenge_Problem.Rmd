@@ -1,0 +1,96 @@
+---
+title: "Week 6 Challenge Problem"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+
+
+Let's clear the global computing environment:
+```{r}
+rm( list = ls() )
+```
+
+
+
+
+Now let's load in the Problem Set 6 R object file:
+```{r}
+load( "Problem Set 6 R Objects.Rdata" )
+```
+
+
+
+# Week 6 Challenge Problem: Pie Chart vs. Barplot
+
+I've mentioned that many people disapprove of pie charts. Instead, they advocate using barplots to display this information. In this problem, we'll explore this issue.
+
+Other than the graph in part (a), the answers for this problem are not really "right" or "wrong", and we'll give you credit as long as you write something reasonable. However, I think you'll get more out of the problem if you engage with it and really try to think about this issues here.
+
+
+This challenge problem is a continuation of Problem 4 from Problem Set 6, so you should solve that first before working on this.
+
+
+## Part (a): Barplot
+
+Construct a barplot of the data from problem 4.
+
+**Solution**
+
+
+
+
+
+## Part (b): Barplot analysis
+
+Using the barplot from part (a), can you easily determine Hank Aaron's batting average? Don't do any calculations in your head -- just by looking at the shapes, can you make a reasonable estimate of Hank Aaron's batting average? Explain your answer with a few sentences.
+
+**Solution**
+
+
+
+
+
+
+## Part (c): Pie chart
+
+Construct a pie chart for the data from Problem 4.
+
+**Solution**
+
+
+
+
+
+
+
+## Part (d): Pie chart analysis
+
+Using the pie chart from part (c), can you easily determine Hank Aaron's batting average? Don't do any calculations in your head -- just by looking at the shapes, can you make a reasonable estimate of Hank Aaron's batting average? Explain your answer with one or two sentences.
+
+**Solution**
+
+
+
+
+
+
+
+
+## Part (e): Comparison
+
+Comparing your answers from parts (b) and (d), do you agree with people who think we should always use barplots insted of pie charts? Explain your answer with one or two sentences.
+
+**Solution**
+
+
+
+
+
+
+
+
+
+

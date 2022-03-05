@@ -1,0 +1,229 @@
+---
+title: 'Week 6 Module 3: Tables'
+subtitle: Exercises
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+
+Let's clear the environment:
+```{r}
+rm( list = ls() )
+```
+
+Let's load the objects for this module:
+```{r}
+load( "Module 3 R Objects.Rdata")
+
+ls()
+```
+
+
+
+
+# Week 6 Module 3 Exercises
+
+
+## Exercise 1: Constructing a frequency count table
+
+The vector `one.week.cereal.brand.character.string.vector` contains data on cereal brands sold during one week.
+
+First, construct a frequency count table for the cereal brands using this character string vector, save it in a variable, and display it directly.
+
+Next, create a factor from this character string variable, and save it in a variable.
+
+Then use this factor to construct a new table of the sample frequency count frequencies for this data.
+
+**Solution**
+
+
+
+
+## Exercise 2: Constructing a sample relative proportions table
+
+Construct a sample relative proportions table for the cereal brands using the frequency count table you created in Exercise 1. Save this table in a variable, and display it directly.
+
+**Solution**
+
+
+
+
+## Exercise 3: Rounding the relative proportions table numbers
+
+Use the `round()` function so that the numbers displayed in the relative proportions table have 3 decimal places.
+
+**Solution**
+
+
+
+
+## Exercise 4: Re-ordering the levels
+
+Using character string indexing on the levels of the frequency count table that you created in Exercise 1 to create a new frequency count table displaying the brands in the order "Krispee Yummm!!", "Healthy Kale and Tofu", and "Sugar Bomz".
+
+Then create a new factor with the levels pre-specified in the order "Krispee Yummm!!", "Healthy Kale and Tofu", and "Sugar Bomz". Save this factor in a variable, and use it to create another frequency count table, again displaying the brand names in this order.
+
+Finally, sort the table in *ascending order*, so that the brand with the least sales is reported first, and the brand with the most sales is reported last.
+
+**Solution**
+
+
+
+## Exercise 5: Table and Pie Charts
+
+Construct a pie chart of the relative proportions of the cereal brands using the frequency count table you constructed in Problem 1.
+
+Then construct a pie chart of the relative proportions of the cereal brands using the frequency count table you constructed in Problem 1, displayed in descending order.
+
+**Solution**
+
+
+
+
+
+# Solutions to the Exercises
+
+
+## Exercise 1: Constructing a frequency count table
+
+The vector `one.week.cereal.brand.character.string.vector` contains data on cereal brands sold during one week.
+
+First, construct a frequency count table for the cereal brands using this character string vector, save it in a variable, and display it directly.
+
+Next, create a factor from this character string variable, and save it in a variable.
+
+Then use this factor to construct a new table of the sample frequency count frequencies for this data.
+
+**Solution**
+
+Here's the table constructed from the character string vector:
+```{r}
+one.week.cereal.brand.frequency.count.table <-
+  table(
+    one.week.cereal.brand.character.string.vector
+    )
+
+one.week.cereal.brand.frequency.count.table
+```
+
+Next we can create the factor:
+```{r}
+one.week.cereal.brand.factor <-
+  factor(
+    one.week.cereal.brand.character.string.vector
+  )
+```
+
+And finally we can construct another frequency count table:
+```{r}
+one.week.cereal.brand.frequency.count.table <-
+  table(
+    one.week.cereal.brand.factor
+  )
+
+one.week.cereal.brand.frequency.count.table
+```
+
+
+
+## Exercise 2: Constructing a sample relative proportions table
+
+Construct a sample relative proportions table for the cereal brands using the frequency count table you created in Exercise 1. Save this table in a variable, and display it directly.
+
+**Solution**
+
+```{r}
+one.week.cereal.brand.relative.proportions.table <-
+  proportions(
+    one.week.cereal.brand.frequency.count.table
+  )
+
+one.week.cereal.brand.relative.proportions.table
+```
+
+
+
+## Exercise 3: Rounding the relative proportions table numbers
+
+Use the `round()` function so that the numbers displayed in the relative proportions table have 3 decimal places.
+
+**Solution**
+
+```{r}
+round(
+  one.week.cereal.brand.relative.proportions.table,
+  digits = 3
+)
+```
+
+
+
+## Exercise 4: Re-ordering the levels
+
+Using character string indexing on the levels of the frequency count table that you created in Exercise 1 to create a new frequency count table displaying the brands in the order "Krispee Yummm!!", "Healthy Kale and Tofu", and "Sugar Bomz".
+
+Then create a new factor with the levels pre-specified in the order "Krispee Yummm!!", "Healthy Kale and Tofu", and "Sugar Bomz". Save this factor in a variable, and use it to create another frequency count table, again displaying the brand names in this order.
+
+Finally, sort the table in *ascending order*, so that the brand with the least sales is reported first, and the brand with the most sales is reported last.
+
+**Solution**
+
+```{r}
+reordered.one.week.cereal.brand.frequency.count.table <-
+  one.week.cereal.brand.frequency.count.table[
+    c(
+      "Krispee Yummm!!",
+      "Healthy Kale and Tofu",
+      "Sugar Bomz"
+    )
+  ]
+```
+
+```{r}
+reordered.one.week.cereal.brand.factor <-
+  factor(
+    one.week.cereal.brand.character.string.vector,
+    levels =
+      c(
+        "Krispee Yummm!!",
+        "Healthy Kale and Tofu",
+        "Sugar Bomz"
+      )
+  )
+
+table(
+  reordered.one.week.cereal.brand.factor
+)
+```
+
+```{r}
+ascending.order.one.week.cereal.brand.frequency.count.table <-
+  sort( one.week.cereal.brand.frequency.count.table )
+
+ascending.order.one.week.cereal.brand.frequency.count.table
+```
+
+
+## Exercise 5
+
+Construct a pie chart of the relative proportions of the cereal brands using the frequency count table you constructed in Problem 1.
+
+Then construct a pie chart of the relative proportions of the cereal brands using the frequency count table you constructed in Problem 1, displayed in decreasing order.
+
+**Solution**
+
+```{r}
+pie(
+  sort(
+    one.week.cereal.brand.frequency.count.table,
+    decreasing = TRUE
+  ),
+  main = "Pie chart of frequency counts for cereal brand sales",
+  clockwise = TRUE
+)
+```
+
+
+
