@@ -20,7 +20,9 @@ This directory is for the course **CSCI E-7 Introduction to Python** delivered d
   - 12 marked weekly quizzes on Canvas in .pdf format 
 
 # File Extension Names
-- [ ] Python Source (.py)
-- [x] Jupyter Notebook (.ipynb)
 - [x] Portable Document Format (PDF) (.pdf)
 - [x] Microsoft Word (.docx)
+- [ ] Python Source (.py)
+- [x] Jupyter Notebook (.ipynb)
+
+*Last Modified Date: 2022-03-07*
