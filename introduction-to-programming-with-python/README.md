@@ -25,4 +25,6 @@ This directory is for the course **CSCI E-7 Introduction to Python** delivered d
 - [ ] Python Source (.py)
 - [x] Jupyter Notebook (.ipynb)
 
+<br />
+
 *Last Modified Date: 2022-03-07*
