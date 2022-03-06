@@ -11,5 +11,5 @@ This repository contains all the course materials for the Graduate Certificate i
 # Course List  
 - CSCI E-7 Introduction to Python 
   - Period: Fall 2021; Aug 30, 2021 to Dec 18, 2021 
-- CSCI E-5A R Programming 
+- CSCI E-5a R Programming 
   - Period: Spring 2021; Jan 24, 2022 to May 14, 2022
