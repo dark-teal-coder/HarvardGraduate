@@ -1,11 +1,11 @@
 <!-- This is a README file for a course's directory. -->
 
 # Course Information
-- Course Code: CSCI E-7
-- Course Title: Introduction to Programming with Python
-- Duration: 3 months; 12 weeks
-- Period: Aug 30, 2021 to Dec 18, 2021
-- Medium of Instruction: English
+- <ins>Course Code</ins>: CSCI E-7
+- <ins>Course Title</ins>: Introduction to Programming with Python
+- <ins>Duration</ins>: 3 months; 12 weeks
+- <ins>Period</ins>: Aug 30, 2021 to Dec 18, 2021
+- <ins>Medium of Instruction</ins>: English
 
 # Sub-directories 
 The course repository contains the following sub-directories. Among them, "assignments", "lectures" and "weekly-quizzes" contain all the 12-week materials. 
