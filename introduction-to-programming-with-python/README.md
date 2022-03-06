@@ -4,6 +4,7 @@
 This directory is for the course **CSCI E-7 Introduction to Python** delivered during the period **Aug 30, 2021 to Dec 18, 2021**. 
 
 # Sub-directories 
+The course repository contains the following sub-directories. Among them, "assignments", "lectures" and "weekly-quizzes" contain all the 12-week materials. 
 - `assignments`
   - 12 weekly assignments in .ipynb format  
   - 12 assignment instructions on Canvas in .pdf format 
