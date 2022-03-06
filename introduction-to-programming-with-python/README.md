@@ -19,7 +19,7 @@ This directory is for the course **CSCI E-7 Introduction to Python** delivered d
 - `weekly-quizzes`
   - 12 marked weekly quizzes on Canvas in .pdf format 
 
-# File Extension Names
+# File Formats and Extensions 
 - [x] Portable Document Format (PDF) (.pdf)
 - [x] Microsoft Word (.docx)
 - [ ] Python Source (.py)
