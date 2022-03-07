@@ -1,5 +1,5 @@
 ---
-title: 'Problem Set 0 SOLUTIONS'
+title: 'Problem Set 0'
 subtitle: "CSCI E-5a: Programming in R"
 output:
   pdf_document: default
@@ -16,8 +16,6 @@ rm( list = ls() )
 
 
 
-
-
 # Problem 1: Introduce Yourself
 
 In this problem, you can tell us a little bit about your background and your tech setup.
@@ -29,8 +27,10 @@ In this problem, you can tell us a little bit about your background and your tec
 Please list your official full name that you are registered under. Then tell us what name you would like us to use when we address you.
 
 **Solution**
-
-My official full name is "Theodore Hatch Whitfield". Please address me as "Hatch".
+First Name: Preesa
+Last Name: Saewong
+Nick Name: Ree
+Preferred Name: Ree
 
 
 
@@ -40,8 +40,7 @@ Please tell us what time zone you are located in. What is the time difference fr
 
 **Solution**
 
-I'm located in Boston, which is Eastern Daylight Time (EDT), so there's no time difference for me!
-
+Time Zone: GMT+8 (13 hours ahead of Boston time)
 
 
 
@@ -54,8 +53,7 @@ However, we would like to know if you've had any prior programming experience. I
 If you don't have any prior programming experience, hey, that's cool too. So don't be afraid to tell us that either.
 
 **Solution**
-
-I've been writing code for 30 years, working in Pascal, x86 assembly language, C, Excel VBA, SAS, Stata, R, Python, and even a few lines of Perl.
+I've taken an introductory Python course in my undergraduate studies before but I didn't major Computer Science or any related discipline. I've also taken CSCI E-7 last semester. But never touched on R before. 
 
 
 
@@ -64,10 +62,7 @@ I've been writing code for 30 years, working in Pascal, x86 assembly language, C
 Why are you taking CSCI E-5a? Tell us about your motivation for enrolling, and what you hope to get out of the course.
 
 **Solution**
-
-I want to develop my skills in statistics, data science, and machine learning, and I need a comprehensive introduction to the fundamentals of probability theory.
-
-
+To earn a credential for future career development; to compare Python and R for data analysis. 
 
 
 
@@ -76,8 +71,7 @@ I want to develop my skills in statistics, data science, and machine learning, a
 What computer operating system are you using? Tell us if it's Windows, iOS, Linux, or something else, as well as the OS version.
 
 **Solution**
-
-I'm using Windows 10.
+Windows 11. 
 
 
 
@@ -86,8 +80,7 @@ I'm using Windows 10.
 How did the installation procedure go for you? Did you have any problems? Did you find the Module 3: Installing Software video helpful?
 
 **Solution**
-
-I was able to install all the required software easily without any problems. The video was great!
+Fine. I didn't watch the video but I just followed the PDF instructions. 
 
 
 
@@ -96,7 +89,6 @@ I was able to install all the required software easily without any problems. The
 End of problem 1
 
 \newpage
-
 
 
 
@@ -121,8 +113,7 @@ For exams, you must not discuss the problems with anyone else, and the final doc
 For this part, please write us a sentence declaring that you understand the negative honor code and agree not to violate it.
 
 **Solution**
-
-I understand the negative honor code, and pledge not to violate it.
+Yes, I understand and agree with the negative honor code. 
 
 
 
@@ -139,9 +130,7 @@ Instead, you promise to dig in, push yourself, and commit to excellence instead 
 For this problem, please write us a sentence declaring that you understand the positive honor code and agree not to violate it.
 
 **Solution**
-
-I understand the positive honor code, and pledge not to violate it.
-
+Yes, I understand and agree with the positive honor code. 
 
 
 
@@ -153,15 +142,11 @@ End of problem 2
 
 
 
-
 # Problem 3: Canvas Website
 
 In this problem, we'll explore the course website.
 
-
-
-First, please watch the *Module 2: Canvas Website* video.
-
+First, please watch the Module 2: Canvas Website video.
 
 ## Part (a): Current Week ZIP Bundle
 
@@ -171,24 +156,20 @@ Where is the link for the current week ZIP bundle?
 
 The link for the current week ZIP bundle is the second link from the top of the Canvas Home page, under the Current Week section.
 
-
 ## Part (b): Complete Problem Set Solutions ZIP Bundle
 
 Where is the link for the Complete Problem Set Solutions ZIP Bundle located?
 
 **Solution**
-
-The link for the Complete Problem Set Solutions ZIP Bundle is the third link from the top of the Home page, under the Current Week section.
-
-
+It's the 3rd link from the top of the Canvas Home page under the Current Week section. 
 
 ## Part (c): Submitting Assignments
 
 What is the name of the system that we use for grading assignments? Where is the link for this system located?
 
 **Solution**
-
-We use the Gradescope grading system for all assignments. The link for Gradescope is located in the left-hand course navigation menu, second from the bottom.
+Name: Gradescope
+Location: 2nd last on the course menu 
 
 
 
@@ -197,10 +178,7 @@ We use the Gradescope grading system for all assignments. The link for Gradescop
 Where can you see all your combined course grades? Where is the link located?
 
 **Solution**
-
-We use the Canvas Grades page to report combined course grades. The link for the Canvas Grades page is located at the bottom of the left-hand course navigation menu.
-
-
+Grades page at the bottom of the course navigation menu.  
 
 
 
@@ -209,9 +187,7 @@ We use the Canvas Grades page to report combined course grades. The link for the
 Where are the module videos located? Have you been able to watch them?
 
 **Solution**
-
-The module videos are located at the bottom of each individual week web page. So far, I've been able to watch all the videos.
-
+The videos are located in the last session of each week individual page. But I haven't tried to watch them. 
 
 
 
@@ -223,26 +199,17 @@ End of Problem 3
 
 
 
-
-
-
-
 # Problem 4: Formative Assessments
 
 In this problem, we'll define the concept of a formative assessment, and confirm the grading session deadlines for Problem Set 0.
 
-
-
 First, read the article "CSCI E-5a Spring 2022 Assessments" in the Course Documentation folder, and review the "CSCI E-5a Spring 2022 Grading Schedule Cheatsheet.pdf" document.
-
 
 ## Part (a): Explanation
 
 What is a formative assessment? Write your answer using a complete sentence.
 
 **Solution**
-
-A *formative assessment* is an assignment where we have the opportunity to solve challenging problems with feedback from the teaching staff in a low-stakes environment.
 
 
 
@@ -252,8 +219,6 @@ When does the gate close for the first grading session for Problem Set 0? Write 
 
 **Solution**
 
-The gate for the first grading session for Problem Set 0 closes on Monday, January 24, at 11 PM EDT.
-
 
 
 ## Part (c): Problem Set 0, Second Grading Session
@@ -262,9 +227,6 @@ When does the gate close for the second grading session for Problem Set 0? Write
 
 **Solution**
 
-The gate for the second grading session for Problem Set 0 closes on Monday, January 31, at 11 PM EDT.
-
-
 
 
 ## Part (d): Problem Set 0, Third Grading Session
@@ -272,8 +234,6 @@ The gate for the second grading session for Problem Set 0 closes on Monday, Janu
 When does the gate close for the third grading session for Problem Set 0? Write your answer using a complete sentence, and explicitly specify the day, date, and time (use EDT).
 
 **Solution**
-
-The gate for the third grading session for Problem Set 0 closes on Monday, February 7, at 11 PM EDT.
 
 
 
@@ -296,13 +256,12 @@ In this problem, we'll define the concept of a summative assessment, confirm the
 First, read the article "CSCI E-5a Spring 2022 Assessments" in the Course Documentation folder, and review the "CSCI E-5a Spring 2022 Grading Schedule Cheatsheet.pdf" document.
 
 
+
 ## Part (a): Explanation
 
 What is a summative assessment? Write your answer using a complete sentence.
 
 **Solution**
-
-A *summative assessment* is an assignment where the teaching staff rigorously and objectively evaluates the knowledge and skills that you have developed in the course.
 
 
 
@@ -312,8 +271,6 @@ When will the Midterm Assessment be released, and when is it due? Write your ans
 
 **Solution**
 
-The Midterm Assessment will be released on Monday, March 7, at 5 PM EDT. The only gate for the Midterm Assessment closes on Monday, March 14, at 11 PM EDT.
-
 
 
 ## Part (c): Comprehensive Assessment
@@ -321,8 +278,6 @@ The Midterm Assessment will be released on Monday, March 7, at 5 PM EDT. The onl
 When will the Comprehensive Assessment be released, and when is it due? Write your answer using a complete sentence, and explicitly specify the days, dates, and times (use EDT).
 
 **Solution**
-
-The Comprehensive Assessment will be released on Monday, May 2, at 5 PM EDT. The gate for the Comprehensive Assessment will close on Monday, May 9, at 11 PM EDT.
 
 
 
@@ -333,8 +288,6 @@ Your final grade in this course depends heavily on your performance on the two s
 Write a single sentence acknowledging that the course relies heavily on the two summative assessments, and that you accept this high-stakes testing approach.
 
 **Solution**
-
-I understand that CSCI E-5a relies heavily on high-stakes summative assessments for determining the final course letter grade, and I accept this approach.
 
 
 
@@ -362,16 +315,13 @@ Write the sentence "To be or not to be -- that is the question" in regular text,
 
 **Solution**
 
-To be or not to be -- that is the **question**.
+
 
 ## Part (b): Italics
 
 Write the sentence "To be or not to be -- that is the question" in regular text, and then use R markdown to put the word "question" in italics.
 
 **Solution**
-
-To be or not to be -- that is the *question*.
-
 
 
 
@@ -381,8 +331,6 @@ Write the sentence "To be or not to be -- that is the question" in regular text,
 
 **Solution**
 
-To be or not to be, that is the `question`.'
-
 
 
 ## Part (d): Block quote
@@ -390,8 +338,6 @@ To be or not to be, that is the `question`.'
 Write the sentence "To be or not to be -- that is the question" displayed as a block quote.
 
 **Solution**
-
-> To be or not to be, that is the question.
 
 
 
@@ -406,8 +352,6 @@ What sort of typesetting is this, and what should you do when you encounter it?
 
 **Solution**
 
-This is an example of LaTeX typesetting. I should leave it alone when I encounter it.
-
 
 
 ## Part (f): Pandoc
@@ -415,8 +359,6 @@ This is an example of LaTeX typesetting. I should leave it alone when I encounte
 Sometimes the pandoc system can fail to knit an R notebook successfully, even though the notebook does not contain any errors. What should you do if this happens?
 
 **Solution**
-
-If pandoc is not working, try closing RStudio,reopening it, and trying to knit again.
 
 
 
@@ -447,8 +389,6 @@ What is R? Write your answer using a complete sentence.
 
 **Solution**
 
-R is a computational engine that takes symbolic expressions as input, evaluates them, and returns the output value.
-
 
 
 ## Part (b): RStudio
@@ -457,8 +397,6 @@ Explain what RStudio is, and how it relates to R. Write your answer using a comp
 
 **Solution**
 
-RStudio is a user interface for working with R.
-
 
 
 ## Part (c): Code chunks
@@ -466,8 +404,6 @@ RStudio is a user interface for working with R.
 Explain how code chunks work.
 
 **Solution**
-
-The start and end of a code chunk are indicated by three backtick marks. RStudio sends all the text contained by these delimiters directly to R for evaluation, and displays any output return values.
 
 
 
@@ -490,6 +426,7 @@ What is 5 times 7? To solve this mystery, create a code chunk and then type in t
 ```{r}
 5 * 7
 ```
+
 
 
 \newpage
