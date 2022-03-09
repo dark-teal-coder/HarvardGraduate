@@ -3,13 +3,13 @@ title: "Problem Set 00"
 author: "github.com/dark-teal-coder"
 subtitle: 'CSCI E-5a: Programming in R'
 output:
-    pdf_document: default
     html_document: 
         df_print: paged
+    pdf_document: default
     word_document: default
 ---
-Use the following code chuck to solve the problem of R code running off the edge of the page in the rendered PDF document. It has to be placed immediately after the YAML header to affect everything below that. Install `knitr` using the command `install.packages('knitr', dependencies=TRUE)` in Console if it is not installed. 
 ```{r, global_options, include=FALSE}
+# Use this code chuck to solve the problem of R code running off the edge of the page in the rendered PDF document. It has to be placed immediately after the YAML header to affect everything below that. Install `knitr` using the command `install.packages('knitr', dependencies=TRUE)` in Console if it is not installed. 
 # include=FALSE argument allows us to hide this code chuck in the final document. 
 # width.cutoff=80 defines the cutoff point and wraps text to the next line. 
 knitr::opts_chunk$set(message=FALSE, tidy.opts=list(width.cutoff=80), tidy=TRUE) 
@@ -35,12 +35,12 @@ Please list your official full name that you are registered under. Then tell us 
 **Solution**
 
 ----------------------------------------------------------------------------------------------------
-```{r}
-# First Name: Preesa 
-# Last Name: Saewong
-# Nick Name: Ree
-# Preferred Name: Ree
-```
+
+* First Name: Preesa 
+* Last Name: Saewong
+* Nick Name: Ree
+* Preferred Name: Ree
+
 ----------------------------------------------------------------------------------------------------
 
 ## Part (b): Time Zone
@@ -49,9 +49,11 @@ Please tell us what time zone you are located in. What is the time difference fr
 
 **Solution**
 
-```{r}
-# Time Zone: GMT+8 (13 hours ahead of Boston time)
-```
+----------------------------------------------------------------------------------------------------
+
+* Time Zone: GMT+8 (13 hours ahead of Boston time)
+
+----------------------------------------------------------------------------------------------------
 
 ## Part (c): Programming Experience
 
@@ -63,9 +65,11 @@ If you don't have any prior programming experience, hey, that's cool too. So don
 
 **Solution**
 
-```{r}
-# I've taken an introductory Python course in my undergraduate studies before but I didn't major Computer Science or any related discipline. I've also taken CSCI E-7 last semester. But never touched on R before.
-```
+----------------------------------------------------------------------------------------------------
+
+I've taken an introductory Python course in my undergraduate studies before but I didn't major Computer Science or any related discipline. I've also taken CSCI E-7 last semester. But never touched on R before.
+
+----------------------------------------------------------------------------------------------------
 
 ## Part (d): Motivation
 
@@ -73,9 +77,11 @@ Why are you taking CSCI E-5a? Tell us about your motivation for enrolling, and w
 
 **Solution**
 
-```{r}
-# Purposes: to earn a credential for future career development; to compare Python and R for data analysis  
-```
+----------------------------------------------------------------------------------------------------
+
+* Purposes: to earn a credential for future career development; to compare Python and R for data analysis  
+
+----------------------------------------------------------------------------------------------------
 
 ## Part (e): Operating System
 
@@ -83,9 +89,11 @@ What computer operating system are you using? Tell us if it's Windows, iOS, Linu
 
 **Solution**
 
-```{r}
-# Operating System: Windows 11 
-```
+----------------------------------------------------------------------------------------------------
+
+* Operating System: Windows 11 
+
+----------------------------------------------------------------------------------------------------
 
 ## Part (f): Installation
 
@@ -93,9 +101,11 @@ How did the installation procedure go for you? Did you have any problems? Did yo
 
 **Solution**
 
-```{r}
-# Fine! I didn't watch the video but I just followed the PDF instructions. 
-```
+----------------------------------------------------------------------------------------------------
+
+* Fine! I didn't watch the video but I just followed the PDF instructions. 
+
+----------------------------------------------------------------------------------------------------
 
 
 
@@ -127,9 +137,11 @@ For this part, please write us a sentence declaring that you understand the nega
 
 **Solution**
 
-```{r}
-# Yes, I understand and agree with the negative honor code. 
-```
+----------------------------------------------------------------------------------------------------
+
+Yes, I understand and agree with the negative honor code. 
+
+----------------------------------------------------------------------------------------------------
 
 ## Part (b): Positive honor code
 
@@ -145,9 +157,11 @@ For this problem, please write us a sentence declaring that you understand the p
 
 **Solution**
 
-```{r}
-# Yes, I understand and agree with the positive honor code. 
-```
+----------------------------------------------------------------------------------------------------
+
+Yes, I understand and agree with the positive honor code. 
+
+----------------------------------------------------------------------------------------------------
 
 
 
@@ -171,9 +185,11 @@ Where is the link for the current week ZIP bundle?
 
 **Solution**
 
-```{r}
-# The link for the current week ZIP bundle is the second link from the top of the Canvas Home page, under the Current Week section.
-```
+----------------------------------------------------------------------------------------------------
+
+The link for the current week ZIP bundle is the second link from the top of the Canvas Home page, under the Current Week section.
+
+----------------------------------------------------------------------------------------------------
 
 ## Part (b): Complete Problem Set Solutions ZIP Bundle
 
@@ -181,9 +197,11 @@ Where is the link for the Complete Problem Set Solutions ZIP Bundle located?
 
 **Solution**
 
-```{r}
-# It's the 3rd link from the top of the Canvas Home page under the Current Week section. 
-```
+----------------------------------------------------------------------------------------------------
+
+It's the 3rd link from the top of the Canvas Home page under the Current Week section. 
+
+----------------------------------------------------------------------------------------------------
 
 ## Part (c): Submitting Assignments
 
@@ -191,10 +209,12 @@ What is the name of the system that we use for grading assignments? Where is the
 
 **Solution**
 
-```{r}
-# Name: Gradescope
-# Location: 2nd last on the course menu 
-```
+----------------------------------------------------------------------------------------------------
+
+* Name: Gradescope
+* Location: 2nd last on the course menu 
+
+----------------------------------------------------------------------------------------------------
 
 ## Part (d): Reviewing Grades
 
@@ -202,9 +222,11 @@ Where can you see all your combined course grades? Where is the link located?
 
 **Solution**
 
-```{r}
-# It's located at Grades at the bottom of the course navigation menu. 
-```
+----------------------------------------------------------------------------------------------------
+
+It's located at Grades at the bottom of the course navigation menu. 
+
+----------------------------------------------------------------------------------------------------
 
 ## Part (e): Course Videos
 
@@ -212,9 +234,11 @@ Where are the module videos located? Have you been able to watch them?
 
 **Solution**
 
-```{r}
-# The videos are located in the last session of each week individual page. But I haven't tried to watch them. 
-```
+----------------------------------------------------------------------------------------------------
+
+The videos are located in the last session of each week individual page. But I haven't tried to watch them. 
+
+----------------------------------------------------------------------------------------------------
 
 
 
@@ -238,9 +262,11 @@ What is a formative assessment? Write your answer using a complete sentence.
 
 **Solution**
 
-```{r}
-# A formative assessment is an assignment where you have the opportunity to work on challenging problems with feedback from the teaching staff in a low-stakes environment. 
-```
+----------------------------------------------------------------------------------------------------
+
+A formative assessment is an assignment where you have the opportunity to work on challenging problems with feedback from the teaching staff in a low-stakes environment. 
+
+----------------------------------------------------------------------------------------------------
 
 ## Part (b): Problem Set 0, First Grading Session
 
@@ -248,9 +274,11 @@ When does the gate close for the first grading session for Problem Set 0? Write 
 
 **Solution**
 
-```{r}
-# The 1st grading session will close on Monday, Jan 24, 2022, at 23:00 Eastern Daylight Time (EDT). 
-```
+----------------------------------------------------------------------------------------------------
+
+The 1st grading session will close on Monday, Jan 24, 2022, at 23:00 Eastern Daylight Time (EDT). 
+
+----------------------------------------------------------------------------------------------------
 
 ## Part (c): Problem Set 0, Second Grading Session
 
@@ -258,9 +286,11 @@ When does the gate close for the second grading session for Problem Set 0? Write
 
 **Solution**
 
-```{r}
-# The 1st grading session will close on Monday, Jan 31, 2022, at 23:00 Eastern Daylight Time (EDT). 
-```
+----------------------------------------------------------------------------------------------------
+
+The 2nd grading session will close on Monday, Jan 31, 2022, at 23:00 Eastern Daylight Time (EDT). 
+
+----------------------------------------------------------------------------------------------------
 
 ## Part (d): Problem Set 0, Third Grading Session
 
@@ -268,9 +298,11 @@ When does the gate close for the third grading session for Problem Set 0? Write 
 
 **Solution**
 
-```{r}
-# The 1st grading session will close on Monday, Feb 07, 2022, at 23:00 Eastern Daylight Time (EDT). 
-```
+----------------------------------------------------------------------------------------------------
+
+The 3rd grading session will close on Monday, Feb 07, 2022, at 23:00 Eastern Daylight Time (EDT). 
+
+----------------------------------------------------------------------------------------------------
 
 
 
@@ -294,9 +326,11 @@ What is a summative assessment? Write your answer using a complete sentence.
 
 **Solution**
 
-```{r}
-# A summative assessment is an assignment where the teaching staff rigorously and objectively evaluates the knowledge and skills that you have developed in the course.
-```
+----------------------------------------------------------------------------------------------------
+
+A summative assessment is an assignment where the teaching staff rigorously and objectively evaluates the knowledge and skills that you have developed in the course.
+
+----------------------------------------------------------------------------------------------------
 
 ## Part (b): Midterm Assessment
 
@@ -304,9 +338,11 @@ When will the Midterm Assessment be released, and when is it due? Write your ans
 
 **Solution**
 
-```{r}
-# The Midterm Assessment will be released on Monday, Mar 07, 2022, at 17:00 Eastern Daylight Time (EDT) and is due on Monday, Mar 14, 2022, at 23:00 Eastern Daylight Time (EDT). 
-```
+----------------------------------------------------------------------------------------------------
+
+The Midterm Assessment will be released on Monday, Mar 07, 2022, at 17:00 Eastern Daylight Time (EDT) and is due on Monday, Mar 14, 2022, at 23:00 Eastern Daylight Time (EDT). 
+
+----------------------------------------------------------------------------------------------------
 
 ## Part (c): Comprehensive Assessment
 
@@ -314,9 +350,11 @@ When will the Comprehensive Assessment be released, and when is it due? Write yo
 
 **Solution**
 
-```{r}
-# The Comprehensive Assessment will be released on Monday, May 02, 2022, at 17:00 Eastern Daylight Time (EDT) and is due on Monday, May 09, 2022, at 23:00 Eastern Daylight Time (EDT). 
-```
+----------------------------------------------------------------------------------------------------
+
+The Comprehensive Assessment will be released on Monday, May 02, 2022, at 17:00 Eastern Daylight Time (EDT) and is due on Monday, May 09, 2022, at 23:00 Eastern Daylight Time (EDT). 
+
+----------------------------------------------------------------------------------------------------
 
 ## Part (d): High-Stakes Testing
 
@@ -326,9 +364,11 @@ Write a single sentence acknowledging that the course relies heavily on the two 
 
 **Solution**
 
-```{r}
-# This course relies heavily on the midterm and comprehensive assessments and 80% of the course final grade will come from these. Though I hate stress, I accept this high-stakes testing approach. 
-```
+----------------------------------------------------------------------------------------------------
+
+This course relies heavily on the midterm and comprehensive assessments and 80% of the course final grade will come from these. Though I hate stress, I accept this high-stakes testing approach. 
+
+----------------------------------------------------------------------------------------------------
 
 
 
@@ -353,10 +393,10 @@ Write the sentence "To be or not to be -- that is the question" in regular text,
 ----------------------------------------------------------------------------------------------------
 
 Code: 
+```
+To be or not to be -- that is the **question**.
+```
 
-```
-To be or not to be -- that is the **question**. 
-```
 Output: 
 
 To be or not to be -- that is the **question**. 
@@ -372,10 +412,10 @@ Write the sentence "To be or not to be -- that is the question" in regular text,
 ----------------------------------------------------------------------------------------------------
 
 Code: 
+```
+To be or not to be -- that is the *question*.
+```
 
-```
-To be or not to be -- that is the *question*. 
-```
 Output: 
 
 To be or not to be -- that is the *question*. 
@@ -391,10 +431,10 @@ Write the sentence "To be or not to be -- that is the question" in regular text,
 ----------------------------------------------------------------------------------------------------
 
 Code: 
+```
+To be or not to be -- that is the `question`.
+```
 
-```
-To be or not to be -- that is the `question`. 
-```
 Output: 
 
 To be or not to be -- that is the `question`. 
@@ -410,10 +450,10 @@ Write the sentence "To be or not to be -- that is the question" displayed as a b
 ----------------------------------------------------------------------------------------------------
 
 Code: 
-
 ```
 > To be or not to be -- that is the question. 
 ```
+
 Output: 
 
 > To be or not to be -- that is the question. 
@@ -431,9 +471,11 @@ What sort of typesetting is this, and what should you do when you encounter it?
 
 **Solution**
 
-```{r}
-# This code is in the LaTex typesetting language. Leave it alone when you encounter it. 
-```
+----------------------------------------------------------------------------------------------------
+
+This code is in the LaTex typesetting language. Leave it alone when you encounter it. 
+
+----------------------------------------------------------------------------------------------------
 
 ## Part (f): Pandoc
 
@@ -441,9 +483,11 @@ Sometimes the pandoc system can fail to knit an R notebook successfully, even th
 
 **Solution**
 
-```{r}
-# Try again. If it fails again, save all your work and quit RStudio. Then, restart RStudio. 
-```
+----------------------------------------------------------------------------------------------------
+
+Try again. If it fails again, save all your work and quit RStudio. Then, restart RStudio. 
+
+----------------------------------------------------------------------------------------------------
 
 
 
@@ -467,9 +511,11 @@ What is R? Write your answer using a complete sentence.
 
 **Solution**
 
-```{r}
-# R is a computer programming language that takes expressions, evaluates them, and returns an output value. 
-```
+----------------------------------------------------------------------------------------------------
+
+R is a computer programming language that takes expressions, evaluates them, and returns an output value. 
+
+----------------------------------------------------------------------------------------------------
 
 ## Part (b): RStudio
 
@@ -477,9 +523,11 @@ Explain what RStudio is, and how it relates to R. Write your answer using a comp
 
 **Solution**
 
-```{r}
-# RStudio is an integrated development environment (IDE) that provides a complete system for writing, testing, and executing R code.
-```
+----------------------------------------------------------------------------------------------------
+
+RStudio is an integrated development environment (IDE) that provides a complete system for writing, testing, and executing R code.
+
+----------------------------------------------------------------------------------------------------
 
 ## Part (c): Code chunks
 
@@ -487,9 +535,17 @@ Explain how code chunks work.
 
 **Solution**
 
-```{r}
-# RStudio uses the concept of "code chunks" to indicate when text should be considered as R code. Code chucks are indicated by 2 delimiters ```{r} and ```.
+----------------------------------------------------------------------------------------------------
+
+RStudio uses the concept of "code chunks" to indicate when text should be considered as R code. Code chucks are indicated by 2 delimiters: opening 3 backticks followed by `{r}` and closing 3 backticks. 
+
+````
+```{r}`r ''`
+# R code goes between these 3-backtick delimiters.
 ```
+````
+
+----------------------------------------------------------------------------------------------------
 
 ## Part (d): 2 + 2
 
@@ -497,9 +553,13 @@ What is 2 + 2? To solve this mystery, type the expression "2 + 2" into the code 
 
 **Solution**
 
+----------------------------------------------------------------------------------------------------
+
 ```{r}
 2 + 2
 ```
+
+----------------------------------------------------------------------------------------------------
 
 ## Part (e): 5 times 7
 
@@ -507,9 +567,13 @@ What is 5 times 7? To solve this mystery, create a code chunk and then type in t
 
 **Solution**
 
-```{r}
+----------------------------------------------------------------------------------------------------
 
+```{r}
+5 * 7
 ```
+
+----------------------------------------------------------------------------------------------------
 
 
 
