@@ -1,12 +1,19 @@
 ---
 title: "Problem Set 00"
 author: "github.com/dark-teal-coder"
-subtitle: "CSCI E-5a: Programming in R"
+subtitle: 'CSCI E-5a: Programming in R'
 output:
-  pdf_document: default
-  html_document:
-    df_print: paged
+    pdf_document: default
+    html_document: 
+        df_print: paged
+    word_document: default
 ---
+Use the following code chuck to solve the problem of R code running off the edge of the page in the rendered PDF document. It has to be placed immediately after the YAML header to affect everything below that. Install `knitr` using the command `install.packages('knitr', dependencies=TRUE)` in Console if it is not installed. 
+```{r, global_options, include=FALSE}
+# include=FALSE argument allows us to hide this code chuck in the final document. 
+# width.cutoff=80 defines the cutoff point and wraps text to the next line. 
+knitr::opts_chunk$set(message=FALSE, tidy.opts=list(width.cutoff=80), tidy=TRUE) 
+```
 
 
 
@@ -27,12 +34,14 @@ Please list your official full name that you are registered under. Then tell us 
 
 **Solution**
 
+----------------------------------------------------------------------------------------------------
 ```{r}
 # First Name: Preesa 
 # Last Name: Saewong
 # Nick Name: Ree
 # Preferred Name: Ree
 ```
+----------------------------------------------------------------------------------------------------
 
 ## Part (b): Time Zone
 
@@ -55,8 +64,7 @@ If you don't have any prior programming experience, hey, that's cool too. So don
 **Solution**
 
 ```{r}
-# I've taken an introductory Python course in my undergraduate studies before but I didn't major Computer Science or any related discipline. I've also taken CSCI E-7 last semester. But never touched on R before. 
-
+# I've taken an introductory Python course in my undergraduate studies before but I didn't major Computer Science or any related discipline. I've also taken CSCI E-7 last semester. But never touched on R before.
 ```
 
 ## Part (d): Motivation
@@ -424,7 +432,7 @@ What sort of typesetting is this, and what should you do when you encounter it?
 **Solution**
 
 ```{r}
-
+# This code is in the LaTex typesetting language. Leave it alone when you encounter it. 
 ```
 
 ## Part (f): Pandoc
@@ -434,7 +442,7 @@ Sometimes the pandoc system can fail to knit an R notebook successfully, even th
 **Solution**
 
 ```{r}
-
+# Try again. If it fails again, save all your work and quit RStudio. Then, restart RStudio. 
 ```
 
 
@@ -460,7 +468,7 @@ What is R? Write your answer using a complete sentence.
 **Solution**
 
 ```{r}
-
+# R is a computer programming language that takes expressions, evaluates them, and returns an output value. 
 ```
 
 ## Part (b): RStudio
@@ -470,7 +478,7 @@ Explain what RStudio is, and how it relates to R. Write your answer using a comp
 **Solution**
 
 ```{r}
-
+# RStudio is an integrated development environment (IDE) that provides a complete system for writing, testing, and executing R code.
 ```
 
 ## Part (c): Code chunks
@@ -480,7 +488,7 @@ Explain how code chunks work.
 **Solution**
 
 ```{r}
-
+# RStudio uses the concept of "code chunks" to indicate when text should be considered as R code. Code chucks are indicated by 2 delimiters ```{r} and ```.
 ```
 
 ## Part (d): 2 + 2
@@ -490,7 +498,7 @@ What is 2 + 2? To solve this mystery, type the expression "2 + 2" into the code 
 **Solution**
 
 ```{r}
-
+2 + 2
 ```
 
 ## Part (e): 5 times 7

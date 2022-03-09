@@ -25,12 +25,22 @@ The course repository contains the following sub-directories. Among them, "assig
   - 12 marked weekly quizzes on Canvas in .pdf format 
 
 # File Formats and Extensions 
-- [x] Microsoft Word (.docx)
-- [x] Portable Document Format (PDF) (.pdf)
-- [ ] Python Source (.py)
-- [x] Jupyter Notebook (.ipynb)
-- [x] Text (.txt)
-- [x] Comma-separated values (.csv)
+- Input Data Files 
+  - [x] Text (.txt)
+  - [x] Comma-separated Values (.csv)
+- Output Data Files 
+  - [x] Microsoft Word (.docx)
+  - [x] Portable Document Format (PDF) (.pdf)
+- Source Code Files 
+  - [ ] Hypertext Markup Language (HTML) Source (.html)
+  - [ ] Cascading Style Sheets (CSS) Source (.css)
+  - [ ] JavaScript Source (.js)
+  - [ ] Java Source (.java)
+  - [ ] Java Bytecode (.class)
+  - [ ] Python Source (.py)
+  - [x] Jupyter Notebook (.ipynb)
+  - [ ] R Source (.R) 
+  - [ ] R Notebook (.Rmd) 
 
 <br />
 
