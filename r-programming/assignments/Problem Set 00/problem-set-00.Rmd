@@ -1,5 +1,6 @@
 ---
-title: 'Problem Set 0'
+title: "Problem Set 00"
+author: "github.com/dark-teal-coder"
 subtitle: "CSCI E-5a: Programming in R"
 output:
   pdf_document: default
@@ -20,19 +21,18 @@ rm( list = ls() )
 
 In this problem, you can tell us a little bit about your background and your tech setup.
 
-
-
 ## Part (a): Course Name
 
 Please list your official full name that you are registered under. Then tell us what name you would like us to use when we address you.
 
 **Solution**
-First Name: Preesa
-Last Name: Saewong
-Nick Name: Ree
-Preferred Name: Ree
 
-
+```{r}
+# First Name: Preesa 
+# Last Name: Saewong
+# Nick Name: Ree
+# Preferred Name: Ree
+```
 
 ## Part (b): Time Zone
 
@@ -40,9 +40,9 @@ Please tell us what time zone you are located in. What is the time difference fr
 
 **Solution**
 
-Time Zone: GMT+8 (13 hours ahead of Boston time)
-
-
+```{r}
+# Time Zone: GMT+8 (13 hours ahead of Boston time)
+```
 
 ## Part (c): Programming Experience
 
@@ -53,40 +53,47 @@ However, we would like to know if you've had any prior programming experience. I
 If you don't have any prior programming experience, hey, that's cool too. So don't be afraid to tell us that either.
 
 **Solution**
-I've taken an introductory Python course in my undergraduate studies before but I didn't major Computer Science or any related discipline. I've also taken CSCI E-7 last semester. But never touched on R before. 
 
+```{r}
+# I've taken an introductory Python course in my undergraduate studies before but I didn't major Computer Science or any related discipline. I've also taken CSCI E-7 last semester. But never touched on R before. 
 
+```
 
 ## Part (d): Motivation
 
 Why are you taking CSCI E-5a? Tell us about your motivation for enrolling, and what you hope to get out of the course.
 
 **Solution**
-To earn a credential for future career development; to compare Python and R for data analysis. 
 
-
+```{r}
+# Purposes: to earn a credential for future career development; to compare Python and R for data analysis  
+```
 
 ## Part (e): Operating System
 
 What computer operating system are you using? Tell us if it's Windows, iOS, Linux, or something else, as well as the OS version.
 
 **Solution**
-Windows 11. 
 
-
+```{r}
+# Operating System: Windows 11 
+```
 
 ## Part (f): Installation
 
 How did the installation procedure go for you? Did you have any problems? Did you find the Module 3: Installing Software video helpful?
 
 **Solution**
-Fine. I didn't watch the video but I just followed the PDF instructions. 
+
+```{r}
+# Fine! I didn't watch the video but I just followed the PDF instructions. 
+```
 
 
 
 \newpage
 
-End of problem 1
+End of Problem 1
 
 \newpage
 
@@ -95,8 +102,6 @@ End of problem 1
 # Problem 2: The Honor Codes
 
 In this problem, we'll review the two honor codes and agree to abide by them.
-
-
 
 ## Part (a): Negative honor code
 
@@ -113,9 +118,10 @@ For exams, you must not discuss the problems with anyone else, and the final doc
 For this part, please write us a sentence declaring that you understand the negative honor code and agree not to violate it.
 
 **Solution**
-Yes, I understand and agree with the negative honor code. 
 
-
+```{r}
+# Yes, I understand and agree with the negative honor code. 
+```
 
 ## Part (b): Positive honor code
 
@@ -130,13 +136,16 @@ Instead, you promise to dig in, push yourself, and commit to excellence instead 
 For this problem, please write us a sentence declaring that you understand the positive honor code and agree not to violate it.
 
 **Solution**
-Yes, I understand and agree with the positive honor code. 
+
+```{r}
+# Yes, I understand and agree with the positive honor code. 
+```
 
 
 
 \newpage
 
-End of problem 2
+End of Problem 2
 
 \newpage
 
@@ -154,40 +163,50 @@ Where is the link for the current week ZIP bundle?
 
 **Solution**
 
-The link for the current week ZIP bundle is the second link from the top of the Canvas Home page, under the Current Week section.
+```{r}
+# The link for the current week ZIP bundle is the second link from the top of the Canvas Home page, under the Current Week section.
+```
 
 ## Part (b): Complete Problem Set Solutions ZIP Bundle
 
 Where is the link for the Complete Problem Set Solutions ZIP Bundle located?
 
 **Solution**
-It's the 3rd link from the top of the Canvas Home page under the Current Week section. 
+
+```{r}
+# It's the 3rd link from the top of the Canvas Home page under the Current Week section. 
+```
 
 ## Part (c): Submitting Assignments
 
 What is the name of the system that we use for grading assignments? Where is the link for this system located?
 
 **Solution**
-Name: Gradescope
-Location: 2nd last on the course menu 
 
-
+```{r}
+# Name: Gradescope
+# Location: 2nd last on the course menu 
+```
 
 ## Part (d): Reviewing Grades
 
 Where can you see all your combined course grades? Where is the link located?
 
 **Solution**
-Grades page at the bottom of the course navigation menu.  
 
-
+```{r}
+# It's located at Grades at the bottom of the course navigation menu. 
+```
 
 ## Part (e): Course Videos
 
 Where are the module videos located? Have you been able to watch them?
 
 **Solution**
-The videos are located in the last session of each week individual page. But I haven't tried to watch them. 
+
+```{r}
+# The videos are located in the last session of each week individual page. But I haven't tried to watch them. 
+```
 
 
 
@@ -211,7 +230,9 @@ What is a formative assessment? Write your answer using a complete sentence.
 
 **Solution**
 
-
+```{r}
+# A formative assessment is an assignment where you have the opportunity to work on challenging problems with feedback from the teaching staff in a low-stakes environment. 
+```
 
 ## Part (b): Problem Set 0, First Grading Session
 
@@ -219,7 +240,9 @@ When does the gate close for the first grading session for Problem Set 0? Write 
 
 **Solution**
 
-
+```{r}
+# The 1st grading session will close on Monday, Jan 24, 2022, at 23:00 Eastern Daylight Time (EDT). 
+```
 
 ## Part (c): Problem Set 0, Second Grading Session
 
@@ -227,13 +250,19 @@ When does the gate close for the second grading session for Problem Set 0? Write
 
 **Solution**
 
-
+```{r}
+# The 1st grading session will close on Monday, Jan 31, 2022, at 23:00 Eastern Daylight Time (EDT). 
+```
 
 ## Part (d): Problem Set 0, Third Grading Session
 
 When does the gate close for the third grading session for Problem Set 0? Write your answer using a complete sentence, and explicitly specify the day, date, and time (use EDT).
 
 **Solution**
+
+```{r}
+# The 1st grading session will close on Monday, Feb 07, 2022, at 23:00 Eastern Daylight Time (EDT). 
+```
 
 
 
@@ -245,17 +274,11 @@ End of Problem 4
 
 
 
-
-
 # Problem 5: Summative Assessments
 
 In this problem, we'll define the concept of a summative assessment, confirm the dates of the summative assessments, and discuss high-stakes testing.
 
-
-
 First, read the article "CSCI E-5a Spring 2022 Assessments" in the Course Documentation folder, and review the "CSCI E-5a Spring 2022 Grading Schedule Cheatsheet.pdf" document.
-
-
 
 ## Part (a): Explanation
 
@@ -263,7 +286,9 @@ What is a summative assessment? Write your answer using a complete sentence.
 
 **Solution**
 
-
+```{r}
+# A summative assessment is an assignment where the teaching staff rigorously and objectively evaluates the knowledge and skills that you have developed in the course.
+```
 
 ## Part (b): Midterm Assessment
 
@@ -271,7 +296,9 @@ When will the Midterm Assessment be released, and when is it due? Write your ans
 
 **Solution**
 
-
+```{r}
+# The Midterm Assessment will be released on Monday, Mar 07, 2022, at 17:00 Eastern Daylight Time (EDT) and is due on Monday, Mar 14, 2022, at 23:00 Eastern Daylight Time (EDT). 
+```
 
 ## Part (c): Comprehensive Assessment
 
@@ -279,7 +306,9 @@ When will the Comprehensive Assessment be released, and when is it due? Write yo
 
 **Solution**
 
-
+```{r}
+# The Comprehensive Assessment will be released on Monday, May 02, 2022, at 17:00 Eastern Daylight Time (EDT) and is due on Monday, May 09, 2022, at 23:00 Eastern Daylight Time (EDT). 
+```
 
 ## Part (d): High-Stakes Testing
 
@@ -288,6 +317,10 @@ Your final grade in this course depends heavily on your performance on the two s
 Write a single sentence acknowledging that the course relies heavily on the two summative assessments, and that you accept this high-stakes testing approach.
 
 **Solution**
+
+```{r}
+# This course relies heavily on the midterm and comprehensive assessments and 80% of the course final grade will come from these. Though I hate stress, I accept this high-stakes testing approach. 
+```
 
 
 
@@ -299,15 +332,9 @@ End of Problem 5
 
 
 
-
-
-
-
 # Problem 6: R Markdown
 
 In this problem, we'll practice various R markdown techniques.
-
-
 
 ## Part (a): Bold
 
@@ -315,7 +342,18 @@ Write the sentence "To be or not to be -- that is the question" in regular text,
 
 **Solution**
 
+----------------------------------------------------------------------------------------------------
 
+Code: 
+
+```
+To be or not to be -- that is the **question**. 
+```
+Output: 
+
+To be or not to be -- that is the **question**. 
+
+----------------------------------------------------------------------------------------------------
 
 ## Part (b): Italics
 
@@ -323,7 +361,18 @@ Write the sentence "To be or not to be -- that is the question" in regular text,
 
 **Solution**
 
+----------------------------------------------------------------------------------------------------
 
+Code: 
+
+```
+To be or not to be -- that is the *question*. 
+```
+Output: 
+
+To be or not to be -- that is the *question*. 
+
+----------------------------------------------------------------------------------------------------
 
 ## Part (c): Verbatim
 
@@ -331,7 +380,18 @@ Write the sentence "To be or not to be -- that is the question" in regular text,
 
 **Solution**
 
+----------------------------------------------------------------------------------------------------
 
+Code: 
+
+```
+To be or not to be -- that is the `question`. 
+```
+Output: 
+
+To be or not to be -- that is the `question`. 
+
+----------------------------------------------------------------------------------------------------
 
 ## Part (d): Block quote
 
@@ -339,7 +399,18 @@ Write the sentence "To be or not to be -- that is the question" displayed as a b
 
 **Solution**
 
+----------------------------------------------------------------------------------------------------
 
+Code: 
+
+```
+> To be or not to be -- that is the question. 
+```
+Output: 
+
+> To be or not to be -- that is the question. 
+
+----------------------------------------------------------------------------------------------------
 
 ## Part (e): LaTeX
 
@@ -352,13 +423,19 @@ What sort of typesetting is this, and what should you do when you encounter it?
 
 **Solution**
 
+```{r}
 
+```
 
 ## Part (f): Pandoc
 
 Sometimes the pandoc system can fail to knit an R notebook successfully, even though the notebook does not contain any errors. What should you do if this happens?
 
 **Solution**
+
+```{r}
+
+```
 
 
 
@@ -370,18 +447,11 @@ End of Problem 6
 
 
 
-
-
-
 # Problem 7: Code Chunks
 
 In this problem, we'll define the concept of code chunks, and also run them.
 
-
-
 First, read Module 4, Section 4 on Code Chunks.
-
-
 
 ## Part (a): R and RStudio
 
@@ -389,7 +459,9 @@ What is R? Write your answer using a complete sentence.
 
 **Solution**
 
+```{r}
 
+```
 
 ## Part (b): RStudio
 
@@ -397,7 +469,9 @@ Explain what RStudio is, and how it relates to R. Write your answer using a comp
 
 **Solution**
 
+```{r}
 
+```
 
 ## Part (c): Code chunks
 
@@ -405,7 +479,9 @@ Explain how code chunks work.
 
 **Solution**
 
+```{r}
 
+```
 
 ## Part (d): 2 + 2
 
@@ -424,7 +500,7 @@ What is 5 times 7? To solve this mystery, create a code chunk and then type in t
 **Solution**
 
 ```{r}
-5 * 7
+
 ```
 
 
@@ -437,22 +513,10 @@ End of Problem 7
 
 
 
-
-
-
 # Problem 8: Gradescope
 
 In this problem, we'll upload our finished Problem Set 0 PDF to Gradescope.
 
-
-
 Knit this R notebook to a PDF document. Then log into the course website, and navigate to Gradescope. Submit your assignment to "Problem Set 0: Course Orientation (First Grading Session)", and be sure to associate pages with problems.
 
 There's nothing to report here, and as long as you submit your assignment properly and associate pages with problems (including this one!) we'll automatically give you full credit for this problem.
-
-
-
-
-
-
-

@@ -20,19 +20,18 @@ rm( list = ls() )
 
 In this problem, you can tell us a little bit about your background and your tech setup.
 
-
-
 ## Part (a): Course Name
 
 Please list your official full name that you are registered under. Then tell us what name you would like us to use when we address you.
 
 **Solution**
-First Name: Preesa
-Last Name: Saewong
-Nick Name: Ree
-Preferred Name: Ree
 
-
+```{r}
+# First Name: 
+# Last Name: 
+# Nick Name: 
+# Preferred Name: 
+```
 
 ## Part (b): Time Zone
 
@@ -40,9 +39,9 @@ Please tell us what time zone you are located in. What is the time difference fr
 
 **Solution**
 
-Time Zone: GMT+8 (13 hours ahead of Boston time)
+```{r}
 
-
+```
 
 ## Part (c): Programming Experience
 
@@ -53,36 +52,44 @@ However, we would like to know if you've had any prior programming experience. I
 If you don't have any prior programming experience, hey, that's cool too. So don't be afraid to tell us that either.
 
 **Solution**
-I've taken an introductory Python course in my undergraduate studies before but I didn't major Computer Science or any related discipline. I've also taken CSCI E-7 last semester. But never touched on R before. 
 
+```{r}
 
+```
 
 ## Part (d): Motivation
+
+```{r}
+
+```
 
 Why are you taking CSCI E-5a? Tell us about your motivation for enrolling, and what you hope to get out of the course.
 
 **Solution**
-To earn a credential for future career development; to compare Python and R for data analysis. 
 
+```{r}
 
+```
 
 ## Part (e): Operating System
 
 What computer operating system are you using? Tell us if it's Windows, iOS, Linux, or something else, as well as the OS version.
 
 **Solution**
-Windows 11. 
 
+```{r}
 
+```
 
 ## Part (f): Installation
 
 How did the installation procedure go for you? Did you have any problems? Did you find the Module 3: Installing Software video helpful?
 
 **Solution**
-Fine. I didn't watch the video but I just followed the PDF instructions. 
 
+```{r}
 
+```
 
 \newpage
 
@@ -95,8 +102,6 @@ End of problem 1
 # Problem 2: The Honor Codes
 
 In this problem, we'll review the two honor codes and agree to abide by them.
-
-
 
 ## Part (a): Negative honor code
 
@@ -113,9 +118,10 @@ For exams, you must not discuss the problems with anyone else, and the final doc
 For this part, please write us a sentence declaring that you understand the negative honor code and agree not to violate it.
 
 **Solution**
-Yes, I understand and agree with the negative honor code. 
 
+```{r}
 
+```
 
 ## Part (b): Positive honor code
 
@@ -130,9 +136,10 @@ Instead, you promise to dig in, push yourself, and commit to excellence instead 
 For this problem, please write us a sentence declaring that you understand the positive honor code and agree not to violate it.
 
 **Solution**
-Yes, I understand and agree with the positive honor code. 
 
+```{r}
 
+```
 
 \newpage
 
@@ -154,42 +161,49 @@ Where is the link for the current week ZIP bundle?
 
 **Solution**
 
-The link for the current week ZIP bundle is the second link from the top of the Canvas Home page, under the Current Week section.
+```{r}
+
+```
 
 ## Part (b): Complete Problem Set Solutions ZIP Bundle
 
 Where is the link for the Complete Problem Set Solutions ZIP Bundle located?
 
 **Solution**
-It's the 3rd link from the top of the Canvas Home page under the Current Week section. 
+
+```{r}
+
+```
 
 ## Part (c): Submitting Assignments
 
 What is the name of the system that we use for grading assignments? Where is the link for this system located?
 
 **Solution**
-Name: Gradescope
-Location: 2nd last on the course menu 
 
+```{r}
 
+```
 
 ## Part (d): Reviewing Grades
 
 Where can you see all your combined course grades? Where is the link located?
 
 **Solution**
-Grades page at the bottom of the course navigation menu.  
 
+```{r}
 
+```
 
 ## Part (e): Course Videos
 
 Where are the module videos located? Have you been able to watch them?
 
 **Solution**
-The videos are located in the last session of each week individual page. But I haven't tried to watch them. 
 
+```{r}
 
+```
 
 \newpage
 
@@ -211,7 +225,9 @@ What is a formative assessment? Write your answer using a complete sentence.
 
 **Solution**
 
+```{r}
 
+```
 
 ## Part (b): Problem Set 0, First Grading Session
 
@@ -219,7 +235,9 @@ When does the gate close for the first grading session for Problem Set 0? Write 
 
 **Solution**
 
+```{r}
 
+```
 
 ## Part (c): Problem Set 0, Second Grading Session
 
@@ -227,7 +245,9 @@ When does the gate close for the second grading session for Problem Set 0? Write
 
 **Solution**
 
+```{r}
 
+```
 
 ## Part (d): Problem Set 0, Third Grading Session
 
@@ -235,7 +255,9 @@ When does the gate close for the third grading session for Problem Set 0? Write 
 
 **Solution**
 
+```{r}
 
+```
 
 \newpage
 
@@ -245,17 +267,11 @@ End of Problem 4
 
 
 
-
-
 # Problem 5: Summative Assessments
 
 In this problem, we'll define the concept of a summative assessment, confirm the dates of the summative assessments, and discuss high-stakes testing.
 
-
-
 First, read the article "CSCI E-5a Spring 2022 Assessments" in the Course Documentation folder, and review the "CSCI E-5a Spring 2022 Grading Schedule Cheatsheet.pdf" document.
-
-
 
 ## Part (a): Explanation
 
@@ -263,7 +279,9 @@ What is a summative assessment? Write your answer using a complete sentence.
 
 **Solution**
 
+```{r}
 
+```
 
 ## Part (b): Midterm Assessment
 
@@ -271,7 +289,9 @@ When will the Midterm Assessment be released, and when is it due? Write your ans
 
 **Solution**
 
+```{r}
 
+```
 
 ## Part (c): Comprehensive Assessment
 
@@ -279,7 +299,9 @@ When will the Comprehensive Assessment be released, and when is it due? Write yo
 
 **Solution**
 
+```{r}
 
+```
 
 ## Part (d): High-Stakes Testing
 
@@ -289,7 +311,9 @@ Write a single sentence acknowledging that the course relies heavily on the two 
 
 **Solution**
 
+```{r}
 
+```
 
 \newpage
 
@@ -299,15 +323,9 @@ End of Problem 5
 
 
 
-
-
-
-
 # Problem 6: R Markdown
 
 In this problem, we'll practice various R markdown techniques.
-
-
 
 ## Part (a): Bold
 
@@ -315,7 +333,9 @@ Write the sentence "To be or not to be -- that is the question" in regular text,
 
 **Solution**
 
+```{r}
 
+```
 
 ## Part (b): Italics
 
@@ -323,7 +343,9 @@ Write the sentence "To be or not to be -- that is the question" in regular text,
 
 **Solution**
 
+```{r}
 
+```
 
 ## Part (c): Verbatim
 
@@ -331,7 +353,9 @@ Write the sentence "To be or not to be -- that is the question" in regular text,
 
 **Solution**
 
+```{r}
 
+```
 
 ## Part (d): Block quote
 
@@ -339,7 +363,9 @@ Write the sentence "To be or not to be -- that is the question" displayed as a b
 
 **Solution**
 
+```{r}
 
+```
 
 ## Part (e): LaTeX
 
@@ -352,7 +378,9 @@ What sort of typesetting is this, and what should you do when you encounter it?
 
 **Solution**
 
+```{r}
 
+```
 
 ## Part (f): Pandoc
 
@@ -360,7 +388,9 @@ Sometimes the pandoc system can fail to knit an R notebook successfully, even th
 
 **Solution**
 
+```{r}
 
+```
 
 \newpage
 
@@ -370,18 +400,11 @@ End of Problem 6
 
 
 
-
-
-
 # Problem 7: Code Chunks
 
 In this problem, we'll define the concept of code chunks, and also run them.
 
-
-
 First, read Module 4, Section 4 on Code Chunks.
-
-
 
 ## Part (a): R and RStudio
 
@@ -389,7 +412,9 @@ What is R? Write your answer using a complete sentence.
 
 **Solution**
 
+```{r}
 
+```
 
 ## Part (b): RStudio
 
@@ -397,7 +422,9 @@ Explain what RStudio is, and how it relates to R. Write your answer using a comp
 
 **Solution**
 
+```{r}
 
+```
 
 ## Part (c): Code chunks
 
@@ -405,7 +432,9 @@ Explain how code chunks work.
 
 **Solution**
 
+```{r}
 
+```
 
 ## Part (d): 2 + 2
 
@@ -424,10 +453,8 @@ What is 5 times 7? To solve this mystery, create a code chunk and then type in t
 **Solution**
 
 ```{r}
-5 * 7
+
 ```
-
-
 
 \newpage
 
@@ -437,22 +464,10 @@ End of Problem 7
 
 
 
-
-
-
 # Problem 8: Gradescope
 
 In this problem, we'll upload our finished Problem Set 0 PDF to Gradescope.
 
-
-
 Knit this R notebook to a PDF document. Then log into the course website, and navigate to Gradescope. Submit your assignment to "Problem Set 0: Course Orientation (First Grading Session)", and be sure to associate pages with problems.
 
 There's nothing to report here, and as long as you submit your assignment properly and associate pages with problems (including this one!) we'll automatically give you full credit for this problem.
-
-
-
-
-
-
-
