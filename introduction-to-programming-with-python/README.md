@@ -9,19 +9,19 @@
 
 # Sub-directories 
 The course repository contains the following sub-directories. Among them, "assignments", "lectures" and "weekly-quizzes" contain all the 12-week materials. 
-- `assignments`
+- harvard-graduate/introduction-to-programming-with-python/
   - 12 weekly assignments in .ipynb format  
   - 12 assignment instructions on Canvas in .pdf format 
-- `data`
+- harvard-graduate/data/
   - Data files in .csv and .txt formats 
-- `lectures`
+- harvard-graduate/lectures/
   - 11 weekly lecture notes in .ipynb format  
-- `project`
+- harvard-graduate/project/
   - 1 script
   - Input data files  
   - Output files
   - 3 pairs of project documents in .docx and .pdf formats 
-- `weekly-quizzes`
+- harvard-graduate/weekly-quizzes/
   - 12 marked weekly quizzes on Canvas in .pdf format 
 
 # File Formats and Extensions 
