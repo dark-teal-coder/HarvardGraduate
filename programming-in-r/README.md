@@ -1,4 +1,4 @@
-<!-- This is a README file for a course's directory. -->
+<!-- This is a README file for a Harvard course. -->
 
 # Course Information
 - <ins>Course Code</ins>: CSCI E-5a
