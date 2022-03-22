@@ -1,0 +1,313 @@
+---
+title: 'Lecture 8, Module 1: Character Strings'
+subtitle: Exercises
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r}
+rm( list = ls() )
+```
+
+
+```{r}
+load( "Lecture 8 Module 1 R Objects.Rdata" )
+```
+
+# Exercises
+
+## Exercise 1: Stripping out an internal code
+
+The vector `exercise.1.data` consists of character strings, each of which begins with an internal code of fixed length, followed by an identifier of variable length consisting entirely of digits.
+
+For each character string value in `exercise.1.data`, strip out the internal code of fixed length, and return a character string vector consisting of just the variable length identifiers.
+
+You'll have to figure out how long the internal code by examining the data yourself.
+
+**Solution**
+
+
+
+
+
+
+
+## Exercise 2: Ted Williams' On-Base Percentage
+
+Here are Ted Williams's career statistics:
+
+| Statistics        | Value |
+|:------------------|------:|
+| Plate appearances | 9,792 |
+| At-bats           | 7,706 |
+| Hits              | 2,654 |
+| Doubles           |   525 |
+| Triples           |    71 |
+| Home Runs         |   521 |
+| Bases on balls    | 2,021 |
+| Hit by a pitch    |    39 |
+| Sacrifice flies   |    20 |
+
+Report Ted Williams' On-Base Percentage (OBP) using a `cat()` statement, with the value displayed using the standard baseball conventions.
+
+**Solution**
+
+## Exercise 3: Substring pattern matching with the `grep()` function
+
+Consider this set of data:
+
+```{r}
+exercise.3.data <-
+  c(
+    "healthy kale",
+    "Sugar Bms",
+    "Sugar Bom",
+    "Krispy Ym!",
+    "kale Tfuo",
+    "Sug Bz",
+    "Crispy Yum",
+    "healthy kale and tofu"
+  )
+```
+
+### Part (a): Counting rows with "kale"
+
+How many rows in `exercise.3.data` contain the string "kale"?
+
+**Solution**
+
+### Part (b): Converting to "kale" or "no kale"
+
+Create a new vector consisting of the values "kale" or "no kale", where this new vector has the value "kale" precisely when the input data vector `exercise.3.data` has an element with a substring that matches the pattern string "kale".
+
+**Solution**
+
+### Part (c): Converting all "kale" entries to "HKT"
+
+Create a new vector consisting of the values of the original data vector `exercise.3.data`, but with all elements that match the pattern "kale" replaced with "HKT".
+
+**Solution**
+
+
+
+
+# Solution to the Exercises
+
+
+## Exercise 1: Stripping out an internal code
+
+The vector `exercise.1.data` consists of character strings, each of which begins with an internal code of fixed length, followed by an identifier of variable length consisting entirely of digits.
+
+For each character string value in `exercise.1.data`, strip out the internal code of fixed length, and return a character string vector consisting of just the variable length identifiers.
+
+You'll have to figure out how long the internal code by examining the data yourself.
+
+**Solution**
+
+Let's first take a look at the values in `exercise.1.data` by directly displaying the vector:
+
+```{r}
+exercise.1.data
+```
+
+You can see that the first 7 characters of each string are always the same, so this is the internal code.
+
+Then we can extract the identifier string by using the `substr()` function and the `nchar()` function:
+
+```{r}
+identifier.string.vector <-
+  substr(
+    x = exercise.1.data,
+    start = 8,
+    stop = nchar( exercise.1.data )
+  )
+```
+
+Now let's display this directly:
+
+```{r}
+identifier.string.vector
+```
+
+
+
+
+## Exercise 2: Ted Williams' On-Base Percentage
+
+Here are Ted Williams's career statistics:
+
+| Statistics        | Value |
+|:------------------|------:|
+| Plate appearances | 9,792 |
+| At-bats           | 7,706 |
+| Hits              | 2,654 |
+| Doubles           |   525 |
+| Triples           |    71 |
+| Home Runs         |   521 |
+| Bases on balls    | 2,021 |
+| Hit by a pitch    |    39 |
+| Sacrifice flies   |    20 |
+
+Report Ted Williams' On-Base Percentage (OBP) using a `cat()` statement, with the value displayed using the standard baseball conventions.
+
+**Solution**
+
+Let's start by creating a set of variables to hold Williams' career batting statistics:
+
+```{r}
+ted.williams.at.bats <- 7706
+
+ted.williams.hits <- 2654
+
+ted.williams.doubles <- 525
+
+ted.williams.triples <- 71
+
+ted.williams.home.runs <- 521
+
+ted.williams.bases.on.balls <- 2021
+
+ted.williams.hit.by.a.pitch <- 39
+
+ted.williams.sacrifice.flies <- 20
+```
+
+Now we can calculate Ted Williams' career on-base percentage:
+
+```{r}
+ted.williams.on.base.percentage <-
+    (ted.williams.hits +
+         ted.williams.bases.on.balls +
+         ted.williams.hit.by.a.pitch) /
+    (ted.williams.at.bats +
+         ted.williams.bases.on.balls +
+         ted.williams.hit.by.a.pitch +
+         ted.williams.sacrifice.flies)
+```
+
+Next, we'll format this result using the `formatC()` function so that it has exactly 3 digits trailing the decimal point, and then directly display it to check our work:
+
+```{r}
+ted.williams.on.base.percentage.string <-
+  formatC(
+    x = ted.williams.on.base.percentage,
+    format = "f",
+    digits = 3
+  )
+
+ted.williams.on.base.percentage.string
+```
+
+Now let's use the `substr()` function to remove the leading 0, and then directly display this string to check our work:
+
+```{r}
+ted.williams.on.base.percentage.formatted.string <-
+  substr(
+    x = ted.williams.on.base.percentage.string,
+    start = 2,
+    stop = 5
+  )
+
+ted.williams.on.base.percentage.formatted.string
+```
+
+Finally, we can report this with a `cat()` statement:
+
+```{r}
+cat(
+  "Ted Williams on-base percentage:",
+  ted.williams.on.base.percentage.formatted.string
+)
+```
+
+
+
+
+
+
+## Exercise 3: Substring pattern matching with the grep() function
+
+Consider this set of data:
+```{r}
+exercise.3.data <-
+  c(
+    "healthy kale",
+    "Sugar Bms",
+    "Sugar Bom",
+    "Krispy Ym!",
+    "kale Tfuo",
+    "Sug Bz",
+    "Crispy Yum",
+    "healthy kale and tofu"
+  )
+```
+
+### Part (a): Counting rows with "kale"
+
+How many rows in `exercise.3.data` contain the string "kale"?
+
+**Solution**
+
+```{r}
+kale.match.index.vector <-
+  grep(
+    pattern = "kale",
+    x = exercise.3.data
+  )
+
+length( kale.match.index.vector )
+```
+
+
+
+### Part (b): Converting to "kale" or "no kale"
+
+Create a new vector consisting of the values "kale" or "no kale", where this new vector has the value "kale" precisely when the input data vector `exercise.3.data` has an element with a substring that matches the pattern string "kale".
+
+**Solution**
+
+```{r}
+kale.match.logical.indexing.vector <-
+  grepl(
+    pattern = "kale",
+    x = exercise.3.data
+  )
+
+ifelse(
+  test = kale.match.logical.indexing.vector,
+  yes = "kale",
+  no = "no kale"
+)
+```
+
+
+
+
+### Part (c): Converting all "kale" entries to "HKT"
+
+Create a new vector consisting of the values of the original data vector `exercise.3.data`, but with all elements that match the pattern "kale" replaced with "HKT".
+
+**Solution**
+
+```{r}
+kale.match.logical.indexing.vector <-
+  grepl(
+    pattern = "kale",
+    x = exercise.3.data
+  )
+
+ifelse(
+  test = kale.match.logical.indexing.vector,
+  yes = "HKT",
+  no = exercise.3.data
+)
+```
+
+
+
+
+
+
+
+

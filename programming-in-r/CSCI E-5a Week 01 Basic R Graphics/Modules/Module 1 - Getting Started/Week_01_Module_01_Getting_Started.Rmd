@@ -8,12 +8,12 @@ output:
     df_print: paged
 ---
 
+
+
 Let's start by clearing the global computing environment:
 ```{r}
 rm( list = ls() )
 ```
-
-
 
 
 
@@ -23,54 +23,34 @@ Hello! And welcome to Module 1: Getting Started.
 
 In this module, we'll get started with some basic concepts of R programming.
 
-
-
 * In Section 1, we'll learn about atomic values, which are the most basic objects in R.
-
 * In Section 2, we'll explore the concept of functions.
-
 * In Section 3, we'll define vectors, which are the most important compound data structure in R.
-
-
 
 Once you've completed this module, you'll be able to:
 
 * Explain what an atomic value is
-
 * Define the three primary atomic data types that we will use in this course
-
 * Explain what a function is
-
 * Explain what input arguments and return values are
-
 * Use the built-in R function `exp()` to calculate values of the exponential function.
-
 * Determine the class of an arbitrary R object by using the `class()` function.
-
 * Define the concept of a vector
-
 * Construct a vector of arbitrary values by using the `c()` function
-
-
 
 In this module we'll see three built-in R functions:
 
 * The exponential function `exp()`.
-
 * The class function `class()`.
-
 * The vector construction function `c()`.
-
 
 All right, let's start out by exploring atomic values.
 
 
 
-
-
 # Section 1: Atomic Values
 
-> **Main Idea** *In R, the most basic objects are called *atomic values*.
+> **Main Idea** In R, the most basic objects are called *atomic values*.
 
 In this section, we'll learn about atomic values, which are the most basic objects in R.
 
@@ -81,9 +61,7 @@ An *atomic value* is a value that has no component parts.
 For our course, we'll focus on 3 different types of atomic values:
 
 * Numeric values, such as 5, -14.7, and $\pi/2$.
-
 * Logical values, such as `TRUE` and `FALSE`.
-
 * Character string values, such as the strings "Hi Mom!", 'xyzxyz', and "7".
 
 Note that character strings **must** be enclosed in quotes, but they can be either single or double quotes.
@@ -93,23 +71,16 @@ Each different kind of atomic data is called a "class".
 For example:
 
 * The class of the object 5 is "numeric".
-
 * The class of the object `TRUE` is "logical".
-
 * The class of the object "Hi Mom!" is "character".
 
 Sometimes however I'll also refer the class of an object as a "type", which means the same thing.
 
 In fact, for this and the next three lectures, we'll mainly focus on just numeric values, and only in the fifth lecture will we explore logical values.
 
-
-
 So those are the atomic values of R.
 
 Now let's move on to functions.
-
-
-
 
 
 
@@ -124,8 +95,6 @@ In this section, we'll explore the concept of a function.
 In general, a *function* is something that takes some input values and either produces an output value or performs some action.
 
 Much of our course is devoted to learning how to use the rich set of functions that are built-in to R, as well how to create your own user-defined functions.
-
-
 
 The inputs are usually called the *arguments* of the function, but just to be clear I will always refer to these as the "input arguments".
 
@@ -146,20 +115,16 @@ In R, the built-in function `exp()` computes the exponential function $f(x) = e^
 To use an R function to calculate a value, we have to follow an exact procedure:
 
 * First, we write the name of the function.
-
 * Then there is an opening parenthesis.
-
 * Then there is the actual numeric input argument.
-
 * Finally there is a closing parenthesis.
 
 We can calculate the value of the exponential function for the input value 2 using the built-in R function `exp()`.
 
 Remember, there are two ways to run an individual code chunk:
 
-* First, you can click on the little arrow in the upper right-hand corner of the code chunk.
-
-* Second, you can place the cursor inside the code chunk and then use the keystroke Ctrl+Shift+Enter on Windows and Cmd+Shift+Enter on Macs.
+1. You can click on the little arrow in the upper right-hand corner of the code chunk.
+2. You can place the cursor inside the code chunk and then use the keystroke Ctrl+Shift+Enter on Windows and Cmd+Shift+Enter on Macs.
 
 ```{r}
 exp( 2 )
@@ -205,19 +170,9 @@ class( "Hi Mom!" )
 
 
 
-Some functions don't produce a return value.
+Some functions don't produce a return value. Instead, sometimes we'll just want the function to perform an action and we don't really care about the return value. For instance, graphics functions typically operate this way -- they take the input arguments and use them to draw an object, but they don't necessarily produce a return value.
 
-Instead, sometimes we'll just want the function to perform an action and we don't really care about the return value.
-
-For instance, graphics functions typically operate this way -- they take the input arguments and use them to draw an object, but they don't necessarily produce a return value.
-
-
-
-So those are some basic concepts about functions in R.
-
-Now let's move on to vectors.
-
-
+So those are some basic concepts about functions in R. Now let's move on to vectors.
 
 
 
@@ -298,20 +253,11 @@ We can also use the `c()` function to create character string vectors:
 c( "Hi Mom", "xyzxyz", "7" )
 ```
 
-
 We'll learn much more about vectors in Week 3, and indeed the rest of the course, but for now the `c()` function will suffice.
 
 
 
-So those are some basic ideas about vectors.
-
-Now let's review the contents of this module.
-
-
-
-
-
-
+So those are some basic ideas about vectors. Now let's review the contents of this module.
 
 
 
@@ -319,12 +265,8 @@ Now let's review the contents of this module.
 
 In this module, we started out with some basic concepts of R programming.
 
-
-
 * In Section 1, we learned about atomic values, which are the most basic objects in R.
-
 * In Section 2, we explored the concept of functions.
-
 * In Section 3, we defined vectors, which are the most important compound data structure in R.
 
 
@@ -332,19 +274,12 @@ In this module, we started out with some basic concepts of R programming.
 Now that you've completed this module, you should be able to:
 
 * Explain what an atomic value is
-
 * Define the three primary atomic data types that we will use in this course
-
 * Explain what a function is
-
 * Explain what input arguments and return values are
-
 * Use the built-in R function `exp()` to calculate values of the exponential function.
-
 * Determine the class of an arbitrary R object by using the `class()` function.
-
 * Define the concept of a vector
-
 * Construct a vector of arbitrary values by using the `c()` function
 
 
@@ -352,9 +287,7 @@ Now that you've completed this module, you should be able to:
 In this module we saw three built-in R functions:
 
 * The exponential function `exp()`.
-
 * The class function `class()`.
-
 * The vector construction function `c()`.
 
 
@@ -362,6 +295,3 @@ In this module we saw three built-in R functions:
 OK! That's it for Module 1: Getting Started.
 
 Now let's move on to Module 2: Graphical Plots.
-
-
-

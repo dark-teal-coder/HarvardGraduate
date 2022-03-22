@@ -1,0 +1,98 @@
+---
+title: 'Week 8 Module 2: R Functions'
+subtitle: Exercises
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+---
+
+
+Let's clear the global computing environment:
+```{r}
+rm( list = ls() )
+```
+
+
+# Exercise
+
+## Exercise 1: Input argument re-orderings
+
+Generate a vector consisting of the number 8 repeated 5 times, using two different orderings of the input arguments.
+
+**Solution**
+
+
+# Solutions to the Exercises
+
+## Exercise 1: Input argument re-orderings
+
+Generate a vector consisting of the number 8 repeated 5 times, using two different orderings of the input arguments.
+
+**Solution**
+
+The first sequence is:
+
+```{r}
+rep( x = 8, times = 5 )
+```
+
+The second sequence is:
+
+```{r}
+rep( times = 5, x = 8 )
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

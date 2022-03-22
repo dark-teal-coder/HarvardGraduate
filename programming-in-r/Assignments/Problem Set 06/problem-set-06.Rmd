@@ -1,12 +1,21 @@
 ---
-title: "Problem Set 6"
-subtitle: "CSCI E-5a: Programming in R"
+title: "Problem Set 06"
+author: "github.com/dark-teal-coder"
+subtitle: 'CSCI E-5a: Programming in R'
 output:
-  pdf_document: default
-  html_notebook: default
-  html_document:
-    df_print: paged
+    html_notebook: default
+    html_document: 
+        df_print: paged
+    pdf_document: default
+    word_document: default
 ---
+```{r, global_options, include=FALSE}
+# Use this code chuck to solve the problem of R code running off the edge of the page in the rendered PDF document. It has to be placed immediately after the YAML header to affect everything below that. Install `knitr` using the command `install.packages('knitr', dependencies=TRUE)` in Console if it is not installed. 
+# include=FALSE argument allows us to hide this code chuck in the final document. 
+# width.cutoff=80 defines the cutoff point and wraps text to the next line. 
+knitr::opts_chunk$set(message=FALSE, tidy.opts=list(width.cutoff=80), tidy=TRUE) 
+```
+
 
 
 Let's clear the environment:
