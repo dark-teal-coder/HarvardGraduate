@@ -1,0 +1,549 @@
+---
+title: "Week 9 Module 3 -- Working with Columns"
+subtitle: 'CSCI E-5a: Programming in R'
+output:
+  pdf_document: default
+  html_notebook: default
+  html_document:
+    df_print: paged
+---
+
+
+Let's clear the global computing environment:
+```{r}
+rm( list = ls() )
+```
+
+
+
+# Module Overview and Learning Objectives
+
+Hello! And welcome to Module 3: Working with Columns.
+
+In this module, we will investigate a variety of methods for selecting data from a data frame.
+
+
+
+* In Section 1, we'll learn how to select columns from a data frame by using positive integer indexing.
+
+* In Section 2, we'll see how to select columns from a data frame by using names.
+
+* In Section 3, we'll see how to select individual elements from a data frame by using two identifiers.
+
+* In Section 4, we'll learn how to sum the values in numeric columns or across rows.
+
+
+
+When you've completed this module, you'll be able to:
+
+* Select columns from a data frame by using positive integer indexing.
+
+* Select columns from a data frame by using names.
+
+* Select individual elements from a data frame by using two identifiers.
+
+
+
+There are two new built-in R functions in this module:
+
+* `colSums()`
+
+* `rowSums()`
+
+
+
+
+
+Allright, let's get rolling!
+
+
+
+
+
+# Section 1: Selecting Columns with Positive Integers
+
+> **Main Idea:** *We can select columns from a data frame by using positive integer indexing*
+
+We can select columns from a data frame by using positive integer indexing.
+
+
+
+Positive integer indexing for data frames operates in a manner similar to positive integer indexing for vectors.
+
+First, we can write the name of the data frame, followed by a single opening square bracket, then a positive integer, and finally a closing square bracket:
+```{r}
+first.column.cars.data.frame <-
+    cars[ 1 ]
+
+head( first.column.cars.data.frame )
+```
+
+
+This will return the first column of the `cars` data frame, but notice that the object that is being returned is a data frame:
+```{r}
+class( first.column.cars.data.frame )
+```
+
+
+
+
+If you want to extract the data in the first column of the data frame, but have it returned to you as a vector, you have to use double square brackets like this:
+```{r}
+head( cars[[ 1 ]] )
+```
+
+Let's check the clas of this object:
+```{r}
+class( cars[[ 1 ]] )
+```
+
+
+
+You can also use a vector of positive integers to obtain multiple columns at once, although in this case the object that is returned must be a data frame, because we have multiple columns.
+
+For instance, to obtain the first three columns of the `iris` data frame, we could use a colon operator to make a vector with the values 1, 2, and 3, and then use this to index the data frame:
+```{r}
+first.three.iris.columns <- iris[ 1:3 ]
+
+head( first.three.iris.columns )
+```
+
+
+Likewise, if we only wanted the first and third columns, we could put the column indices 1 and 3 into a vector using the `c()` function:
+```{r}
+first.third.iris.columns <- iris[ c(1, 3) ]
+
+head( first.third.iris.columns )
+```
+
+
+
+So that's how to select columns from a data frame by using positive integer indexing.
+
+Now let's see how to select columns from a data frame by using names.
+
+
+
+
+
+
+## Exercise 2.1: Selecting columns with positive integer indexing
+
+Write an expression that will extract all the columns to the left of `Sepal.Width`, including the `Sepal.Width` column as well.
+
+**Solution**
+
+```{r}
+# Type your answer in here
+```
+
+
+
+
+
+
+
+
+# Section 2: Selecting Columns with Names
+
+> **Main Idea:** *We can select columns from a data frame by using their names*
+
+In this section, we'll see how to select columns from a data frame by using names.
+
+
+
+Since each column in a data frame has a name, we can also select columns by using their names.
+
+Again, if we use a single square bracket, this will return the data in a data frame:
+```{r}
+head( cars[ "speed" ] )
+```
+
+
+If we use double brackets, we will obtain the column in vector form:
+```{r}
+head( cars[[ "speed" ]] )
+```
+
+We can also use a character vector to select multiple columns at once, bundled as a data frame:
+```{r}
+head( mtcars[ c("mpg", "cyl", "disp", "wt") ] )
+```
+
+
+
+There's another way to use names to obtain a column vector from a data frame: we can use the data frame name, followed by a dollar sign "$", and then the column name:
+```{r}
+head( iris$Sepal.Width )
+```
+
+We could also construct the same R object by using the double bracket approach:
+```{r}
+head( iris[[ "Sepal.Width" ]] )
+```
+
+
+
+So that's how to select columns from a data frame by using names.
+
+Now let's see how to select individual elements from a data frame by using two identifiers.
+
+
+
+
+
+
+## Exercise 2.2: Selecting columns using names
+
+Construct a data frame by selecting these variables from the `mtcars` data frame:
+
+* `hp`
+
+* `qsec`
+
+* `gear`
+
+* `carb`
+
+Once you've selected these columns, save them in a variable. Then display the first five rows of the data frame.
+
+**Solution**
+
+
+
+
+
+
+# Section 3: Selecting Elements Using Two Identifiers
+
+> **Main Idea:** *We can select individual elements from a data frame*
+
+In this section, we'll see how to select individual elements from a data frame by using two identifiers.
+
+
+
+We can select a single element in a data frame by using two positive integers.
+
+To do this, type the name of the data frame, followed by an open square bracket, followed by the index of the row, then a comma separator, then the index of the column, and finally a close square bracket.
+
+Recall the `iris` data frame:
+```{r}
+head( iris )
+```
+
+
+Thus, to obtain the element in the sixth row and second column of the `iris` data frame, we have:
+```{r}
+iris[ 6, 2 ]
+```
+
+
+
+
+You can also use a vector for the indices:
+```{r}
+iris[ c(3, 5, 6), 2 ]
+```
+
+
+We can also use names in the double indexing technique. To select the fifth element in the `speed` column, we have:
+```{r}
+iris[ 5, "Petal.Width" ]
+```
+
+We can also do this using the dollar sign notation:
+```{r}
+iris$Petal.Width[ 5 ]
+```
+
+
+Because of this method of double-indexing, we can use our techniques for flow of control in a very interesting way.
+
+
+For an example of this method, let's start by creating a data frame with some missing data in it:
+```{r}
+missing.cars.data <- cars
+missing.cars.data[ 4, 1 ] <- NA
+missing.cars.data[ 17, 2 ] <- NA
+missing.cars.data[ 38, 1 ] <- NA
+```
+
+Let's take a look at this data frame:
+```{r eval = FALSE}
+missing.cars.data
+```
+
+
+Let's try selecting one of the missing elements:
+```{r}
+missing.cars.data[ 17, 2 ]
+```
+
+```{r}
+missing.cars.data[ 17, "dist" ]
+```
+
+
+
+Now we want to write a reporter to search for missing data over the entire data frame.
+
+We can do this using a double `for` loop:
+```{r}
+for( col.index in 1:ncol(missing.cars.data) ) {
+    
+    for( row.index in 1:nrow(missing.cars.data) ) {
+        
+        if ( is.na( missing.cars.data[ row.index, col.index ] ) ) {
+            
+            cat( "Found missing data!\n" )
+            
+        }
+    }
+}
+```
+Notice what this code is doing -- it's scanning over the entire data frame by scanning across the columns first and for each column scanning down the rows.
+
+Thus, this double `for` loop enables us to search through the entire data frame for missing data.
+
+Of course, the message that it's printing out isn't very useful, but this is an opportunity to use your own imagination and creativity to think of how to improve this.
+
+We could perform this scan another way.
+
+First let's write a function that takes a vector and prints out a message if the vector contains any missing data:
+```{r}
+vector.missing.data <- function( input.vector ) {
+    if( any( is.na( input.vector ) ) ) {
+        cat( "Found missing data!!\n" )
+    }
+}
+```
+
+
+Let's see how this function works on the first column of the `missing.cars` data frame:
+```{r}
+vector.missing.data( missing.cars.data[[ 1 ]] )
+```
+
+Notice that we had to use the double brackets notation, because we wanted the first column of the data frame as a vector.
+
+Now we can apply this function to each column using a `for` loop:
+```{r}
+for( col.index in 1:ncol( missing.cars.data ) ) {
+    vector.missing.data( missing.cars.data[[ col.index ]] )
+}
+```
+Again, this function is not as useful as it could be, and this is another opportunity for you to exercise your creativity and improve this code.
+
+
+So that's how to select individual elements from a data frame.
+
+Now let's learn how to sum the values in numeric columns or across rows.
+
+
+
+
+# Section 4: Summing Rows and Columns
+
+**Main Idea:** *We can sum the values in numeric columns or rows*
+
+In this section, we'll learn how to sum the values in numeric columns or across rows.
+
+
+
+If we have a data frame consisting of all numeric values, then we can sum the values in each column or across the rows.
+
+For instance, let's start by making a small test data frame to study:
+```{r}
+test.data.frame <-
+    data.frame(
+        first = 1:3,
+        second = 4:6,
+        third = 7:9
+    )
+
+test.data.frame
+```
+
+
+We can construct a vector consisting of the sums of all the values in each column by using the `colSums()` function:
+```{r}
+colSums( test.data.frame )
+```
+
+Notice that the `colSums()` function returns a named vector, where the names are just the names of the columns in the original data frame.
+
+
+
+We can also construct a vector consisting of the sums across the rows of this data frame by using the `rowSums()` function:
+```{r}
+rowSums( test.data.frame )
+```
+
+The `colSums()` and `rowSums()` functions can be very useful, but they necessarily require that all the values in the data frame are numeric.
+
+If even one column in the data frame is not numeric, then the `colSums()` and `rowSums()` functions will generate an error.
+
+To see this, let's construct another test data frame:
+```{r}
+second.test.data.frame <-
+    data.frame(
+        name = c( "Taylor", "Ted", "Ashley" ),
+        first = 1:3,
+        second = 4:6,
+        third = 7:9
+    )
+
+second.test.data.frame
+```
+
+Now look what happens when we try to run the `colSums()` function with this data frame:
+```{r error = TRUE}
+colSums( second.test.data.frame )
+```
+
+The problem here is that the first column is not numeric, so R generates an error when it attempts to add character string values together.
+
+A similar error occurs with the `rowSums()` function:
+```{r error = TRUE}
+rowSums( second.test.data.frame )
+```
+
+The solution to this problem is to first select just the numeric columns that we want:
+```{r}
+numeric.test.data.frame <-
+    second.test.data.frame[
+        c( "first", "second", "third" )
+    ]
+
+numeric.test.data.frame
+```
+
+Now we can use the `colSums()` function without generating an error:
+```{r}
+colSums( numeric.test.data.frame )
+```
+
+Similarly for the row sums:
+```{r}
+rowSums( numeric.test.data.frame )
+```
+
+This method of first selecting just the numeric columns makes the `colSums()` and `rowSums()` functions much more useful.
+
+
+
+So that's how to sum the values in numeric columns or across rows.
+
+Now let's review what we've learned in this module.
+
+
+
+
+
+# Module Review
+
+In this module, we investigated a variety of methods for selecting data from a data frame.
+
+
+
+* In Section 1, we learned how to select columns from a data frame by using positive integer indexing.
+
+* In Section 2, we saw how to select columns from a data frame by using names.
+
+* In Section 3, we saw how to select individual elements from a data frame by using two identifiers.
+
+* In Section 4, we learned how to sum the values in numeric columns or across rows.
+
+
+
+
+Now that you've completed this module, you should be able to:
+
+* Select columns from a data frame by using positive integer indexing.
+
+* Select columns from a data frame by using names.
+
+* Select individual elements from a data frame by using two identifiers.
+
+
+
+There were two new built-in R functions in this module:
+
+* `colSums()`
+
+* `rowSums()`
+
+
+
+
+Allright, that's it for Module 3: Working with Columns.
+
+Now let's move on to Module 4: Scatterplots.
+
+See you there!
+
+
+
+
+
+
+# Solutions to the Exercises
+
+
+## Exercise 2.1: Selecting columns with positive integer indexing
+
+Write an expression that will extract all the columns to the left of `Sepal.Width`, including the `Sepal.Width` column as well.
+
+**Solution**
+
+Here's a simple solution:
+```{r}
+head( iris[ c(1, 2) ] )
+```
+
+Here's another simple solution:
+```{r}
+head( iris[ 1:2 ] )
+```
+
+
+Here's a more abstract approach:
+```{r}
+head(
+    iris[ 1: which( names(iris) == "Sepal.Width" ) ]
+)
+```
+We'll find this useful when we want to write function that can perform this operation more generally.
+
+
+
+## Exercise 2.2: Selecting columns using names
+
+Construct a data frame by selecting these variables from the `mtcars` data frame:
+
+* `hp`
+
+* `qsec`
+
+* `gear`
+
+* `carb`
+
+Once you've selected these columns, save them in a variable. Then display the first five rows of the data frame.
+
+**Solution**
+
+```{r}
+exercise.2.2.data.frame <-
+    mtcars[ c( "hp", "qsec", "gear", "carb" ) ]
+```
+
+Now we can display the first five rows using the `head()` function:
+```{r}
+head( exercise.2.2.data.frame, 5 )
+```
+
+
+
+
+
