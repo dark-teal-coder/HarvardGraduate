@@ -1,0 +1,134 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+
+```{r}
+rm( list = ls() )
+```
+
+
+
+```{r}
+babe.ruth.data.frame <-
+    read.csv( "Babe Ruth Seasonal Batting Data.csv" )
+```
+
+
+```{r}
+cat(
+    "Hits:",
+    sum( babe.ruth.data.frame$H )
+)
+```
+
+
+```{r}
+cat(
+    "At-Bats:",
+    sum( babe.ruth.data.frame$AB )
+)
+```
+
+
+
+
+
+
+
+```{r}
+ted.williams.data.frame <-
+    read.csv( "Ted Williams Seasonal Batting Data.csv" )
+```
+
+
+```{r}
+cat(
+    "Hits:",
+    sum( ted.williams.data.frame$H )
+)
+```
+
+
+```{r}
+cat(
+    "At-Bats:",
+    sum( ted.williams.data.frame$AB )
+)
+```
+
+
+
+
+```{r}
+willie.mays.data.frame <-
+    read.csv( "Willie Mays Seasonal Batting Data.csv" )
+```
+
+
+```{r}
+cat(
+    "Hits:",
+    sum( willie.mays.data.frame$H )
+)
+```
+
+
+```{r}
+cat(
+    "At-Bats:",
+    sum( willie.mays.data.frame$AB )
+)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
