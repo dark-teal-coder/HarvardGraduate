@@ -1,0 +1,401 @@
+"Location","Sales","Costs"
+"Boston",12.87,10.69
+"Boston",12.46,12.71
+"Boston",13.35,10.09
+"London",14.38,11.69
+"Salt Lake City",14.68,6.35
+"London",14.7,10.98
+"London",16.07,12.57
+"Boston",11.07,9.31
+"Salt Lake City",14.84,9.64
+"London",14.45,12.96
+"London",14.47,13.43
+"London",16.14,11.72
+"Salt Lake City",13.62,7.13
+"Shanghai",10.26,7.79
+"Shanghai",9.07,9.1
+"London",16.84,11.63
+"Shanghai",10.31,8.68
+"Boston",12.66,10.23
+"Shanghai",11.11,6.86
+"Salt Lake City",14.17,6.95
+"Shanghai",8.75,7.28
+"Boston",11.46,9.73
+"Shanghai",8.55,7.49
+"Salt Lake City",15.94,7.35
+"Salt Lake City",14.4,6.58
+"London",15.03,13.13
+"Boston",10.06,9.77
+"London",16.27,12.66
+"Salt Lake City",14.09,6.62
+"Shanghai",7.54,11.44
+"London",14.17,11.45
+"Salt Lake City",15.28,7.09
+"Boston",11.21,9.9
+"Shanghai",11.25,9.71
+"Salt Lake City",13.48,7.15
+"Boston",12.56,8.64
+"Salt Lake City",14.75,7.62
+"Salt Lake City",15.13,7.18
+"Boston",11.72,8.23
+"Boston",12.16,7.76
+"Shanghai",9.8,8.73
+"Boston",11.44,10.48
+"Shanghai",8.91,7.52
+"Shanghai",10.76,8.22
+"Boston",12.17,8.22
+"Boston",12.75,10.28
+"London",14,10.18
+"Shanghai",8.67,8.81
+"Boston",11.16,10.34
+"Boston",11.16,10.47
+"Salt Lake City",14.8,6.46
+"Boston",11.69,10.1
+"Boston",11.74,10.55
+"London",15.13,11.84
+"Salt Lake City",16.5,6.53
+"Shanghai",9.91,9.9
+"Shanghai",10.83,8.6
+"Boston",11.89,12.1
+"London",16.75,13.02
+"Boston",12.34,9.75
+"Shanghai",9.98,9.54
+"Boston",12.65,11.23
+"Boston",12.15,10.96
+"London",14.44,13.32
+"London",13.94,12.04
+"Salt Lake City",13.99,6.41
+"Shanghai",10.96,8.59
+"Salt Lake City",15.55,6.77
+"Shanghai",9.44,9.31
+"London",15.19,12.98
+"Shanghai",10.12,8.65
+"Boston",14.03,11.19
+"Boston",12.41,8.97
+"London",14.82,10.19
+"London",14.52,13
+"London",14.8,11.12
+"Shanghai",9.72,7.93
+"London",16.6,11.05
+"Shanghai",10.46,8.91
+"London",15.4,12.1
+"Salt Lake City",14.65,6.94
+"Shanghai",7.84,9.03
+"Boston",12.9,11.17
+"Salt Lake City",15.6,7.42
+"Salt Lake City",15.42,4.9
+"Boston",11.08,11.31
+"Boston",13.2,9.12
+"London",13.99,12.72
+"Boston",9.84,10.99
+"Boston",10.64,10.05
+"London",14.87,12.74
+"Shanghai",10.08,7.13
+"London",16.86,11.47
+"Salt Lake City",14.15,7.15
+"Boston",11.49,8.3
+"Boston",12.36,10.05
+"Shanghai",10.24,9.81
+"London",15.6,12.03
+"Shanghai",10.99,9.43
+"Boston",11.97,10.08
+"Boston",11.51,9.58
+"Shanghai",11.6,9.85
+"Shanghai",9.9,9.2
+"Boston",11.83,8.12
+"Shanghai",8.6,9.37
+"Boston",12.1,9.68
+"Salt Lake City",15.05,7
+"Salt Lake City",14.48,7.46
+"Shanghai",10.51,9.32
+"London",14.89,13.5
+"Boston",11.32,9.93
+"Boston",12.28,10.53
+"Shanghai",9.93,10.35
+"London",14.85,12.36
+"Shanghai",11.11,8.85
+"London",14.86,11.75
+"Shanghai",8.68,9.74
+"London",13.93,11.19
+"Shanghai",9.66,8.53
+"Salt Lake City",16.2,8.29
+"London",15.3,11.96
+"Boston",12.36,10.54
+"London",15.12,11.47
+"Salt Lake City",16.54,6.79
+"Boston",12.65,10.5
+"Shanghai",11.02,9.62
+"London",15.13,11.12
+"Boston",11.35,9.6
+"London",14.62,14.22
+"Shanghai",8.89,10.81
+"Salt Lake City",14.54,7.2
+"Boston",12.73,8.76
+"London",14.71,12.3
+"London",15.68,11.9
+"London",15.71,12.78
+"Salt Lake City",15.93,8.95
+"Salt Lake City",14.44,8.45
+"Shanghai",9.67,9.21
+"Salt Lake City",14.05,6.27
+"Salt Lake City",14.05,5.28
+"London",14.97,12.69
+"Salt Lake City",16.8,5.42
+"London",16.16,12.1
+"London",14.31,13.48
+"Boston",12.78,9.53
+"Shanghai",10.45,9.22
+"London",15.43,10.66
+"Salt Lake City",17.5,7.5
+"London",14.16,12.92
+"Shanghai",8.75,9.83
+"London",15.17,15.77
+"Salt Lake City",14.09,6.83
+"Salt Lake City",14.67,7.6
+"Boston",10.51,9.9
+"Boston",12.65,10.6
+"Salt Lake City",14.49,8.02
+"Salt Lake City",15.3,8.54
+"Shanghai",12.77,9.06
+"London",15.33,10.95
+"Shanghai",9.83,7.75
+"London",14.53,11.95
+"London",16.2,11.65
+"Boston",10.79,10.56
+"London",15.44,13.08
+"Boston",12.71,10.9
+"Boston",10.36,10.49
+"Salt Lake City",15.75,7.73
+"Boston",11.64,11.92
+"Shanghai",11.49,8.81
+"Boston",10.76,10.92
+"Boston",11.02,9.5
+"Salt Lake City",17.64,5.86
+"Boston",10.46,9.78
+"London",14.44,11.76
+"Salt Lake City",15,5.68
+"London",15.17,11.31
+"Boston",11.86,9.15
+"Boston",11.42,9.53
+"Shanghai",11.56,9.16
+"Shanghai",10.22,8.64
+"Shanghai",9.14,9.3
+"Shanghai",11.02,10.23
+"Boston",12.72,9.83
+"Salt Lake City",15.25,6.43
+"Salt Lake City",15.57,7.8
+"Salt Lake City",13.97,7.36
+"Boston",11.59,10.32
+"London",13.19,11.66
+"Boston",12.21,10.48
+"Shanghai",10,8.7
+"Boston",12.79,9.11
+"Salt Lake City",15.79,7.66
+"Boston",13.56,9.75
+"Boston",12.72,8.86
+"Salt Lake City",14.19,8.44
+"Boston",13.61,10.45
+"Shanghai",10.09,8.09
+"Salt Lake City",15.77,7.16
+"Shanghai",9.71,8.24
+"Salt Lake City",15.47,6.92
+"Boston",11.48,10.26
+"Salt Lake City",16.34,6.92
+"Shanghai",11.45,9.02
+"London",14.55,12.34
+"Shanghai",11.46,9.27
+"Shanghai",10.88,9.48
+"Shanghai",8.25,8.83
+"Shanghai",10.43,8.84
+"London",16.54,10.84
+"Boston",14.62,9.23
+"Boston",13.31,9.56
+"Salt Lake City",15.06,6.49
+"Salt Lake City",15.6,6.97
+"Boston",12.5,8.91
+"Shanghai",9.82,9.13
+"Shanghai",9.52,8.08
+"Boston",10.81,10.51
+"Salt Lake City",15.77,5.99
+"Shanghai",8.29,8.83
+"Shanghai",9.76,8.88
+"Salt Lake City",14.21,6.59
+"London",13.7,11.46
+"Boston",12.68,8.84
+"London",13.35,10.11
+"Boston",12.12,10
+"London",15.17,10.14
+"Shanghai",8.31,9
+"London",13.75,10.98
+"Shanghai",11.09,8.48
+"London",15.07,13.38
+"Salt Lake City",14.96,7.37
+"Shanghai",9.41,7.84
+"Boston",12.68,10.31
+"Salt Lake City",14.38,8.11
+"Shanghai",9.46,9.2
+"Salt Lake City",15.93,8.13
+"Salt Lake City",13.35,7.72
+"London",14.88,13.03
+"Salt Lake City",14.78,5
+"Salt Lake City",14.46,4.64
+"Salt Lake City",15.1,5.26
+"London",14.69,11.97
+"Shanghai",11.07,7.49
+"Salt Lake City",15.41,6.36
+"Boston",11.22,10.12
+"Salt Lake City",15.46,8.58
+"London",14.46,11.99
+"London",15.82,13.5
+"Salt Lake City",14.63,6.67
+"Salt Lake City",14.26,8.06
+"Boston",14.26,11.3
+"Shanghai",9.14,7.27
+"Boston",12.31,10.26
+"Boston",12.03,11.04
+"London",14.17,12.76
+"London",15.45,12.13
+"Shanghai",11.08,8.63
+"London",13.74,12.24
+"Shanghai",8.99,9.62
+"Boston",12.91,11.4
+"London",16.33,10.99
+"Shanghai",10.57,10.5
+"Boston",11.49,10.58
+"Shanghai",10.06,6.97
+"Boston",12.24,11.37
+"London",15.05,12.66
+"Shanghai",9.43,7.22
+"Shanghai",8.57,9.36
+"Boston",10.97,10.67
+"Shanghai",9.67,10.18
+"Boston",13.61,8.34
+"London",14.09,11.79
+"London",14.24,10.45
+"Salt Lake City",13.74,5.8
+"Shanghai",11.53,9.11
+"Shanghai",10.43,9.07
+"Boston",11.69,9.87
+"Shanghai",11.24,8.78
+"Salt Lake City",14.64,5.99
+"London",13.79,13.25
+"London",15.37,11.62
+"London",13.44,13.2
+"Salt Lake City",15.48,7.18
+"Boston",11.52,9.97
+"London",14.93,13.7
+"Salt Lake City",13.76,7.13
+"Boston",12.66,9.04
+"London",14.2,12.62
+"Salt Lake City",13.19,5.54
+"Salt Lake City",15.12,5.79
+"Boston",11.38,10.39
+"Salt Lake City",14.93,7.88
+"London",15.34,12.94
+"Shanghai",9.9,8.37
+"Salt Lake City",13.84,8.48
+"Shanghai",8.68,9.67
+"London",14.45,13.77
+"Shanghai",9.4,8.38
+"Boston",11.77,9.13
+"Salt Lake City",13.96,7.14
+"Shanghai",9.32,9.67
+"Salt Lake City",12.99,6.81
+"Salt Lake City",14.24,7.54
+"Salt Lake City",15.43,5.98
+"London",15.91,11.76
+"Boston",13.67,9.72
+"Boston",12.52,11.26
+"Salt Lake City",14.62,7.19
+"Salt Lake City",14.09,7.36
+"Boston",11.34,9.16
+"Shanghai",10.15,9.25
+"Shanghai",10.58,8.75
+"Boston",11.23,9.53
+"Shanghai",10.62,11.21
+"London",13.51,11.39
+"London",13.61,13.38
+"Boston",10.99,10.83
+"London",12.55,10.62
+"Salt Lake City",16.53,8.15
+"Salt Lake City",16.63,6.28
+"Shanghai",8.83,9.73
+"Salt Lake City",16.01,5.62
+"Boston",13.96,10.44
+"Shanghai",10,7.86
+"Salt Lake City",14.91,7.34
+"Boston",12.96,10.61
+"Shanghai",8.27,9.12
+"Salt Lake City",15.37,6.51
+"Salt Lake City",14.77,7.09
+"Shanghai",10.81,9.15
+"Salt Lake City",15.21,6.48
+"London",14.2,11.7
+"Salt Lake City",14.24,5.76
+"London",17,13.21
+"Boston",10.16,11.32
+"London",14.8,11.63
+"Shanghai",8.9,7.6
+"Shanghai",11.79,10.21
+"London",14.61,11.3
+"Boston",12.93,8.3
+"London",14.79,11.48
+"Boston",11.91,10.26
+"London",15.66,12.47
+"Shanghai",9.81,8.42
+"Boston",11.46,10.45
+"London",14.3,12.33
+"Salt Lake City",14.89,6.31
+"London",14.55,13.17
+"London",13.93,11.18
+"Boston",10.34,9.16
+"Salt Lake City",14.72,7.35
+"London",16.89,11.6
+"Boston",12.39,9.08
+"London",13.58,13.74
+"Shanghai",10.25,9.99
+"Shanghai",10.9,9.4
+"Shanghai",9.33,8.91
+"Boston",12.98,11.52
+"Salt Lake City",14.89,6.45
+"Shanghai",8.31,8.78
+"London",13.94,11.63
+"London",15.77,13.09
+"Salt Lake City",15.71,5.49
+"Shanghai",9.08,9.49
+"Salt Lake City",16.34,9.52
+"Salt Lake City",15.36,6.92
+"London",15.68,10.61
+"Salt Lake City",16.33,8.95
+"Salt Lake City",13.51,8.34
+"Salt Lake City",16.71,7.34
+"Salt Lake City",15.1,4.99
+"Salt Lake City",16.36,7.61
+"London",15.69,13.14
+"Boston",12,10.39
+"Salt Lake City",15.86,6.1
+"Salt Lake City",13.4,8.49
+"Salt Lake City",15.36,6.95
+"Shanghai",9.57,9.59
+"Boston",11.51,9.77
+"London",14.43,11.08
+"Salt Lake City",16.06,7.29
+"Shanghai",7.9,9.94
+"Shanghai",10.45,10.21
+"Shanghai",8.62,10.13
+"London",14.51,12.41
+"London",14.42,12.21
+"London",14.69,10.22
+"London",14.75,11.61
+"Boston",11.42,9.58
+"Shanghai",10.23,10.37
+"Salt Lake City",14.54,7.12
+"London",16.83,10.45
+"Boston",11.24,10.38
+"Salt Lake City",15.29,7.46
+"Salt Lake City",15.44,7.42
+"Shanghai",9.51,6.48
+"London",15.96,9.54
+"Shanghai",9.16,8.5
+"Shanghai",9.79,9.51
+"Shanghai",9.05,8.93
