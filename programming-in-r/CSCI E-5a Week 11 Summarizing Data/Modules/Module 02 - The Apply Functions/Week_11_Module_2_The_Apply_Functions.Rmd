@@ -1,0 +1,450 @@
+---
+title: "Week 1 Module 2 -- The Apply Functions"
+output:
+  pdf_document: default
+  html_notebook: default
+  html_document:
+    df_print: paged
+---
+
+
+Let's clear the global computing environment:
+```{r}
+rm( list = ls() )
+```
+
+
+# Module Preview
+
+Hello! And welcome to Module 2: The Apply Functions.
+
+In this module, we'll study a family of functions that can apply a function to the elements of a list.
+
+
+
+* In Section 1, we'll see how to apply a function to the elements of a list.
+
+* In Section 2, we'll see how to use the `lapply()` function to clean data.
+
+
+
+When you've completed this module, you'll be able to:
+
+* Apply a function to the elements of a list.
+
+* Use the `lapply()` function to clean data.
+
+
+
+
+There are four new built-in R functions in this module:
+
+* `lapply()`
+
+* `sapply()`
+
+* `vapply()`
+
+* `tapply()`
+
+
+
+All right! Let's get started by learning how to apply a function to a list.
+
+
+
+
+# Section 1: Applying a Function to a List
+
+**Main Idea:** *We can apply a function to the elements of a list*
+
+In this section, we'll see how to apply a function to the elements of a list.
+
+
+
+Often, we'll want to call a function on each column of a data frame.
+
+For instance, consider the `iris()` data frame, which consists of four columns with numeric data and one column with categorical data.
+
+Suppose we would like to use the `mean()` function to summarize the values in each of the numeric columns.
+
+In this case, we will take each numeric column in turn and calculate the sample mean of their elements.
+
+This is called "mapping" the `mean()` function over the columns of the data frame.
+
+It's also called "applying" the function across the columns of the data frame.
+
+
+
+Let's see this in action.
+
+First, since we are focused on working on the numeric data in the `iris` data frame, let's select just the columns with numeric data and store these in a variable:
+```{r}
+numeric.iris <-
+    iris[ 1:4 ]
+
+head( numeric.iris )
+```
+
+
+We can calculate the sample mean of the elements of the first column:
+```{r}
+mean( numeric.iris[[ 1 ]] )
+```
+
+
+Thus, we would like to construct a vector like this:
+```{r}
+c(
+    mean( numeric.iris[[ 1 ]] ),
+    mean( numeric.iris[[ 2 ]] ),
+    mean( numeric.iris[[ 3 ]] ),
+    mean( numeric.iris[[ 4 ]] )
+)
+```
+
+This is not very efficient code, since we seem to be typing the same thing over and over again, with a slight variation.
+
+Is there some way we can automate this process?
+
+
+
+We might try something like this:
+```{r error = TRUE}
+mean( iris[[ 1:4 ]] )
+```
+
+Unfortunately, the `mean()` function can take only numeric or logical vectors as its input argument, but we are trying to use a data frame as the input argument, so this generates an error.
+
+So we can't map the `mean()` function across the columns of numeric data in the `iris` data frame using this approach.
+
+However, there *is* a way to do this, but we have to use some special functions to do this.
+
+
+
+The basic function for mapping a function across the columns of a data is called `lapply()`, and this takes two input arguments:
+
+* The data frame, denoted `X`.
+
+* The function to be mapped across the columns of `X`, denoted `FUN`.
+
+The `lapply()` function then returns a list of the same length as the input data frame `X`, consisting of the output of the function `FUN` for each of the columns of `X`.
+
+Notice that the two input argument names `X` and `FUN` use all-capital letters and thus do not conform to our standard naming conventions.
+
+Let's see `lapply()` do this:
+```{r}
+lapply(
+    X = numeric.iris,
+    FUN = mean
+)
+```
+
+Notice that `lapply()` returns the sample mean values in a named list.
+
+That's the "l" part of "lapply()" -- it means that the function returns a list.
+
+
+
+There are two other functions that are variations on "lapply()".
+
+The `sapply()` function will try to simplify the return result:
+```{r}
+sapply(
+    X = numeric.iris,
+    FUN = mean
+)
+```
+
+Here it was possible to return the return values in a vector (actually, a named vector), so that's what `sapply()` does.
+
+If you're working interactively, it's often more convenient to use `sapply()` rather than `lapply()`, because it can be annoying to get the return values encased in a list structure.
+
+However, there is a theoretical objection to `sapply()`, because the function determines how to simplify 
+
+There is a theoretical objection to `sapply()`: the function uses an internal algorithm to decide what "simple" means in any context, so it might return a vector in one case and a list in another.
+
+Thus, there is another function called `vapply()`, where you supply a template data structure, and thus you can control exactly the data structure that is returned.
+
+This is all very specialized, and usually `sapply()` is just fine.
+
+Remember that ultimately everything is just a variation of `lapply()`.
+
+You should be aware that `lapply()` is extremely flexible, and the first input argument can be any sort of list, so this is very general.
+
+Of course, a data frame is a special case of a list, so that's why we can use `lapply()` with a data frame.
+
+
+
+So that's how to apply a function to the elements of a list.
+
+Now let's see how to clean data by using the `lapply()` function.
+
+
+
+
+
+# Section 2: Cleaning Data with `lapply()`
+
+**Main Idea:** *We can use apply functions to clean data*
+
+In this section, we'll see how to use the `lapply()` function to clean data.
+
+
+
+In Problem Set 7, Problem 4, we saw how to visualize Kepler's Third Law of planetary motion by constructing a scatterplot.
+
+Now we're going to repeat the same analysis, but with a slightly different data set.
+
+Let's load in a data frame from a tab-delimited file with the planetary data:
+```{r}
+planets.data.frame <-
+    read.csv( "Planetary Data.txt", sep = "\t" )
+
+planets.data.frame
+```
+
+
+
+Before we do any real work, let's fix the column names:
+```{r}
+names( planets.data.frame ) <-
+    c( "Planet", "Distance", "Period", "Mass", "Radius")
+
+planets.data.frame
+```
+
+
+There's a problem with this data -- can you see it?
+
+Take a moment to look at the display of the data and try to see if you can figure out what's going wrong.
+
+
+
+
+
+
+
+
+
+Did you see the problem?
+
+The data set includes information about the moon and the sun, which aren't really planets.
+
+So we want to get rid of these rows, because the scatterplot for Kepler's Third Law only uses the data for the planets.
+
+This is a nice opportunity to use negative integer indexing, because we only have a couple of rows to remove and it's easy to see which ones we want to get rid off:
+
+```{r}
+filtered.planets.data.frame <-
+    planets.data.frame[ c(-1, -2), ]
+
+filtered.planets.data.frame
+```
+
+
+
+
+
+
+OK, so we've resolved the issue about the rows with the Sun and Moon data.
+
+However, there's another problem with this data set.
+
+Again, can you see the issue?
+
+Take a moment to try to figure out what's wrong here.
+
+
+
+
+
+
+
+
+
+
+
+Did you see what the problem is?
+
+The columns for the distance and the period are supposed to contain numeric data, but instead contain character string data!
+
+How did that happen?!?
+
+
+
+If you go back to when we first read in the data frame, notice that entry for the distance value for the Moon is "3.84E+8 (distance from Earth)".
+
+Because of the little text note R cannot parse this as a numeric value, so it treats the value as a character string.
+
+Now, remember our fundamental rule about vectors -- a vector can only contain one kind of atomic value.
+
+So, if even one value in the vector is a character string, then everything else in that vector is coerced to a character string form, even if it is a legitimate expression for a numeric value.
+
+Thus when R read in the data frame, it coerced all the values for this column to character string values.
+
+
+
+Notice that we've removed the row for the Moon, so now all the values in this column look like numeric values.
+
+However, that doesn't matter -- R determines the class of each column when it constructs the vector, and if we remove some rows from the data frame that doesn't change the properties of the columns.
+
+So here's the problem: we want the Distance and Period columns to be numeric vectors so we can construct the scatterplot, but right now they contain character string values.
+
+How can we convert these columns to numeric values?
+
+First, let's select just these two columns:
+```{r}
+distance.period.data.frame <-
+    filtered.planets.data.frame[
+        c( "Distance", "Period" )
+    ]
+
+distance.period.data.frame
+```
+
+
+We can convert character string values to numeric values by using the `as.numeric` function:
+```{r}
+as.numeric( "5.37" )
+```
+
+
+So we want to apply this `as.numeric()` function to both of the columns.
+
+We can do this by using the `lapply()` function:
+```{r}
+final.data <-
+    lapply(
+        X = distance.period.data.frame,
+        FUN = as.numeric
+    )
+
+final.data
+```
+
+And so we've converted these character string columns to numeric vectors, and we can now construct the scatterplot for Kepler's Third Law.
+
+
+
+Notice that `lapply()` returns the vectors in a named list format, NOT a data frame format.
+
+If you want this to be in a data frame format, you can use the `as.data.frame()` function:
+```{r}
+as.data.frame( final.data )
+```
+
+
+But actually, you don't need to worry about converting back over to a data frame format, because you can select the columns from the list by using the '$' notation:
+```{r}
+distance.vector <-
+    final.data$Distance
+
+period.vector <-
+    final.data$Period
+```
+
+Now let's make the graph for Kepler's Third Law:
+```{r}
+log.distance.vector <-
+    log( distance.vector )
+
+log.period.vector <-
+    log( period.vector )
+
+linear.model <-
+    lm( log.period.vector ~ log.distance.vector )
+
+
+# Make an empty plot with no data
+
+plot(
+    x = NULL,
+    xlim = c(24, 30),
+    ylim = c(-2, 6),
+    main = "Scatterplot of log period vs. log radius",
+    xlab = "Log radius",
+    ylab = "Log period"
+)
+
+abline(
+    linear.model,
+    lty = "dashed",
+    lwd = 3,
+    col = "slategray2"
+)
+
+points(
+    x = log.distance.vector,
+    y = log.period.vector,
+    pch = 21,
+    cex = 2.5,
+    lwd = 2.5,
+    col = "black",
+    bg = "mediumorchid1"
+)
+```
+
+
+This is perhaps a simple example of how to use the `lapply()` function, but it's intended to allow you to easily follow each step in the process.
+
+The `lapply()` function becomes more useful as the number of columns becomes larger.
+
+For instance, suppose you have data from a Likert scale with 25 items, and all the entries are reported as character strings.
+
+In this case, you could use the `lapply()` function to convert the 25 columns of data into numeric values.
+
+
+
+In Problem Set 10, Problem 6, you'll encounter some similar problems with baseball data sets, so remember to refer back to this section if you need some hints on how to solve the problems.
+
+
+
+So that's how to use the `lapply()` function to clean data.
+
+Now let's review what we've learned in this module.
+
+
+
+
+# Module Review
+
+In this module, we studied a family of functions that can apply a function to the elements of a list.
+
+
+
+* In Section 1, we saw how to apply a function to the elements of a list.
+
+* In Section 2, we saw how to use the `lapply()` function to clean data.
+
+
+
+Now that you've completed this module, you should be able to:
+
+* Apply a function to the elements of a list.
+
+* Use the `lapply()` function to clean data.
+
+
+
+
+There were three new built-in R functions in this module:
+
+* `lapply()`
+
+* `sapply()`
+
+* `vapply()`
+
+
+
+
+All right! That's it for Module 2: The Apply Functions.
+
+Now let's move on to Module 3: The `tapply()` Function.
+
+
+
+
+
+

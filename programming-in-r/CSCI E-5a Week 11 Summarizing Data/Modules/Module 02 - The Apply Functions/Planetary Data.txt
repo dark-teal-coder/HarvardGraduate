@@ -1,0 +1,11 @@
+Planet	Distance from sun (m)	Period (y)	Mass (kg)	Radius (m)
+Sun	0	NA	1.99E+30	6.96E+08
+Moon	3.84E+8 (distance from Earth)	27.3 days	7.36E+22	1.74E+06
+Mercury	5.79E+10	0.241	3.18E+23	2.43E+06
+Venus	1.08E+11	0.615	4.88E+24	6.06E+06
+Earth	1.50E+11	1	5.98E+24	6.37E+06
+Mars	2.28E+11	1.88	6.42E+23	3.37E+06
+Jupiter	7.78E+11	11.9	1.90E+27	6.99E+07
+Saturn	1.43E+12	29.5	5.68E+26	5.85E+07
+Uranus	2.87E+12	84	8.68E+25	2.33E+07
+Neptune	4.50E+12	165	1.03E+26	2.21E+07
