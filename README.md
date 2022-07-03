@@ -1,4 +1,4 @@
-<!-- This is a README file for the parent directory of Harvard graduate courses. -->
+<!-- This is the current repository's README file. -->
 
 # Metadata
 - <ins>Project Owner</ins>: [@dark-teal-coder](github.com/dark-teal-coder)
