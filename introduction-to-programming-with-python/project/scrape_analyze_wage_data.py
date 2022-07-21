@@ -159,7 +159,7 @@ def write_pdf(filepath_out, text):
     pdf.cell(200, 10, txt=f"Canada Tech Career Wage Report {current_year} Data from Job Bank", ln=1, align='C')
     pdf.ln(10)
     pdf.set_font("Courier", style='I', size=12)
-    pdf.cell(200, 10, txt="Reporter: Preesa Saewong", ln=1, align='R')
+    pdf.cell(200, 10, txt="Reporter: Roxanne Saewong", ln=1, align='R')
     pdf.ln(10)
     pdf.set_font("Courier", size=12)
     pdf.multi_cell(200, 10, txt=text, ln=2, align='L')
