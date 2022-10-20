@@ -15,7 +15,3 @@ This repository contains all the course materials for the Graduate Certificate i
   - Period: Fall 2021; Aug 30, 2021 to Dec 18, 2021 
 - CSCI E-5a R Programming 
   - Period: Spring 2021; Jan 24, 2022 to May 14, 2022
-
-<br />
-
-*Last modified date: Jul 03, 2022*
