@@ -45,7 +45,3 @@ The course repository contains the following sub-directories.
   - [ ] Jupyter Notebook (.ipynb)
   - [ ] R Source (.R) 
   - [x] R Notebook (.Rmd) 
-
-<br />
-
-*Last Modified Date: 2022-03-09*
