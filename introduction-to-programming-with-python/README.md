@@ -40,8 +40,5 @@ The course repository contains the following sub-directories. Among them, "assig
   - [ ] Python Source (.py)
   - [x] Jupyter Notebook (.ipynb)
   - [ ] R Source (.R) 
-  - [ ] R Notebook (.Rmd) 
-
-<br />
-
-*Last Modified Date: 2022-03-07*
+  - [ ] R Notebook (.Rmd)
+  
