@@ -6,7 +6,6 @@
 
 - <ins>Project Owner</ins>: [@dark-teal-coder](github.com/dark-teal-coder)
 - <ins>First Published Date</ins>: 2022-02-21
-- <ins>Last Modified Date</ins>: 2022-03-01
 
 ## Project
 
